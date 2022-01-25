@@ -16,8 +16,17 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('design_your_own_totebag')  # Access Google sheet
 
-design = SHEET.worksheet('design')
 
-data = design.get_all_values()  # Create a list of list
+def intro():
+    """
+    Welcome and information on how to design your own bag
+    """
+    print(" ______       _ __            ___ ")                 
+    print("(  /  _/_    ( /  )          ( / \ ")       
+    print("  /__ /  _    /--< __, _,     /  /_  (  o  _,  __ ") 
+    print("_/(_)(__(/_  /__ /(_(_(_)_  (/\_/(/_/_)_(_(_)_/ /_ ")
+    print("                       /|                  /|")       
+    print("                      (/                  (/ \n\n")    
+    print("Welcome to Tote Bag Design!" 
+          "Here you can create a custom design for your tote bag")
 
-print(data)
