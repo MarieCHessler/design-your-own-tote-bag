@@ -36,7 +36,8 @@ def intro_validate_name():
 
     user_fname = input("Please let us know your first name: ").capitalize()
     user_lname = input("And your last name, please: ").capitalize()
-    print(f"Welcome {user_fname} {user_lname}!")
+    user_name = user_fname + " " + user_lname
+    print(f"Welcome {user_name}!")
 
 
 intro_validate_name()
