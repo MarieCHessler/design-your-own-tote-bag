@@ -18,7 +18,10 @@ SHEET = GSPREAD_CLIENT.open('design_your_own_tote_bag')  # Access Google sheet
 
 
 def intro():
-    """ Welcome and information on how to design your own bag """
+    """
+    Welcome, information on how to design your own bag and
+    user name is collected
+    """
 
     print(" ______       _ __            ___ ")
     print("(  /  _/_    ( /  )          ( / \ ")
@@ -26,5 +29,14 @@ def intro():
     print("_/(_)(__(/_  /__ /(_(_(_)_  (/\_/(/_/_)_(_(_)_/ /_ ")
     print("                       /|                  /|")
     print("                      (/                  (/ \n\n")
-    print("Welcome to Tote Bag Design!"
-          "Here you can create a custom design for your tote bag")
+    print("Welcome to Tote Bag Design!\n")
+    print("Here you can create a custom design for your tote bag.")
+    print("You can choose from different fabrics and colors for ") 
+    print("the inside, the outside and the handles.\n")
+
+    user_fname = input("Please let us know your first name: ")
+    user_lname = input("We would also like to know your last name: ")
+    print(f"Your name is {user_fname} {user_lname}")
+
+
+intro()
