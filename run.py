@@ -19,8 +19,10 @@ SHEET = GSPREAD_CLIENT.open('design_your_own_tote_bag')  # Access Google sheet
 
 def intro_validate_name():
     """
-    Welcome, information on how to design your own bag and
-    user name is collected
+    Printed logo, welcome message and information on how to design
+    your own bag.
+    User first and last names are collected, and the name is validated in a
+    while True loop with a break statement.
     """
 
     print(" ______       _ __            ___ ")
@@ -34,10 +36,19 @@ def intro_validate_name():
     print("You can choose from different fabrics and colors for ")
     print("the inside, the outside and the handles.\n")
 
-    user_fname = input("Please let us know your first name: ").capitalize()
-    user_lname = input("And your last name, please: ").capitalize()
-    user_name = user_fname + " " + user_lname
-    print(f"Welcome {user_name}!")
+    while True:
+        try:
+            user_fname = input("Please let us know your first name: ").capitalize()
+            user_lname = input("And your last name, please: ").capitalize()
+            # user_name = user_fname + " " + user_lname
+            if user_fname.isalpha() and user_lname.isalpha():
+                print(f"Welcome {user_fname} {user_lname}!")
+                break
+            else:
+                raise ValueError(f"You wrote {user_fname} {user_lname}, "
+                                 "but we need your names in letters please.")
+        except ValueError as e:
+            print(f"Invalid entry: {e}\n")
 
 
 intro_validate_name()
