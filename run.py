@@ -17,7 +17,7 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('design_your_own_tote_bag')  # Access Google sheet
 
 
-def intro():
+def intro_validate_name():
     """
     Welcome, information on how to design your own bag and
     user name is collected
@@ -30,13 +30,13 @@ def intro():
     print("                       /|                  /|")
     print("                      (/                  (/ \n\n")
     print("Welcome to Tote Bag Design!\n")
-    print("Here you can create a custom design for your tote bag.")
-    print("You can choose from different fabrics and colors for ") 
+    print("Here you can custom design you tote bag.")
+    print("You can choose from different fabrics and colors for ")
     print("the inside, the outside and the handles.\n")
 
-    user_fname = input("Please let us know your first name: ")
-    user_lname = input("We would also like to know your last name: ")
-    print(f"Your name is {user_fname} {user_lname}")
+    user_fname = input("Please let us know your first name: ").capitalize()
+    user_lname = input("And your last name, please: ").capitalize()
+    print(f"Welcome {user_fname} {user_lname}!")
 
 
-intro()
+intro_validate_name()
