@@ -47,9 +47,10 @@ def intro_validate_name():
                 print(f"Welcome {name}!")
                 break
             else:
-                raise ValueError(f"You wrote {user_fname} {user_lname}, "
-                                 "but we need both names, and in letters please.")
+                raise ValueError(f"You wrote {user_fname} {user_lname}, but "
+                                 "we need both names, and in letters please.")
         except ValueError as e:
-            print(f"Invalid entry: {e}\n") # Input from CI's Love Sandwiches           
+            print(f"Invalid entry: {e}\n")  # Input from CI's Love Sandwiches
+
 
 intro_validate_name()
