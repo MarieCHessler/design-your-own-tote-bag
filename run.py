@@ -17,14 +17,10 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('design_your_own_tote_bag')  # Access Google sheet
 
 
-def intro_validate_name():
+def intro():
     """
     Printed logo, welcome message and information on how to design
     your own bag.
-    User first and last names are collected, and the name is validated in a
-    while True loop with a break statement.
-    The True loop makes sure the names are in letters, and capitalizes them.
-    If names are missing or are not in letters a ValueError is raised.
     """
 
     print(" ______       _ __            ___ ")
@@ -38,11 +34,20 @@ def intro_validate_name():
     print("You can choose from different fabrics and colors for ")
     print("the inside, the outside and the handles.\n")
 
+
+def get_and_validate_name():
+    """
+    User first and last names are collected, and the name is validated in a
+    while True loop with a break statement.
+    The True loop makes sure the names are in letters, and capitalizes them.
+    If names are missing or are not in letters a ValueError is raised.
+    """
     while True:
+        user_fname = input("Please let us know your first name: ").capitalize()
+        user_lname = input("And your last name, please: ").capitalize()
+        name = user_fname + " " + user_lname
+
         try:
-            user_fname = input("Please let us know your first name: ").capitalize()
-            user_lname = input("And your last name, please: ").capitalize()
-            name = user_fname + " " + user_lname
             if user_fname.isalpha() and user_lname.isalpha():
                 print(f"Welcome {name}!")
                 break
@@ -53,4 +58,5 @@ def intro_validate_name():
             print(f"Invalid entry: {e}\n")  # Input from CI's Love Sandwiches
 
 
-intro_validate_name()
+intro()
+get_and_validate_name()
