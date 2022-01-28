@@ -23,6 +23,8 @@ def intro_validate_name():
     your own bag.
     User first and last names are collected, and the name is validated in a
     while True loop with a break statement.
+    The True loop makes sure the names are in letters, and capitalizes them.
+    If names are missing or are not in letters a ValueError is raised.
     """
 
     print(" ______       _ __            ___ ")
@@ -40,15 +42,14 @@ def intro_validate_name():
         try:
             user_fname = input("Please let us know your first name: ").capitalize()
             user_lname = input("And your last name, please: ").capitalize()
-            # user_name = user_fname + " " + user_lname
+            name = user_fname + " " + user_lname
             if user_fname.isalpha() and user_lname.isalpha():
-                print(f"Welcome {user_fname} {user_lname}!")
+                print(f"Welcome {name}!")
                 break
             else:
                 raise ValueError(f"You wrote {user_fname} {user_lname}, "
-                                 "but we need your names in letters please.")
+                                 "but we need both names, and in letters please.")
         except ValueError as e:
-            print(f"Invalid entry: {e}\n")
-
+            print(f"Invalid entry: {e}\n") # Input from CI's Love Sandwiches           
 
 intro_validate_name()
