@@ -62,14 +62,14 @@ def get_and_validate_name():
 
 def update_name_worksheet():
     """
-    Update the Google Sheets name worksheet with the name that has been collected
+    Update the Google Sheets name worksheet with the collected name.
     """
-    print("Sending name to worksheet.\n")
+    print("Your name is being saved...\n")
     name_worksheet = SHEET.worksheet("name")  # Access name worksheet in Google Sheets
-    name_worksheet.append_row(["user_name"])
-    print("Name updated in worksheet.\n")
+    name_worksheet.append_row([new_name])  # The name is saved in the name worksheet
+    print("Your name has been saved successfully :-)\n")
 
 
 intro()
-get_and_validate_name()
+new_name = get_and_validate_name()
 update_name_worksheet()
