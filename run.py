@@ -45,11 +45,11 @@ def get_and_validate_name():
     while True:
         user_fname = input("Please let us know your first name: ").capitalize()
         user_lname = input("And your last name, please: ").capitalize()
-        name = user_fname + " " + user_lname
+        user_name = user_fname + " " + user_lname
 
         try:
             if user_fname.isalpha() and user_lname.isalpha():
-                print(f"Welcome {name}!")
+                print(f"Welcome {user_name}!\n")
                 break
             else:
                 raise ValueError(f"You wrote {user_fname} {user_lname}, but "
@@ -57,6 +57,19 @@ def get_and_validate_name():
         except ValueError as e:
             print(f"Invalid entry: {e}\n")  # Input from CI's Love Sandwiches
 
+    return user_name
+
+
+def update_name_worksheet():
+    """
+    Update the Google Sheets name worksheet with the name that has been collected
+    """
+    print("Sending name to worksheet.\n")
+    name_worksheet = SHEET.worksheet("name")  # Access name worksheet in Google Sheets
+    name_worksheet.append_row(["user_name"])
+    print("Name updated in worksheet.\n")
+
 
 intro()
 get_and_validate_name()
+update_name_worksheet()
