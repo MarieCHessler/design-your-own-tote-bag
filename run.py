@@ -79,19 +79,19 @@ def get_and_validate_outer_fabric():
     linen or denim a ValueError is raised.
     """
     while True:
-        choice_o_fabric = input("Please choose fabric (cotton, linen or denim): ").lower()
+        o_fabric = input("Please choose fabric (cotton, linen or denim): ").lower()
 
         try:
-            if choice_o_fabric.isalpha():
-                print(f"You chose {choice_o_fabric} for the outside of the bag. Great!\n")
+            if o_fabric.isalpha():
+                print(f"You chose {o_fabric} for the outside of the bag. Great!\n")
                 break
             else:
-                raise ValueError(f"You wrote {choice_o_fabric}, but we need a choice "
+                raise ValueError(f"You wrote {o_fabric}, but we need a choice "
                                  "between cotton, linen and denim, in letters please.")
         except ValueError as e:
             print(f"Invalid entry: {e}\n")  # Input from CI's Love Sandwiches
 
-    return choice_o_fabric
+    return o_fabric
 
 
 def get_and_validate_inner_fabric():
@@ -103,19 +103,19 @@ def get_and_validate_inner_fabric():
     linen or denim a ValueError is raised.
     """
     while True:
-        choice_i_fabric = input("Please choose fabric (cotton or spinnaker): ").lower()
+        i_fabric = input("Please choose fabric (cotton or spinnaker): ").lower()
 
         try:
-            if choice_i_fabric.isalpha():
-                print(f"You chose {choice_i_fabric} for the inside of the bag. Great!\n")
+            if i_fabric.isalpha():
+                print(f"You chose {i_fabric} for the inside of the bag. Great!\n")
                 break
             else:
-                raise ValueError(f"You wrote {choice_i_fabric}, but we need a choice "
+                raise ValueError(f"You wrote {i_fabric}, but we need a choice "
                                  "between cotton and spinnaker, in letters please.")
         except ValueError as e:
             print(f"Invalid entry: {e}\n")  # Input from CI's Love Sandwiches
 
-    return choice_i_fabric
+    return i_fabric
 
 
 def update_design_worksheet():
@@ -130,7 +130,7 @@ def update_design_worksheet():
 
 def get_data_from_worksheets():
     """
-    Get the design data back from the Google Sheets name and design worksheets to thank the user
+    Get the data back from the Google Sheets name and design worksheets to thank the user
     for creating a bag with a selection of fabrics, colors and handles.
     """
     print("Your bag is being collected...\n")
