@@ -70,6 +70,41 @@ def update_name_worksheet():
     print("Your name has been saved successfully :-)\n")
 
 
+def get_and_validate_outer_choice():
+    """
+    Outer fabric choice is collected, and validated in a
+    while True loop with a break statement.
+    The True loop makes sure the choice is in letters, and lower case.
+    If choice is missing, is not in letters, or is not cotton, linen or denim a ValueError is raised.
+    """
+    while True:
+        choice_o_fabric = input("Please choose fabric (cotton, linen or denim): ").lower()
+
+        try:
+            if choice_o_fabric.isalpha():
+                print(f"You chose {choice_o_fabric} for the outside of the bag. Great!\n")
+                break
+            else:
+                raise ValueError(f"You wrote {choice_o_fabric}, but we need a choice "
+                                 "between cotton, linen and denim, in letters please.")
+        except ValueError as e:
+            print(f"Invalid entry: {e}\n")  # Input from CI's Love Sandwiches
+
+    return choice_o_fabric
+
+
+def update_design_worksheet_outer():
+    """
+    Update the Google Sheets design worksheet with the collected choice of outer fabric.
+    """
+    print("Your choice is being saved...\n")
+    name_worksheet = SHEET.worksheet("design")  # Access design worksheet in Google Sheets
+    name_worksheet.append_row([outer_choice])  # The choice is saved in the design worksheet
+    print("Your choice has been saved successfully :-)\n")
+
+
 intro()
 new_name = get_and_validate_name()
 update_name_worksheet()
+outer_choice = get_and_validate_outer_choice()
+update_design_worksheet_outer()
