@@ -120,13 +120,25 @@ def get_and_validate_inner_fabric():
 
 def update_design_worksheet():
     """
-    Update the Google Sheets design worksheet with the collected choices of fabric, colors and handles.
+    Update the Google Sheets design worksheet with the collected choices of fabrics, colors and handles.
     """
     print("Your choice is being saved...\n")
-    name_worksheet = SHEET.worksheet("design")  # Access design worksheet in Google Sheets
-    name_worksheet.append_row([outer_fabric, inner_fabric])  # The choices are saved in the design worksheet
+    design_worksheet = SHEET.worksheet("design")  # Access design worksheet in Google Sheets
+    design_worksheet.append_row([outer_fabric, inner_fabric])  # The choices are saved in the design worksheet
     print("Your choice has been saved successfully :-)\n")
 
+
+def get_data_from_worksheets():
+    """
+    Get the design data back from the Google Sheets name and design worksheets to thank the user
+    for creating a bag with a selection of fabrics, colors and handles.
+    """
+    print("Your bag is being collected...\n")
+    your_name = SHEET.worksheet("name").get_all_values()
+    your_name_row = your_name[-1]
+    choices = SHEET.worksheet("design").get_all_values()
+    choices_row = choices[-1]
+    print(f"{your_name_row}, you have created a beautiful bag from {choices_row} :-)\n")
 
 intro()
 new_name = get_and_validate_name()
@@ -134,3 +146,4 @@ update_name_worksheet()
 outer_fabric = get_and_validate_outer_fabric()
 inner_fabric = get_and_validate_inner_fabric()
 update_design_worksheet()
+get_data_from_worksheets()
