@@ -65,8 +65,8 @@ def update_name_worksheet():
     Update the Google Sheets name worksheet with the collected name.
     """
     print("Your name is being saved...\n")
-    name_worksheet = SHEET.worksheet("name")  # Access name worksheet in Google Sheets
-    name_worksheet.append_row([new_name])  # The name is saved in the name worksheet
+    name_worksheet = SHEET.worksheet("name")  # Access Google Sheets worksheet
+    name_worksheet.append_row([new_name])  # The name is saved in the worksheet
     print("Your name has been saved successfully :-)\n")
 
 
@@ -79,15 +79,17 @@ def get_and_validate_outer_fabric():
     linen or denim a ValueError is raised.
     """
     while True:
-        o_fabric = input("Please choose fabric (cotton, linen or denim): \n").lower()
+        o_fabric = input("Would you like the outer fabric to be "
+                         "cotton, linen or denim? \n").lower()
 
         try:
             if o_fabric.isalpha():
-                print(f"You chose {o_fabric} for the outside of the bag. Great!\n")
+                print(f"You chose {o_fabric} for the outside. Nice!\n")
                 break
             else:
                 raise ValueError(f"You wrote {o_fabric}, but we need a choice "
-                                 "between cotton, linen and denim, in letters please.")
+                                 "between cotton, linen and denim, "
+                                 "in letters please.")
         except ValueError as e:
             print(f"Invalid entry: {e}\n")  # Input from CI's Love Sandwiches
 
@@ -103,15 +105,17 @@ def get_and_validate_inner_fabric():
     linen or denim a ValueError is raised.
     """
     while True:
-        i_fabric = input("Please choose fabric (cotton or spinnaker): \n").lower()
+        i_fabric = input("What kind of inner fabric do you prefer, "
+                         "cotton or spinnaker? \n").lower()
 
         try:
             if i_fabric.isalpha():
-                print(f"You chose {i_fabric} for the inside of the bag. Great!\n")
+                print(f"You chose {i_fabric} for the inside. Good choice!\n")
                 break
             else:
                 raise ValueError(f"You wrote {i_fabric}, but we need a choice "
-                                 "between cotton and spinnaker, in letters please.")
+                                 "between cotton and spinnaker, "
+                                 "in letters please.")
         except ValueError as e:
             print(f"Invalid entry: {e}\n")  # Input from CI's Love Sandwiches
 
@@ -127,7 +131,8 @@ def get_and_validate_handles_fabric():
     a ValueError is raised.
     """
     while True:
-        h_fabric = input("Please choose fabric (cotton or belt): \n").lower()
+        h_fabric = input("For the handles, would you like them to be made"
+                         "from cotton or belt? \n").lower()
 
         try:
             if h_fabric.isalpha():
@@ -144,32 +149,35 @@ def get_and_validate_handles_fabric():
 
 def update_design_worksheet():
     """
-    Update the Google Sheets design worksheet with the collected choices of fabrics, colors and handles.
+    Update the Google Sheets design worksheet with the collected choices of
+    fabrics, colors and handles.
     """
     print("Your choices are being saved...\n")
-    design_worksheet = SHEET.worksheet("design")  # Access design worksheet in Google Sheets
+    design_worksheet = SHEET.worksheet("design")  # Access Google Sheets worksheet
     design_worksheet.append_row([outer_fabric, inner_fabric, handles_fabric])  # The choices are saved in the design worksheet
     print("Your choices have been saved successfully :-)\n")
 
 
 def get_data_from_worksheets():
     """
-    Get the data back from the Google Sheets name and design worksheets to thank the user
-    for creating a bag with a selection of fabrics, colors and handles.
+    Get the data back from the Google Sheets name and design worksheets to
+    thank the user for creating a bag with a selection of fabrics, colors
+    and handles.
     """
-    print("Your bag is being designed...\n")
+    print("Your tote bag is being designed...\n")
     your_name = SHEET.worksheet("name").get_all_values()
     your_name_row = your_name[-1]
     choices = SHEET.worksheet("design").get_all_values()
     choices_row = choices[-1]
-    print(f"{your_name_row}, you have created a beautiful bag from {choices_row} \n\n")
+    print(f"{your_name_row}, you have created your own cool ")
+    print(f"tote bag from {choices_row} \n\n")
     print("     _______      ")
     print("     |     |      ")
     print("   -----------    ")
     print("  |           |   ")
     print("  |           |   ")
     print("  |           |   ")
-    print("  |           |   ")
+    print("  |  My Tote  |   ")
     print("   -----------    \n\n")
     print("Thank you for designing your bag with us!\n")
 
