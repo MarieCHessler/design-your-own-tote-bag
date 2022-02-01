@@ -44,13 +44,17 @@ def get_and_validate_name():
     """
     while True:
         user_fname = input("Please let us know your first name: \n").capitalize()
-        user_lname = input("And your last name, please: \n").capitalize()
+        user_lname = input("\nAnd your last name, please: \n").capitalize()
         user_name = user_fname + " " + user_lname
 
         try:
             if user_fname.isalpha() and user_lname.isalpha():
-                print(f"Welcome {user_name}!\n")
+                print(f"\nWelcome {user_name}!\n")
                 break
+            if not user_fname:
+                print("\nSorry, did not catch you first name.\n")
+            if not user_lname:
+                print("\nSorry, did not catch you last name.\n")
             else:
                 raise ValueError(f"You wrote {user_fname} {user_lname}, but "
                                  "we need both names, and in letters please.")
@@ -164,13 +168,13 @@ def get_data_from_worksheets():
     thank the user for creating a bag with a selection of fabrics, colors
     and handles.
     """
-    print("Your tote bag is being designed...\n")
+    print("Your tote bag is now being designed...\n")
     your_name = SHEET.worksheet("name").get_all_values()
     your_name_row = your_name[-1]
     choices = SHEET.worksheet("design").get_all_values()
     choices_row = choices[-1]
-    print(f"{your_name_row}, you have created your own cool ")
-    print(f"tote bag from {choices_row} \n\n")
+    print(f"{your_name_row}, you have created your own cool tote bag ")
+    print(f"from {choices_row} \n\n")
     print("     _______      ")
     print("     |     |      ")
     print("   -----------    ")
