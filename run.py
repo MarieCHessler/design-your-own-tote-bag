@@ -20,9 +20,9 @@ SHEET = GSPREAD_CLIENT.open('design_your_own_tote_bag')  # Access Google sheet
 Import of colorama module to be able to color text and thus improve
 readability and accessibility for the user
 """
-import colorama
-from colorama import Fore, Back, Style
-colorama.init()
+from colorama import init
+from termcolor import colored
+init()
 
 
 def intro():
@@ -37,7 +37,7 @@ def intro():
     print("_/(_)(__(/_  /__ /(_(_(_)_  (/\_/(/_/_)_(_(_)_/ /_ ")
     print("                       /|                  /|")
     print("                      (/                  (/ \n\n")
-    print("Welcome to Tote Bag Design!\n")
+    print(colored("Welcome to Tote Bag Design!\n", "blue"))
     print("Here you can custom design you tote bag.")
     print("You can choose from different fabrics and colors for ")
     print("the inside, the outside and the handles.\n")
@@ -51,13 +51,13 @@ def get_and_validate_name():
     If names are missing or are not in letters a ValueError is raised.
     """
     while True:
-        user_fname = input("Please give us your first name: \n").capitalize()
-        user_lname = input("\nAnd your last name, please: \n").capitalize()
+        user_fname = input(colored("Please give us your first name: \n", "cyan")).capitalize()
+        user_lname = input(colored("\nAnd your last name, please: \n", "cyan")).capitalize()
         user_name = user_fname + " " + user_lname
 
         try:
             if user_fname.isalpha() and user_lname.isalpha():
-                print(f"\nWelcome {user_name}!\n")
+                print(colored(f"\nWelcome {user_name}!\n", "green"))
                 break
             if not user_fname:
                 print("\nSorry, we did not catch you first name.\n")
@@ -91,12 +91,12 @@ def get_and_validate_outer_fabric():
     linen or denim a ValueError is raised.
     """
     while True:
-        o_fabric = input("Would you like the outer fabric to be "
-                         "cotton, linen or denim? \n").lower()
+        o_fabric = input(colored("Would you like the outer fabric to be "
+                         "cotton, linen or denim? \n", "cyan")).lower()
 
         try:
             if o_fabric.isalpha():
-                print(f"\nYou chose {o_fabric} for the outside. Nice!\n")
+                print(colored(f"\nYou chose {o_fabric} for the outside. Nice!\n", "green"))
                 break
             if not o_fabric:
                 print("\nYou forgot to make a choice.\n")
@@ -119,12 +119,12 @@ def get_and_validate_outer_color():
     cream or grey a ValueError is raised.
     """
     while True:
-        o_color = input("Do you prefer the outer color to be "
-                        "blue, cream or grey? \n").lower()
+        o_color = input(colored("Do you prefer the outer color to be "
+                        "blue, cream or grey? \n", "cyan")).lower()
 
         try:
             if o_color.isalpha():
-                print(f"\nYou chose {o_color} for the outside. Looks good!\n")
+                print(colored(f"\nYou chose {o_color} for the outside. Looks good!\n", "green"))
                 break
             if not o_color:
                 print("\nYou forgot to make a choice.\n")
@@ -147,12 +147,12 @@ def get_and_validate_inner_fabric():
     spinnaker a ValueError is raised.
     """
     while True:
-        i_fabric = input("What kind of inner fabric do you prefer, "
-                         "cotton or spinnaker? \n").lower()
+        i_fabric = input(colored("What kind of inner fabric do you prefer, "
+                         "cotton or spinnaker? \n", "cyan")).lower()
 
         try:
             if i_fabric.isalpha():
-                print(f"\nYou chose {i_fabric} for the inside. Good choice!\n")
+                print(colored(f"\nYou chose {i_fabric} for the inside. Good choice!\n", "green"))
                 break
             if not i_fabric:
                 print("\nYou forgot to make a choice.\n")
@@ -175,12 +175,12 @@ def get_and_validate_inner_color():
     a ValueError is raised.
     """
     while True:
-        i_color = input("Do you prefer the inner color to be "
-                        "black or white? \n").lower()
+        i_color = input(colored("Do you prefer the inner color to be "
+                        "black or white? \n", "cyan")).lower()
 
         try:
             if i_color.isalpha():
-                print(f"\nYou chose {i_color} for the inside. Perfect!\n")
+                print(colored(f"\nYou chose {i_color} for the inside. Perfect!\n", "green"))
                 break
             if not i_color:
                 print("\nYou forgot to make a choice.\n")
@@ -202,12 +202,12 @@ def get_and_validate_handle_fabric():
     a ValueError is raised.
     """
     while True:
-        h_fabric = input("For the handles, would you like them to be made "
-                         "from cotton or belt? \n").lower()
+        h_fabric = input(colored("For the handles, would you like them to be made "
+                         "from cotton or belt? \n", "cyan")).lower()
 
         try:
             if h_fabric.isalpha():
-                print(f"\nYou chose {h_fabric} for the handles. Great!\n")
+                print(colored(f"\nYou chose {h_fabric} for the handles. Great!\n", "green"))
                 break
             if not h_fabric:
                 print("\nYou forgot to make a choice.\n")
@@ -229,12 +229,12 @@ def get_and_validate_handle_color():
     white or grey a ValueError is raised.
     """
     while True:
-        h_color = input("Do you prefer the handle color to be "
-                        "blue, white or grey? \n").lower()
+        h_color = input(colored("Do you prefer the handle color to be "
+                        "blue, white or grey? \n", "cyan")).lower()
 
         try:
             if h_color.isalpha():
-                print(f"\nYou chose {h_color} for the handles. Stylish!\n")
+                print(colored(f"\nYou chose {h_color} for the handles. Stylish!\n", "green"))
                 break
             if not h_color:
                 print("\nYou forgot to make a choice.\n")
@@ -271,8 +271,8 @@ def get_data_from_worksheets():
     your_name_row = your_name[-1]
     choices = SHEET.worksheet("design").get_all_values()
     choices_row = choices[-1]
-    print(f"{your_name_row}, you have created your own cool tote bag ")
-    print(f"from {choices_row} \n\n")
+    print(colored(f"{your_name_row}, you have created your own cool tote bag ", "green"))
+    print(colored(f"from {choices_row} \n\n", "green"))
     print("     _______      ")
     print("     |     |      ")
     print("   -----------    ")
@@ -281,7 +281,7 @@ def get_data_from_worksheets():
     print("  |           |   ")
     print("  |  My Tote  |   ")
     print("   -----------    \n\n")
-    print("Thank you for designing your bag with us!\n")
+    print(colored("Thank you for designing your bag with us!\n", "blue"))
 
 
 intro()
