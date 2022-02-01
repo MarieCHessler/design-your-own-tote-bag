@@ -43,8 +43,8 @@ def get_and_validate_name():
     If names are missing or are not in letters a ValueError is raised.
     """
     while True:
-        user_fname = input("Please let us know your first name: ").capitalize()
-        user_lname = input("And your last name, please: ").capitalize()
+        user_fname = input("Please let us know your first name: \n").capitalize()
+        user_lname = input("And your last name, please: \n").capitalize()
         user_name = user_fname + " " + user_lname
 
         try:
@@ -79,7 +79,7 @@ def get_and_validate_outer_fabric():
     linen or denim a ValueError is raised.
     """
     while True:
-        o_fabric = input("Please choose fabric (cotton, linen or denim): ").lower()
+        o_fabric = input("Please choose fabric (cotton, linen or denim): \n").lower()
 
         try:
             if o_fabric.isalpha():
@@ -103,7 +103,7 @@ def get_and_validate_inner_fabric():
     linen or denim a ValueError is raised.
     """
     while True:
-        i_fabric = input("Please choose fabric (cotton or spinnaker): ").lower()
+        i_fabric = input("Please choose fabric (cotton or spinnaker): \n").lower()
 
         try:
             if i_fabric.isalpha():
@@ -127,7 +127,7 @@ def get_and_validate_handles_fabric():
     a ValueError is raised.
     """
     while True:
-        h_fabric = input("Please choose fabric (cotton or belt): ").lower()
+        h_fabric = input("Please choose fabric (cotton or belt): \n").lower()
 
         try:
             if h_fabric.isalpha():
