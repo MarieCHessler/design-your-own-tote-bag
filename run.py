@@ -43,7 +43,7 @@ def get_and_validate_name():
     If names are missing or are not in letters a ValueError is raised.
     """
     while True:
-        user_fname = input("Please let us know your first name: \n").capitalize()
+        user_fname = input("Please give us your first name: \n").capitalize()
         user_lname = input("\nAnd your last name, please: \n").capitalize()
         user_name = user_fname + " " + user_lname
 
@@ -172,7 +172,7 @@ def get_and_validate_inner_color():
 
         try:
             if i_color.isalpha():
-                print(f"\nYou chose {i_color} for the inside. Perfect choice!\n")
+                print(f"\nYou chose {i_color} for the inside. Perfect!\n")
                 break
             if not i_color:
                 print("\nYou forgot to make a choice.\n")
