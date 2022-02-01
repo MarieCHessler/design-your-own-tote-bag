@@ -52,9 +52,9 @@ def get_and_validate_name():
                 print(f"\nWelcome {user_name}!\n")
                 break
             if not user_fname:
-                print("\nSorry, did not catch you first name.\n")
+                print("\nSorry, we did not catch you first name.\n")
             if not user_lname:
-                print("\nSorry, did not catch you last name.\n")
+                print("\nSorry, we did not catch you last name.\n")
             else:
                 raise ValueError(f"You wrote {user_fname} {user_lname}, but "
                                  "we need both names, and in letters please.")
@@ -71,7 +71,7 @@ def update_name_worksheet():
     print("Your name is being saved...\n")
     name_worksheet = SHEET.worksheet("name")  # Access Google Sheets worksheet
     name_worksheet.append_row([new_name])  # The name is saved in the worksheet
-    print("Your name has been saved successfully :-)\n")
+    print("Now we have your name, thanks :-)\n")
 
 
 def get_and_validate_outer_fabric():
@@ -88,8 +88,10 @@ def get_and_validate_outer_fabric():
 
         try:
             if o_fabric.isalpha():
-                print(f"You chose {o_fabric} for the outside. Nice!\n")
+                print(f"\nYou chose {o_fabric} for the outside. Nice!\n")
                 break
+            if not o_fabric:
+                print("\nYou forgot to make a choice.\n")
             else:
                 raise ValueError(f"You wrote {o_fabric}, but we need a choice "
                                  "between cotton, linen and denim, "
@@ -100,13 +102,41 @@ def get_and_validate_outer_fabric():
     return o_fabric
 
 
+def get_and_validate_outer_color():
+    """
+    Outer color choice is collected, and validated in a while True loop
+    with a break statement.
+    The True loop makes sure the choice is in letters, and lower case.
+    If choice is missing, is not in letters, or is not blue,
+    cream or grey a ValueError is raised.
+    """
+    while True:
+        o_color = input("Do you prefer the outer color to be "
+                        "blue, cream or grey? \n").lower()
+
+        try:
+            if o_color.isalpha():
+                print(f"\nYou chose {o_color} for the outside. Looks good!\n")
+                break
+            if not o_color:
+                print("\nYou forgot to make a choice.\n")
+            else:
+                raise ValueError(f"You wrote {o_color}, but we need a choice "
+                                 "between blue, cream and grey, "
+                                 "in letters please.")
+        except ValueError as e:
+            print(f"Invalid entry: {e}\n")  # Input from CI's Love Sandwiches
+
+    return o_color
+
+
 def get_and_validate_inner_fabric():
     """
     Inner fabric choice is collected, and validated in a while True loop
     with a break statement.
     The True loop makes sure the choice is in letters, and lower case.
-    If choice is missing, is not in letters, or is not cotton,
-    linen or denim a ValueError is raised.
+    If choice is missing, is not in letters, or is not cotton or
+    spinnaker a ValueError is raised.
     """
     while True:
         i_fabric = input("What kind of inner fabric do you prefer, "
@@ -114,8 +144,10 @@ def get_and_validate_inner_fabric():
 
         try:
             if i_fabric.isalpha():
-                print(f"You chose {i_fabric} for the inside. Good choice!\n")
+                print(f"\nYou chose {i_fabric} for the inside. Good choice!\n")
                 break
+            if not i_fabric:
+                print("\nYou forgot to make a choice.\n")
             else:
                 raise ValueError(f"You wrote {i_fabric}, but we need a choice "
                                  "between cotton and spinnaker, "
@@ -126,7 +158,34 @@ def get_and_validate_inner_fabric():
     return i_fabric
 
 
-def get_and_validate_handles_fabric():
+def get_and_validate_inner_color():
+    """
+    Inner color choice is collected, and validated in a while True loop
+    with a break statement.
+    The True loop makes sure the choice is in letters, and lower case.
+    If choice is missing, is not in letters, or is not black or white
+    a ValueError is raised.
+    """
+    while True:
+        i_color = input("Do you prefer the inner color to be "
+                        "black or white? \n").lower()
+
+        try:
+            if i_color.isalpha():
+                print(f"\nYou chose {i_color} for the inside. Perfect choice!\n")
+                break
+            if not i_color:
+                print("\nYou forgot to make a choice.\n")
+            else:
+                raise ValueError(f"You wrote {i_color}, but we need a choice "
+                                 "between black and white, in letters please.")
+        except ValueError as e:
+            print(f"Invalid entry: {e}\n")  # Input from CI's Love Sandwiches
+
+    return i_color
+
+
+def get_and_validate_handle_fabric():
     """
     Handles fabric choice is collected, and validated in a while True loop
     with a break statement.
@@ -135,13 +194,15 @@ def get_and_validate_handles_fabric():
     a ValueError is raised.
     """
     while True:
-        h_fabric = input("For the handles, would you like them to be made"
+        h_fabric = input("For the handles, would you like them to be made "
                          "from cotton or belt? \n").lower()
 
         try:
             if h_fabric.isalpha():
-                print(f"You chose {h_fabric} for the handles. Great!\n")
+                print(f"\nYou chose {h_fabric} for the handles. Great!\n")
                 break
+            if not h_fabric:
+                print("\nYou forgot to make a choice.\n")
             else:
                 raise ValueError(f"You wrote {h_fabric}, but we need a choice "
                                  "between cotton and belt, in letters please.")
@@ -151,6 +212,34 @@ def get_and_validate_handles_fabric():
     return h_fabric
 
 
+def get_and_validate_handle_color():
+    """
+    Handle color choice is collected, and validated in a while True loop
+    with a break statement.
+    The True loop makes sure the choice is in letters, and lower case.
+    If choice is missing, is not in letters, or is not blue,
+    white or grey a ValueError is raised.
+    """
+    while True:
+        h_color = input("Do you prefer the handle color to be "
+                        "blue, white or grey? \n").lower()
+
+        try:
+            if h_color.isalpha():
+                print(f"\nYou chose {h_color} for the handles. Stylish!\n")
+                break
+            if not h_color:
+                print("\nYou forgot to make a choice.\n")
+            else:
+                raise ValueError(f"You wrote {h_color}, but we need a choice "
+                                 "between blue, cream and grey, "
+                                 "in letters please.")
+        except ValueError as e:
+            print(f"Invalid entry: {e}\n")  # Input from CI's Love Sandwiches
+
+    return h_color
+
+
 def update_design_worksheet():
     """
     Update the Google Sheets design worksheet with the collected choices of
@@ -158,7 +247,8 @@ def update_design_worksheet():
     """
     print("Your choices are being saved...\n")
     design_worksheet = SHEET.worksheet("design")  # Access Google Sheets worksheet
-    design_worksheet.append_row([outer_fabric, inner_fabric, handles_fabric])  # The choices are saved in the design worksheet
+    design_worksheet.append_row([outer_color, outer_fabric, inner_color,
+                                 inner_fabric, handle_color, handle_fabric])  # The choices are saved in the design worksheet
     print("Your choices have been saved successfully :-)\n")
 
 
@@ -190,7 +280,10 @@ intro()
 new_name = get_and_validate_name()
 update_name_worksheet()
 outer_fabric = get_and_validate_outer_fabric()
+outer_color = get_and_validate_outer_color()
 inner_fabric = get_and_validate_inner_fabric()
-handles_fabric = get_and_validate_handles_fabric()
+inner_color = get_and_validate_inner_color()
+handle_fabric = get_and_validate_handle_fabric()
+handle_color = get_and_validate_handle_color()
 update_design_worksheet()
 get_data_from_worksheets()
