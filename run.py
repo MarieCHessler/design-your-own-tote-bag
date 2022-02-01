@@ -16,6 +16,14 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('design_your_own_tote_bag')  # Access Google sheet
 
+"""
+Import of colorama module to be able to color text and thus improve
+readability and accessibility for the user
+"""
+import colorama
+from colorama import Fore, Back, Style
+colorama.init()
+
 
 def intro():
     """
