@@ -22,7 +22,7 @@ readability and accessibility for the user
 """
 from colorama import init
 from termcolor import colored
-init()
+
 
 
 def intro():
@@ -274,9 +274,9 @@ def get_data_from_worksheets():
     """
     print("Your tote bag is now being designed...\n")
     your_name = SHEET.worksheet("name").get_all_values()
-    your_name_row = your_name[-1]  # Get the latest name entry
+    your_name_row = your_name[-1][-1]  # Get the latest name entry
     choices = SHEET.worksheet("design").get_all_values()
-    choices_row = choices[-1] # Get the latest design entries
+    choices_row = choices[-1]  # Get the latest design entries
     print(colored(f"{your_name_row}, you have created your own cool tote bag ", "green"))
     print(colored(f"from {choices_row} \n\n", "green"))
     print("     _______      ")
@@ -294,6 +294,7 @@ def main():
     """
     Run all functions
     """
+    init()
     intro()
     new_name = get_and_validate_name()
     update_name_worksheet()
