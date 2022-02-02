@@ -22,7 +22,7 @@ readability and accessibility for the user
 """
 from colorama import init
 from termcolor import colored
-
+init()
 
 
 def intro():
@@ -79,10 +79,8 @@ def update_name_worksheet():
     Update the Google Sheets name worksheet with the collected name.
     """
     print("Your name is being saved...\n")
-    # Access Google Sheets name worksheet
-    name_worksheet = SHEET.worksheet("name")
-    # The name is saved in the name worksheet
-    name_worksheet.append_row([new_name])
+    name_worksheet = SHEET.worksheet("name")  # Access Google Sheets worksheet
+    name_worksheet.append_row([new_name])  # The name is saved in the worksheet
     print("Now we have your name, thanks :-)\n")
 
 
@@ -258,11 +256,9 @@ def update_design_worksheet():
     fabrics, colors and handles.
     """
     print("Your choices are being saved...\n")
-    # Access Google Sheets design worksheet
-    design_worksheet = SHEET.worksheet("design")
-    # The choices are saved in the design worksheet
+    design_worksheet = SHEET.worksheet("design")  # Access Google Sheets worksheet
     design_worksheet.append_row([outer_color, outer_fabric, inner_color,
-                                 inner_fabric, handle_color, handle_fabric])
+                                 inner_fabric, handle_color, handle_fabric])  # The choices are saved in the design worksheet
     print("Your choices have been saved successfully :-)\n")
 
 
@@ -274,9 +270,9 @@ def get_data_from_worksheets():
     """
     print("Your tote bag is now being designed...\n")
     your_name = SHEET.worksheet("name").get_all_values()
-    your_name_row = your_name[-1][-1]  # Get the latest name entry
+    your_name_row = your_name[-1]
     choices = SHEET.worksheet("design").get_all_values()
-    choices_row = choices[-1]  # Get the latest design entries
+    choices_row = choices[-1]
     print(colored(f"{your_name_row}, you have created your own cool tote bag ", "green"))
     print(colored(f"from {choices_row} \n\n", "green"))
     print("     _______      ")
@@ -290,21 +286,14 @@ def get_data_from_worksheets():
     print(colored("Thank you for designing your bag with us!\n", "blue"))
 
 
-def main():
-    """
-    Run all functions
-    """
-    init()
-    intro()
-    new_name = get_and_validate_name()
-    update_name_worksheet()
-    outer_fabric = get_and_validate_outer_fabric()
-    outer_color = get_and_validate_outer_color()
-    inner_fabric = get_and_validate_inner_fabric()
-    inner_color = get_and_validate_inner_color()
-    handle_fabric = get_and_validate_handle_fabric()
-    handle_color = get_and_validate_handle_color()
-    update_design_worksheet()
-    get_data_from_worksheets()
-
-main()
+intro()
+new_name = get_and_validate_name()
+update_name_worksheet()
+outer_fabric = get_and_validate_outer_fabric()
+outer_color = get_and_validate_outer_color()
+inner_fabric = get_and_validate_inner_fabric()
+inner_color = get_and_validate_inner_color()
+handle_fabric = get_and_validate_handle_fabric()
+handle_color = get_and_validate_handle_color()
+update_design_worksheet()
+get_data_from_worksheets()
