@@ -31,12 +31,14 @@ def intro():
     your own bag.
     """
 
-    print(" ______       _ __            ___ ")
-    print("(  /  _/_    ( /  )          ( / \ ")
-    print("  /__ /  _    /--< __, _,     /  /_  (  o  _,  __ ")
-    print("_/(_)(__(/_  /__ /(_(_(_)_  (/\_/(/_/_)_(_(_)_/ /_ ")
-    print("                       /|                  /|")
-    print("                      (/                  (/ \n\n")
+    print("""
+     ______       _ __            ___
+    (  /  _/_    ( /  )          ( / \ 
+      /__ /  _    /--< __, _,     /  /_  (  o  _,  __
+    _/(_)(__(/_  /__ /(_(_(_)_  (/\_/(/_/_)_(_(_)_/ /_
+                           /|                  /|
+                          (/                  (/ \n\n
+    """)
     print(colored("Welcome to Tote Bag Design!\n", "blue"))
     print("Here you can custom design you tote bag.")
     print("You can choose from different fabrics and colors for ")
