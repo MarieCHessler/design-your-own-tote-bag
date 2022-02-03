@@ -73,13 +73,13 @@ def get_and_validate_name():
     return user_name
 
 
-def update_name_worksheet():
+def update_name_worksheet(user_name):
     """
     Update the Google Sheets name worksheet with the collected name.
     """
     print("Your name is being saved...\n")
     name_worksheet = SHEET.worksheet("name")  # Access Google Sheets worksheet
-    name_worksheet.append_row([new_name])  # The name is saved in the worksheet
+    name_worksheet.append_row([user_name])  # The name is saved in the worksheet
     print("Now we have your name, thanks :-)\n")
 
 
@@ -256,7 +256,8 @@ def get_and_validate_handle_color():
     return h_color
 
 
-def update_design_worksheet():
+def update_design_worksheet(o_color, o_fabric, i_color, i_fabric,
+                            h_color, h_fabric):
     """
     Update the Google Sheets design worksheet with the collected choices of
     fabrics, colors and handles.
@@ -265,8 +266,8 @@ def update_design_worksheet():
     # Access Google Sheets worksheet
     design_worksheet = SHEET.worksheet("design")
     # The choices are saved in the design worksheet
-    design_worksheet.append_row([outer_color, outer_fabric, inner_color,
-                                 inner_fabric, handle_color, handle_fabric])
+    design_worksheet.append_row([o_color, o_fabric, i_color, i_fabric,
+                                 h_color, h_fabric])
     print("Your choices have been saved successfully :-)\n")
 
 
@@ -295,14 +296,19 @@ def get_data_from_worksheets():
     print(colored("Thank you for designing your bag with us!\n", "blue"))
 
 
-intro()
-new_name = get_and_validate_name()
-update_name_worksheet()
-outer_fabric = get_and_validate_outer_fabric()
-outer_color = get_and_validate_outer_color()
-inner_fabric = get_and_validate_inner_fabric()
-inner_color = get_and_validate_inner_color()
-handle_fabric = get_and_validate_handle_fabric()
-handle_color = get_and_validate_handle_color()
-update_design_worksheet()
-get_data_from_worksheets()
+def main():
+    intro()
+    user_name = get_and_validate_name()
+    update_name_worksheet(user_name)
+    o_fabric = get_and_validate_outer_fabric()
+    o_color = get_and_validate_outer_color()
+    i_fabric = get_and_validate_inner_fabric()
+    i_color = get_and_validate_inner_color()
+    h_fabric = get_and_validate_handle_fabric()
+    h_color = get_and_validate_handle_color()
+    update_design_worksheet(o_color, o_fabric, i_color, i_fabric,
+                            h_color, h_fabric)
+    get_data_from_worksheets()
+
+
+main()
