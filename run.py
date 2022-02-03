@@ -1,9 +1,14 @@
 """
 Import of gspread library and Credentials class from Google auth library
 and wireup APIS, based on instructions from CI's Love Sandwiches project
+Import of colorama module to be able to color text and thus improve
+readability and accessibility for the user
 """
 import gspread
 from google.oauth2.service_account import Credentials
+from colorama import init
+from termcolor import colored
+init()
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -15,14 +20,6 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('design_your_own_tote_bag')  # Access Google sheet
-
-"""
-Import of colorama module to be able to color text and thus improve
-readability and accessibility for the user
-"""
-from colorama import init
-from termcolor import colored
-init()
 
 
 def intro():
@@ -53,8 +50,10 @@ def get_and_validate_name():
     If names are missing or are not in letters a ValueError is raised.
     """
     while True:
-        user_fname = input(colored("Please give us your first name: \n", "cyan")).capitalize()
-        user_lname = input(colored("\nAnd your last name, please: \n", "cyan")).capitalize()
+        user_fname = input(colored("Please give us your first name: \n",
+                                   "cyan")).capitalize()
+        user_lname = input(colored("\nAnd your last name, please: \n",
+                                   "cyan")).capitalize()
         user_name = user_fname + " " + user_lname
 
         try:
@@ -94,11 +93,12 @@ def get_and_validate_outer_fabric():
     """
     while True:
         o_fabric = input(colored("Would you like the outer fabric to be "
-                         "cotton, linen or denim? \n", "cyan")).lower()
+                                 "cotton, linen or denim? \n", "cyan")).lower()
 
         try:
             if o_fabric.isalpha():
-                print(colored(f"\nYou chose {o_fabric} for the outside. Nice!\n", "green"))
+                print(colored(f"\nYou chose {o_fabric} for the outside. "
+                              "Nice!\n", "green"))
                 break
             if not o_fabric:
                 print("\nYou forgot to make a choice.\n")
@@ -126,7 +126,8 @@ def get_and_validate_outer_color():
 
         try:
             if o_color.isalpha():
-                print(colored(f"\nYou chose {o_color} for the outside. Looks good!\n", "green"))
+                print(colored(f"\nYou chose {o_color} for the outside. "
+                              "Looks good!\n", "green"))
                 break
             if not o_color:
                 print("\nYou forgot to make a choice.\n")
@@ -150,11 +151,12 @@ def get_and_validate_inner_fabric():
     """
     while True:
         i_fabric = input(colored("What kind of inner fabric do you prefer, "
-                         "cotton or spinnaker? \n", "cyan")).lower()
+                                 "cotton or spinnaker? \n", "cyan")).lower()
 
         try:
             if i_fabric.isalpha():
-                print(colored(f"\nYou chose {i_fabric} for the inside. Good choice!\n", "green"))
+                print(colored(f"\nYou chose {i_fabric} for the inside. "
+                              "Good choice!\n", "green"))
                 break
             if not i_fabric:
                 print("\nYou forgot to make a choice.\n")
@@ -182,7 +184,8 @@ def get_and_validate_inner_color():
 
         try:
             if i_color.isalpha():
-                print(colored(f"\nYou chose {i_color} for the inside. Perfect!\n", "green"))
+                print(colored(f"\nYou chose {i_color} for the inside. "
+                              "Perfect!\n", "green"))
                 break
             if not i_color:
                 print("\nYou forgot to make a choice.\n")
@@ -204,12 +207,14 @@ def get_and_validate_handle_fabric():
     a ValueError is raised.
     """
     while True:
-        h_fabric = input(colored("For the handles, would you like them to be made "
-                         "from cotton or belt? \n", "cyan")).lower()
+        h_fabric = input(colored("For the handles, would you like them to be "
+                                 "made from cotton or belt? \n",
+                                 "cyan")).lower()
 
         try:
             if h_fabric.isalpha():
-                print(colored(f"\nYou chose {h_fabric} for the handles. Great!\n", "green"))
+                print(colored(f"\nYou chose {h_fabric} for the handles. "
+                              "Great!\n", "green"))
                 break
             if not h_fabric:
                 print("\nYou forgot to make a choice.\n")
@@ -232,11 +237,12 @@ def get_and_validate_handle_color():
     """
     while True:
         h_color = input(colored("Do you prefer the handle color to be "
-                        "blue, white or grey? \n", "cyan")).lower()
+                                "blue, white or grey? \n", "cyan")).lower()
 
         try:
             if h_color.isalpha():
-                print(colored(f"\nYou chose {h_color} for the handles. Stylish!\n", "green"))
+                print(colored(f"\nYou chose {h_color} for the handles. "
+                              "Stylish!\n", "green"))
                 break
             if not h_color:
                 print("\nYou forgot to make a choice.\n")
@@ -256,9 +262,11 @@ def update_design_worksheet():
     fabrics, colors and handles.
     """
     print("Your choices are being saved...\n")
-    design_worksheet = SHEET.worksheet("design")  # Access Google Sheets worksheet
+    # Access Google Sheets worksheet
+    design_worksheet = SHEET.worksheet("design")
+    # The choices are saved in the design worksheet
     design_worksheet.append_row([outer_color, outer_fabric, inner_color,
-                                 inner_fabric, handle_color, handle_fabric])  # The choices are saved in the design worksheet
+                                 inner_fabric, handle_color, handle_fabric])
     print("Your choices have been saved successfully :-)\n")
 
 
@@ -273,7 +281,8 @@ def get_data_from_worksheets():
     your_name_row = your_name[-1]
     choices = SHEET.worksheet("design").get_all_values()
     choices_row = choices[-1]
-    print(colored(f"{your_name_row}, you have created your own cool tote bag ", "green"))
+    print(colored(f"{your_name_row}, you have created your own cool tote bag ",
+                  "green"))
     print(colored(f"from {choices_row} \n\n", "green"))
     print("     _______      ")
     print("     |     |      ")
