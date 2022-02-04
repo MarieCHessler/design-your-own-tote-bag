@@ -42,7 +42,33 @@ def intro():
     print("the inside, the outside and the handles.\n")
 
 
-def get_and_validate_name():
+def get_and_validate_fname():
+    """
+    User first name is collected, and the name is validated in a
+    while True loop with a break statement.
+    The True loop makes sure the name is in letters, and capitalizes them.
+    If names are missing or are not in letters a ValueError is raised.
+    """
+    while True:
+        fname = input(colored("Please give us your first name: \n",
+                              "cyan")).capitalize()
+
+        try:
+            if fname.isalpha():
+                print()
+                break
+            if not fname:
+                print("\nSorry, we did not catch you first name.\n")
+            else:
+                raise ValueError(f"You wrote {fname}, but we need the "
+                                 "name, and in letters please.")
+        except ValueError as e:
+            print(f"{e}\n")
+
+    return fname
+
+
+def get_and_validate_lname(fname):
     """
     User first and last names are collected, and the name is validated in a
     while True loop with a break statement.
@@ -50,36 +76,33 @@ def get_and_validate_name():
     If names are missing or are not in letters a ValueError is raised.
     """
     while True:
-        user_fname = input(colored("Please give us your first name: \n",
-                                   "cyan")).capitalize()
-        user_lname = input(colored("\nAnd your last name, please: \n",
-                                   "cyan")).capitalize()
-        user_name = user_fname + " " + user_lname
+        lname = input(colored("\nAnd your last name, please: \n",
+                              "cyan")).capitalize()
+        full_name = fname + " " + lname
 
         try:
-            if user_fname.isalpha() and user_lname.isalpha():
-                print(colored(f"\nWelcome {user_name}!\n", "green"))
+            if lname.isalpha():
+                print(colored(f"\nWelcome {full_name}!\n", "green"))
                 break
-            if not user_fname:
-                print("\nSorry, we did not catch you first name.\n")
-            if not user_lname:
+            if not lname:
                 print("\nSorry, we did not catch you last name.\n")
             else:
-                raise ValueError(f"You wrote {user_fname} {user_lname}, but "
-                                 "we need both names, and in letters please.")
+                raise ValueError(f"You wrote {lname}, but we need the "
+                                 "name, and in letters please.")
         except ValueError as e:
-            print(f"Invalid entry: {e}\n")  # Input from CI's Love Sandwiches
+            print(f"{e}\n")
 
-    return user_name
+    return full_name
 
 
-def update_name_worksheet(user_name):
+def update_name_worksheet(full_name):
     """
     Update the Google Sheets name worksheet with the collected name.
     """
     print("Your name is being saved...\n")
     name_worksheet = SHEET.worksheet("name")  # Access Google Sheets worksheet
-    name_worksheet.append_row([user_name])  # The name is saved in the worksheet
+    # The name is saved in the worksheet
+    name_worksheet.append_row([full_name])
     print("Now we have your name, thanks :-)\n")
 
 
@@ -298,8 +321,9 @@ def get_data_from_worksheets():
 
 def main():
     intro()
-    user_name = get_and_validate_name()
-    update_name_worksheet(user_name)
+    fname = get_and_validate_fname()
+    full_name = get_and_validate_lname(fname)
+    update_name_worksheet(full_name)
     o_fabric = get_and_validate_outer_fabric()
     o_color = get_and_validate_outer_color()
     i_fabric = get_and_validate_inner_fabric()
