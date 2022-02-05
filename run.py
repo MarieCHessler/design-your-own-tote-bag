@@ -76,7 +76,7 @@ def get_and_validate_lname(fname):
     If names are missing or are not in letters a ValueError is raised.
     """
     while True:
-        lname = input(colored("\nAnd your last name, please: \n",
+        lname = input(colored("And your last name, please: \n",
                               "cyan")).capitalize()
         full_name = fname + " " + lname
 
@@ -130,7 +130,7 @@ def get_and_validate_outer_fabric():
                                  "between cotton, linen and denim, "
                                  "in letters please.")
         except ValueError as e:
-            print(f"Invalid entry: {e}\n")  # Input from CI's Love Sandwiches
+            print(f"{e}\n")
 
     return o_fabric
 
@@ -159,7 +159,7 @@ def get_and_validate_outer_color():
                                  "between blue, cream and grey, "
                                  "in letters please.")
         except ValueError as e:
-            print(f"Invalid entry: {e}\n")  # Input from CI's Love Sandwiches
+            print(f"{e}\n")
 
     return o_color
 
@@ -188,7 +188,7 @@ def get_and_validate_inner_fabric():
                                  "between cotton and spinnaker, "
                                  "in letters please.")
         except ValueError as e:
-            print(f"Invalid entry: {e}\n")  # Input from CI's Love Sandwiches
+            print(f"{e}\n")
 
     return i_fabric
 
@@ -216,15 +216,15 @@ def get_and_validate_inner_color():
                 raise ValueError(f"You wrote {i_color}, but we need a choice "
                                  "between black and white, in letters please.")
         except ValueError as e:
-            print(f"Invalid entry: {e}\n")  # Input from CI's Love Sandwiches
+            print(f"{e}\n")
 
     return i_color
 
 
 def get_and_validate_handle_fabric():
     """
-    Handles fabric choice is collected, and validated in a while True loop
-    with a break statement.
+    Fabric choice for the handles is collected, and validated in a while True
+    loop with a break statement.
     The True loop makes sure the choice is in letters, and lower case.
     If choice is missing, is not in letters, or is not cotton or belt
     a ValueError is raised.
@@ -245,15 +245,15 @@ def get_and_validate_handle_fabric():
                 raise ValueError(f"You wrote {h_fabric}, but we need a choice "
                                  "between cotton and belt, in letters please.")
         except ValueError as e:
-            print(f"Invalid entry: {e}\n")  # Input from CI's Love Sandwiches
+            print(f"{e}\n")
 
     return h_fabric
 
 
 def get_and_validate_handle_color():
     """
-    Handle color choice is collected, and validated in a while True loop
-    with a break statement.
+    Color choice for the handlesis collected, and validated in a while True
+    loop with a break statement.
     The True loop makes sure the choice is in letters, and lower case.
     If choice is missing, is not in letters, or is not blue,
     white or grey a ValueError is raised.
@@ -274,7 +274,7 @@ def get_and_validate_handle_color():
                                  "between blue, cream and grey, "
                                  "in letters please.")
         except ValueError as e:
-            print(f"Invalid entry: {e}\n")  # Input from CI's Love Sandwiches
+            print(f"{e}\n")
 
     return h_color
 
@@ -302,12 +302,15 @@ def get_data_from_worksheets():
     """
     print("Your tote bag is now being designed...\n")
     your_name = SHEET.worksheet("name").get_all_values()
-    your_name_row = your_name[-1]
+    your_name_row = your_name[-1][-1]
     choices = SHEET.worksheet("design").get_all_values()
     choices_row = choices[-1]
-    print(colored(f"{your_name_row}, you have created your own cool tote bag ",
-                  "green"))
-    print(colored(f"from {choices_row} \n\n", "green"))
+    o_choice = choices_row[0] + " " + choices_row[1]
+    i_choice = choices_row[2] + " " + choices_row[3]
+    h_choice = choices_row[4] + " " + choices_row[5]
+    print(colored(f"{your_name_row}, you have created your own cool tote bag "
+                  f"with an outside of {o_choice}, an inside of {i_choice}, " 
+                  f"and {h_choice} handles.\n\n", "green"))
     print("     _______      ")
     print("     |     |      ")
     print("   -----------    ")
