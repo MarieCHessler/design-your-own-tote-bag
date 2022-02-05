@@ -323,6 +323,9 @@ def get_data_from_worksheets():
 
 
 def main():
+    """
+    Run all functions
+    """
     intro()
     fname = get_and_validate_fname()
     full_name = get_and_validate_lname(fname)
