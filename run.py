@@ -294,6 +294,7 @@ def update_design_worksheet(o_color, o_fabric, i_color, i_fabric,
     print("Your choices have been saved successfully :-)\n")
 
 
+
 def get_data_from_worksheets():
     """
     Get the data back from the Google Sheets name and design worksheets to
@@ -301,14 +302,15 @@ def get_data_from_worksheets():
     and handles.
     """
     print("Your tote bag is now being designed...\n")
-    your_name = SHEET.worksheet("name").get_all_values()
-    your_name_row = your_name[-1][-1]
-    choices = SHEET.worksheet("design").get_all_values()
-    choices_row = choices[-1]
+    all_names = SHEET.worksheet("name").get_all_values()
+    your_name_row = all_names[-1]
+    your_name = your_name_row[0]
+    all_choices = SHEET.worksheet("design").get_all_values()
+    choices_row = all_choices[-1]
     o_choice = choices_row[0] + " " + choices_row[1]
     i_choice = choices_row[2] + " " + choices_row[3]
     h_choice = choices_row[4] + " " + choices_row[5]
-    print(colored(f"{your_name_row}, you have created your own cool tote bag "
+    print(colored(f"{your_name}, you have created your own cool tote bag "
                   f"with an outside of {o_choice}, an inside of {i_choice}, " 
                   f"and {h_choice} handles.\n\n", "green"))
     print("     _______      ")
