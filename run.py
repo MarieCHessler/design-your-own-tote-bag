@@ -106,6 +106,34 @@ def update_name_worksheet(full_name):
     print("Now we have your name, thanks :-)\n")
 
 
+def get_id_from_worksheet():
+    """
+    Get present id from ID worksheet.
+    """
+    all_ids = SHEET.worksheet("id").get_all_values()
+    id_row = all_ids[-2]
+    present_id = id_row[0]
+
+    print(f"This is the previous bag ID: {present_id}\n")
+
+    return present_id
+
+
+def return_new_id_to_worksheet(present_id):
+    """
+    Increment present ID and pass new ID to worksheet.
+    """
+    new_id = present_id
+    new_id = int(new_id) + 1
+
+    print("Your bag ID is being created...\n")
+    # Access Google Sheets worksheet
+    design_worksheet = SHEET.worksheet("id")
+    # The choices are saved in the design worksheet
+    design_worksheet.append_row([new_id])
+    print("Your bag ID has been saved successfully :-)\n")
+
+
 def get_and_validate_outer_fabric():
     """
     Outer fabric choice is collected, and validated in a while True loop
@@ -294,7 +322,6 @@ def update_design_worksheet(o_color, o_fabric, i_color, i_fabric,
     print("Your choices have been saved successfully :-)\n")
 
 
-
 def get_data_from_worksheets():
     """
     Get the data back from the Google Sheets name and design worksheets to
@@ -332,6 +359,8 @@ def main():
     fname = get_and_validate_fname()
     full_name = get_and_validate_lname(fname)
     update_name_worksheet(full_name)
+    present_id = get_id_from_worksheet()
+    return_new_id_to_worksheet(present_id)
     o_fabric = get_and_validate_outer_fabric()
     o_color = get_and_validate_outer_color()
     i_fabric = get_and_validate_inner_fabric()
