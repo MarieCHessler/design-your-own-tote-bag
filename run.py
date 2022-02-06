@@ -343,10 +343,11 @@ def get_data_from_worksheets():
     id_row = all_ids[-1]
     bag_id = id_row[0]
 
-    print(colored(f"{your_name}, you have created your own cool tote bag "
-                  f"with an outside of {o_choice}, an inside of {i_choice}, "
-                  f"and {h_choice} handles. Your bag ID is {bag_id}, and "
-                  f"you can use it to see your order.\n\n", "green"))
+    print(colored(f"You are a great designer {your_name}! Your own cool tote "
+                  f"bag is made from an outside of {o_choice}, an inside "
+                  f"of {i_choice}, and {h_choice} handles. Your bag ID is "
+                  f"{bag_id}, and you can use it to see your order.\n\n",
+                  "green"))
 
     print("""
          _______
