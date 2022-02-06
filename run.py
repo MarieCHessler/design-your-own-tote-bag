@@ -348,16 +348,18 @@ def get_data_from_worksheets():
                   f"and {h_choice} handles. Your bag ID is {bag_id}, and "
                   f"you can use it to see your order.\n\n", "green"))
 
-    print("     _______      ")
-    print("     |     |      ")
-    print("   -----------    ")
-    print("  |           |   ")
-    print("  |           |   ")
-    print("  |           |   ")
-    print("  |  My Tote  |   ")
-    print("   -----------    \n\n")
+    print("""
+         _______
+         |     |
+       -----------
+      |           |
+      |           |
+      |           |
+      |  My Tote  |
+       -----------    \n\n
+    """)
 
-    print(colored("Thank you for designing your bag with us!\n", "blue"))
+    print(colored("Thank you for designing your bag with us!\n\n", "blue"))
 
 
 def main():
