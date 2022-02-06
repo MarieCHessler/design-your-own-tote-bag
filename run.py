@@ -332,14 +332,22 @@ def get_data_from_worksheets():
     all_names = SHEET.worksheet("name").get_all_values()
     your_name_row = all_names[-1]
     your_name = your_name_row[0]
+
     all_choices = SHEET.worksheet("design").get_all_values()
     choices_row = all_choices[-1]
     o_choice = choices_row[0] + " " + choices_row[1]
     i_choice = choices_row[2] + " " + choices_row[3]
     h_choice = choices_row[4] + " " + choices_row[5]
+
+    all_ids = SHEET.worksheet("id").get_all_values()
+    id_row = all_ids[-1]
+    bag_id = id_row[0]
+
     print(colored(f"{your_name}, you have created your own cool tote bag "
                   f"with an outside of {o_choice}, an inside of {i_choice}, "
-                  f"and {h_choice} handles.\n\n", "green"))
+                  f"and {h_choice} handles. Your bag ID is {bag_id}, and "
+                  f"you can use it to see your order.\n\n", "green"))
+
     print("     _______      ")
     print("     |     |      ")
     print("   -----------    ")
@@ -348,6 +356,7 @@ def get_data_from_worksheets():
     print("  |           |   ")
     print("  |  My Tote  |   ")
     print("   -----------    \n\n")
+
     print(colored("Thank you for designing your bag with us!\n", "blue"))
 
 
