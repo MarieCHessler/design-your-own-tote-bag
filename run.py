@@ -111,7 +111,7 @@ def get_id_from_worksheet():
     Get present id from ID worksheet.
     """
     all_ids = SHEET.worksheet("id").get_all_values()
-    id_row = all_ids[-2]
+    id_row = all_ids[-1]
     present_id = id_row[0]
 
     print(f"This is the previous bag ID: {present_id}\n")
@@ -338,7 +338,7 @@ def get_data_from_worksheets():
     i_choice = choices_row[2] + " " + choices_row[3]
     h_choice = choices_row[4] + " " + choices_row[5]
     print(colored(f"{your_name}, you have created your own cool tote bag "
-                  f"with an outside of {o_choice}, an inside of {i_choice}, " 
+                  f"with an outside of {o_choice}, an inside of {i_choice}, "
                   f"and {h_choice} handles.\n\n", "green"))
     print("     _______      ")
     print("     |     |      ")
