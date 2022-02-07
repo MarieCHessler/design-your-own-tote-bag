@@ -346,7 +346,7 @@ def get_data_from_worksheets():
     print(colored(f"You are a great designer {your_name}! Your own cool tote "
                   f"bag is made from an outside of {o_choice}, an inside "
                   f"of {i_choice}, and {h_choice} handles. Your bag ID is "
-                  f"{bag_id}, and you can use it to see your order.\n\n",
+                  f"{bag_id}, and you can use it to see your design.\n\n",
                   "green"))
 
     print("""
