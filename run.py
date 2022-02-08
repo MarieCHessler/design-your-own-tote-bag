@@ -9,6 +9,7 @@ from google.oauth2.service_account import Credentials
 from colorama import init
 from termcolor import colored
 init()
+from pprint import pprint
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -299,10 +300,8 @@ def get_id_from_worksheet():
     Get present id from ID worksheet.
     """
     all_ids = SHEET.worksheet("id").get_all_values()
-    id_row = all_ids[-1]
+    id_row = all_ids[-1]  # Slice final item from the list
     present_id = id_row[0]
-
-    print(f"This is the previous bag ID: {present_id}\n")
 
     return present_id
 
@@ -330,17 +329,17 @@ def get_data_from_worksheets():
     """
     print("Your tote bag is now being designed...\n")
     all_names = SHEET.worksheet("name").get_all_values()
-    your_name_row = all_names[-1]
+    your_name_row = all_names[-1]  # Slice final item from the list
     your_name = your_name_row[0]
 
     all_choices = SHEET.worksheet("design").get_all_values()
-    choices_row = all_choices[-1]
+    choices_row = all_choices[-1]  # Slice final item from the list
     o_choice = choices_row[0] + " " + choices_row[1]
     i_choice = choices_row[2] + " " + choices_row[3]
     h_choice = choices_row[4] + " " + choices_row[5]
 
     all_ids = SHEET.worksheet("id").get_all_values()
-    id_row = all_ids[-1]
+    id_row = all_ids[-1]  # Slice final item from the list
     bag_id = id_row[0]
 
     print(colored(f"You are a great designer {your_name}! Your own cool tote "
@@ -363,6 +362,18 @@ def get_data_from_worksheets():
     print(colored("Thank you for designing your bag with us!\n\n", "blue"))
 
 
+def find_bag_design():
+    """
+    Search for bag ID and return design
+    """
+    all_info = SHEET.worksheet("all_info").get_all_values()
+    id_to_find = input(colored("Write your bag ID number, to get your design: "
+                    "\n", "cyan"))
+    
+    id_exists = any(id_to_find in sublist for sublist in all_info)
+    print("ID found")
+
+
 def main():
     """
     Run all functions
@@ -382,6 +393,7 @@ def main():
     present_id = get_id_from_worksheet()
     return_new_id_to_worksheet(present_id)
     get_data_from_worksheets()
+    find_bag_design()
 
 
 main()
