@@ -369,12 +369,11 @@ def find_bag_design():
     id_to_find = input(colored("Write your bag ID number, to get your design: "
                                "\n", "cyan"))
 
-    # Check if ID is in a sublist of all_info
-    id_exists = any(id_to_find in sublist for sublist in all_info)
-    if id_exists:
-        print("ID found")
-    else:
-        print("ID not found, please try again")
+    for list in all_info:
+        if id_to_find in list:
+            design_row = list
+            break
+    print(design_row)
 
 
 def main():
