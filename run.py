@@ -314,10 +314,34 @@ def return_new_id_to_worksheet(present_id):
 
     print("Your bag ID is being created...\n")
     # Access Google Sheets worksheet
-    design_worksheet = SHEET.worksheet("id")
-    # The choices are saved in the design worksheet
-    design_worksheet.append_row([new_id])
+    id_worksheet = SHEET.worksheet("id")
+    # The ID is saved in the id worksheet
+    id_worksheet.append_row([new_id])
     print("Your bag ID has been saved successfully :-)\n")
+
+
+def create_unique_id():
+    """
+    Removing white space between first and last name by
+    using the replace() function.
+    Combining ID and full name to a unique design ID"
+    """
+    all_names = SHEET.worksheet("name").get_all_values()
+    your_id_name_row = all_names[-1]  # Slice final item from the list
+    your_id_name = your_id_name_row[0].lower()
+    youridname = your_id_name.replace(" ", "")
+
+    all_ids = SHEET.worksheet("id").get_all_values()
+    id_row = all_ids[-1]  # Slice final item from the list
+    bag_id = id_row[0]
+
+    unique_new_id = bag_id + youridname
+    print("Your unique design ID is being created...\n")
+    # Access Google Sheets worksheet
+    unique_id_worksheet = SHEET.worksheet("unique_id")
+    # The unique ID is saved in the unique ID worksheet
+    unique_id_worksheet.append_row([unique_new_id])
+    print("Your unique design ID has been saved successfully\n")
 
 
 def get_data_from_worksheets():
@@ -337,15 +361,15 @@ def get_data_from_worksheets():
     i_choice = choices_row[2] + " " + choices_row[3]
     h_choice = choices_row[4] + " " + choices_row[5]
 
-    all_ids = SHEET.worksheet("id").get_all_values()
-    id_row = all_ids[-1]  # Slice final item from the list
-    bag_id = id_row[0]
+    all_unique_ids = SHEET.worksheet("unique_id").get_all_values()
+    unique_id_row = all_unique_ids[-1]  # Slice final item from the list
+    unique_id = unique_id_row[0]
 
     print(colored(f"You are a great designer {your_name}! Your own cool tote "
                   f"bag is made from an outside of {o_choice}, an inside "
-                  f"of {i_choice}, and {h_choice} handles. Your bag ID is "
-                  f"{bag_id}, and you can use it to see your design.\n\n",
-                  "green"))
+                  f"of {i_choice}, and {h_choice} handles. Your unique design "
+                  f"ID is {unique_id}, and you can use it to see your design."
+                  "\n\n", "green"))
 
     print("""
          _______
@@ -363,11 +387,11 @@ def get_data_from_worksheets():
 
 def check_design_id():
     """
-    Check if ID existis in a sublist of all_info
+    Check if ID exists in a sublist of all_info
     """
     all_info = SHEET.worksheet("all_info").get_all_values()
     id_to_find = input(colored("Want to see a present or previous design? "
-                               "Enter your bag ID number: \n", "cyan"))
+                               "Enter your design ID: \n", "cyan"))
 
     id_exists = any(id_to_find in sublist for sublist in all_info)
     if id_exists:
@@ -382,7 +406,8 @@ def find_bag_design():
     """
     all_info = SHEET.worksheet("all_info").get_all_values()
     id_to_find = input(colored("Want to see a present or previous design? "
-                               "Enter your bag ID number: \n", "cyan"))
+                               "Enter your design ID: \n", "cyan"))
+    print(all_info)
 
     # Tip from tutor on different ways to go about using the ID to extract
     # the correct list
@@ -390,16 +415,17 @@ def find_bag_design():
         if id_to_find in list:
             design_row = list
 
-    id_design = design_row[0]
-    name_design = design_row[1]
-    o_design = design_row[2] + " " + design_row[3]
-    i_design = design_row[4] + " " + design_row[5]
-    h_design = design_row[6] + " " + design_row[7]
+    unique_id_design = design_row[1]
+    name_design = design_row[2]
+    o_design = design_row[3] + " " + design_row[4]
+    i_design = design_row[5] + " " + design_row[6]
+    h_design = design_row[7] + " " + design_row[8]
 
-    print(colored(f"\n{name_design}, your bag ID number is {id_design}. "
-                  f"The bag is made from an outside of {o_design}, an inside "
-                  f"of {i_design}, and {h_design} handles. Looks very "
-                  f"stylish!\n\n", "green"))
+    print(colored(f"\n{name_design}, your design ID number is "
+                  f"{unique_id_design}. The bag is made from an "
+                  f"outside of {o_design}, an inside of {i_design}, "
+                  f"and {h_design} handles. Looks very stylish!"
+                  "\n\n", "green"))
 
 
 def main():
@@ -420,6 +446,7 @@ def main():
                             h_color, h_fabric)
     present_id = get_id_from_worksheet()
     return_new_id_to_worksheet(present_id)
+    create_unique_id()
     get_data_from_worksheets()
     check_design_id()
     find_bag_design()
