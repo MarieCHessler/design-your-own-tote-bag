@@ -361,19 +361,45 @@ def get_data_from_worksheets():
     print(colored("Thank you for designing your bag with us!\n\n", "blue"))
 
 
-def find_bag_design():
+def check_design_id():
     """
-    Search for bag ID and return design
+    Check if ID existis in a sublist of all_info
     """
     all_info = SHEET.worksheet("all_info").get_all_values()
-    id_to_find = input(colored("Write your bag ID number, to get your design: "
-                               "\n", "cyan"))
+    id_to_find = input(colored("Want to see a present or previous design? "
+                               "Enter your bag ID number: \n", "cyan"))
 
+    id_exists = any(id_to_find in sublist for sublist in all_info)
+    if id_exists:
+        print()
+    else:
+        print("ID not found, please try again\n")
+
+
+def find_bag_design():
+    """
+    Search for bag ID and return design.
+    """
+    all_info = SHEET.worksheet("all_info").get_all_values()
+    id_to_find = input(colored("Want to see a present or previous design? "
+                               "Enter your bag ID number: \n", "cyan"))
+
+    # Tip from tutor on different ways to go about using the ID to extract
+    # the correct list
     for list in all_info:
         if id_to_find in list:
             design_row = list
-            break
-    print(design_row)
+
+    id_design = design_row[0]
+    name_design = design_row[1]
+    o_design = design_row[2] + " " + design_row[3]
+    i_design = design_row[4] + " " + design_row[5]
+    h_design = design_row[6] + " " + design_row[7]
+
+    print(colored(f"\n{name_design}, your bag ID number is {id_design}. "
+                  f"The bag is made from an outside of {o_design}, an inside "
+                  f"of {i_design}, and {h_design} handles. Looks very "
+                  f"stylish!\n\n", "green"))
 
 
 def main():
@@ -395,6 +421,7 @@ def main():
     present_id = get_id_from_worksheet()
     return_new_id_to_worksheet(present_id)
     get_data_from_worksheets()
+    check_design_id()
     find_bag_design()
 
 
