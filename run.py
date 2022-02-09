@@ -9,7 +9,6 @@ from google.oauth2.service_account import Credentials
 from colorama import init
 from termcolor import colored
 init()
-from pprint import pprint
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -368,10 +367,14 @@ def find_bag_design():
     """
     all_info = SHEET.worksheet("all_info").get_all_values()
     id_to_find = input(colored("Write your bag ID number, to get your design: "
-                    "\n", "cyan"))
-    
+                               "\n", "cyan"))
+
+    # Check if ID is in a sublist of all_info
     id_exists = any(id_to_find in sublist for sublist in all_info)
-    print("ID found")
+    if id_exists:
+        print("ID found")
+    else:
+        print("ID not found, please try again")
 
 
 def main():
