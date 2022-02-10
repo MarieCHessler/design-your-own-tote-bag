@@ -44,10 +44,11 @@ def intro():
 
 def get_and_validate_fname():
     """
-    User first name is collected, and the name is validated in a
-    while True loop with a break statement.
-    The True loop makes sure the name is in letters, and capitalizes them.
-    If names are missing or are not in letters a ValueError is raised.
+    Collect and validate user first name in a while True loop with a 
+    break statement.
+    Make sure, using the True loop, the name is in letters, and starts
+    with a capital letter.
+    Raise ValueError if name is missing or is not in letters.
     """
     while True:
         fname = input(colored("Please give us your first name: \n",
@@ -70,10 +71,12 @@ def get_and_validate_fname():
 
 def get_and_validate_lname(fname):
     """
-    User first and last names are collected, and the name is validated in a
-    while True loop with a break statement.
-    The True loop makes sure the names are in letters, and capitalizes them.
-    If names are missing or are not in letters a ValueError is raised.
+    Collect and validate user last name in a while True loop with a 
+    break statement.
+    Make sure, using the True loop, the name is in letters, and starts
+    with a capital letter.
+    Raise ValueError if name is missing or is not in letters.
+    Create a full name by combining first and last name.
     """
     while True:
         lname = input(colored("And your last name, please: \n",
@@ -97,7 +100,8 @@ def get_and_validate_lname(fname):
 
 def update_name_worksheet(full_name):
     """
-    Update the Google Sheets name worksheet with the collected name.
+    Update the Google Sheets name worksheet with the full name, using 
+    the append() method.
     """
     print("Your name is being saved...\n")
     name_worksheet = SHEET.worksheet("name")  # Access Google Sheets worksheet
@@ -108,11 +112,12 @@ def update_name_worksheet(full_name):
 
 def get_and_validate_outer_fabric():
     """
-    Outer fabric choice is collected, and validated in a while True loop
-    with a break statement.
-    The True loop makes sure the choice is in letters, and lower case.
-    If choice is missing, is not in letters, or is not cotton,
-    linen or denim a ValueError is raised.
+    Collect and validate outer fabric in a while True loop with a 
+    break statement.
+    Make sure, using the True loop, the choice is the correct word, in letters,
+    and lower case.
+    Raise ValueError if choice is missing, is not in letters, or is not cotton,
+    linen or denim.
     """
     while True:
         o_fabric_options = ["cotton", "linen", "denim"]
@@ -138,11 +143,12 @@ def get_and_validate_outer_fabric():
 
 def get_and_validate_outer_color():
     """
-    Outer color choice is collected, and validated in a while True loop
-    with a break statement.
-    The True loop makes sure the choice is in letters, and lower case.
-    If choice is missing, is not in letters, or is not blue,
-    cream or grey a ValueError is raised.
+    Collect and validate outer color in a while True loop with a 
+    break statement.
+    Make sure, using the True loop, the choice is the correct word, in letters,
+    and lower case.
+    Raise ValueError if choice is missing, is not in letters, or is not blue,
+    cream, pink or grey.
     """
     while True:
         o_color_options = ["blue", "cream", "pink", "grey"]
@@ -168,11 +174,12 @@ def get_and_validate_outer_color():
 
 def get_and_validate_inner_fabric():
     """
-    Inner fabric choice is collected, and validated in a while True loop
-    with a break statement.
-    The True loop makes sure the choice is in letters, and lower case.
-    If choice is missing, is not in letters, or is not cotton or
-    spinnaker a ValueError is raised.
+    Collect and validate inner fabric in a while True loop with a 
+    break statement.
+    Make sure, using the True loop, the choice is the correct word, in letters,
+    and lower case.
+    Raise ValueError if choice is missing, is not in letters, or is not cotton
+    or spinnaker.
     """
     while True:
         i_fabric_options = ["cotton", "spinnaker"]
@@ -198,11 +205,12 @@ def get_and_validate_inner_fabric():
 
 def get_and_validate_inner_color():
     """
-    Inner color choice is collected, and validated in a while True loop
-    with a break statement.
-    The True loop makes sure the choice is in letters, and lower case.
-    If choice is missing, is not in letters, or is not black or white
-    a ValueError is raised.
+    Collect and validate inner color in a while True loop with a 
+    break statement.
+    Make sure, using the True loop, the choice is the correct word, in letters,
+    and lower case.
+    Raise ValueError if choice is missing, is not in letters, or is not blue,
+    white or black.
     """
     while True:
         i_color_options = ["blue", "white", "black"]
@@ -228,11 +236,12 @@ def get_and_validate_inner_color():
 
 def get_and_validate_handle_fabric():
     """
-    Fabric choice for the handles is collected, and validated in a while True
-    loop with a break statement.
-    The True loop makes sure the choice is in letters, and lower case.
-    If choice is missing, is not in letters, or is not cotton or belt
-    a ValueError is raised.
+    Collect and validate handle fabric in a while True loop with a 
+    break statement.
+    Make sure, using the True loop, the choice is the correct word, in letters,
+    and lower case.
+    Raise ValueError if choice is missing, is not in letters, or is not cotton,
+    or belt.
     """
     while True:
         h_fabric_options = ["cotton", "belt"]
@@ -258,11 +267,12 @@ def get_and_validate_handle_fabric():
 
 def get_and_validate_handle_color():
     """
-    Color choice for the handlesis collected, and validated in a while True
-    loop with a break statement.
-    The True loop makes sure the choice is in letters, and lower case.
-    If choice is missing, is not in letters, or is not blue,
-    white or grey a ValueError is raised.
+    Collect and validate handle color in a while True loop with a 
+    break statement.
+    Make sure, using the True loop, the choice is the correct word, in letters,
+    and lower case.
+    Raise ValueError if choice is missing, is not in letters, or is not blue,
+    white or grey.
     """
     while True:
         h_color_options = ["blue", "white", "grey"]
@@ -290,7 +300,7 @@ def update_design_worksheet(o_color, o_fabric, i_color, i_fabric,
                             h_color, h_fabric):
     """
     Update the Google Sheets design worksheet with the collected choices of
-    fabrics, colors and handles.
+    fabrics, colors and handles using the append() method.
     """
     print("Your design choices are being saved...\n")
     # Access Google Sheets worksheet
@@ -314,7 +324,9 @@ def get_design_no_from_worksheet():
 
 def return_new_no_to_worksheet(present_no):
     """
-    Increment present design no and pass the new no to worksheet.
+    Increment the present design number by one, to create a 
+    new number.
+    Pass the new number to the worksheet.
     """
     new_no = present_no
     new_no = int(new_no) + 1
@@ -329,9 +341,9 @@ def return_new_no_to_worksheet(present_no):
 
 def create_unique_id():
     """
-    Removing white space between first and last name by
-    using the replace() function.
-    Combining ID and full name to a unique design ID"
+    Remove white space between first and last name using the 
+    replace() method.
+    Combine design number and full name to create a unique design ID.
     """
     all_names = SHEET.worksheet("name").get_all_values()
     your_id_name_row = all_names[-1]  # Slice final item from the list
@@ -353,14 +365,16 @@ def create_unique_id():
 
 def get_data_from_worksheets():
     """
-    Get the data back from the Google Sheets name and design worksheets to
-    thank the user for creating a bag with a selection of fabrics, colors
-    and handles.
+    Get the data back from the Google Sheets name and design worksheets. 
+    Use slice and index methods to get the correct row and
+    combine choices.
+    Sum up the tote bag design, by showing the selection of fabrics, colors
+    and handles, and the design ID to the user in a print statement.
     """
     print("Your tote bag is now being designed...\n")
     all_names = SHEET.worksheet("name").get_all_values()
-    your_name_row = all_names[-1]  # Slice final item from the list
-    your_name = your_name_row[0]
+    user_name_row = all_names[-1]  # Slice final item from the list
+    user_name = user_name_row[0]
 
     all_choices = SHEET.worksheet("design").get_all_values()
     choices_row = all_choices[-1]  # Slice final item from the list
@@ -372,7 +386,7 @@ def get_data_from_worksheets():
     unique_id_row = all_unique_ids[-1]  # Slice final item from the list
     unique_id = unique_id_row[0]
 
-    print(colored(f"You are a great designer {your_name}! Your own cool tote "
+    print(colored(f"You are a great designer {user_name}! Your own cool tote "
                   f"bag is made from an outside of {o_choice}, an inside "
                   f"of {i_choice}, and {h_choice} handles. Your unique design "
                   f"ID is {unique_id}, and you can use it to see your design."
@@ -394,9 +408,9 @@ def get_data_from_worksheets():
 
 def find_bag_design():
     """
-    Search for design ID in list of lists
-    Return a design info list using list comprehension and indexing
-    Create variables using indexing
+    Search for design ID in list of lists.
+    Return a design info list using list comprehension and indexing.
+    Create variables using indexing.
     """
     all_info = SHEET.worksheet("all_info").get_all_values()
     id_to_find = input(colored("Want to see a present or previous design? "
