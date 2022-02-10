@@ -285,39 +285,39 @@ def update_design_worksheet(o_color, o_fabric, i_color, i_fabric,
     Update the Google Sheets design worksheet with the collected choices of
     fabrics, colors and handles.
     """
-    print("Your choices are being saved...\n")
+    print("Your design choices are being saved...\n")
     # Access Google Sheets worksheet
     design_worksheet = SHEET.worksheet("design")
     # The choices are saved in the design worksheet
     design_worksheet.append_row([o_color, o_fabric, i_color, i_fabric,
                                  h_color, h_fabric])
-    print("Your choices have been saved successfully :-)\n")
+    print("Your choices have been saved successfully.\n")
 
 
-def get_id_from_worksheet():
+def get_design_no_from_worksheet():
     """
-    Get present id from ID worksheet.
+    Get present design number from design no worksheet.
     """
-    all_ids = SHEET.worksheet("id").get_all_values()
-    id_row = all_ids[-1]  # Slice final item from the list
-    present_id = id_row[0]
+    all_nos = SHEET.worksheet("design_no").get_all_values()
+    design_no_row = all_nos[-1]  # Slice final item from the list
+    present_no = design_no_row[0]
 
-    return present_id
+    return present_no
 
 
-def return_new_id_to_worksheet(present_id):
+def return_new_no_to_worksheet(present_no):
     """
-    Increment present ID and pass new ID to worksheet.
+    Increment present design no and pass new no to worksheet.
     """
-    new_id = present_id
-    new_id = int(new_id) + 1
+    new_no = present_no
+    new_no = int(new_no) + 1
 
-    print("Your bag ID is being created...\n")
+    print("A design number is being created...\n")
     # Access Google Sheets worksheet
-    id_worksheet = SHEET.worksheet("id")
+    design_no_worksheet = SHEET.worksheet("design_no")
     # The ID is saved in the id worksheet
-    id_worksheet.append_row([new_id])
-    print("Your bag ID has been saved successfully :-)\n")
+    design_no_worksheet.append_row([new_no])
+    print("The number has been saved successfully.\n")
 
 
 def create_unique_id():
@@ -331,11 +331,11 @@ def create_unique_id():
     your_id_name = your_id_name_row[0].lower()
     youridname = your_id_name.replace(" ", "")
 
-    all_ids = SHEET.worksheet("id").get_all_values()
-    id_row = all_ids[-1]  # Slice final item from the list
-    bag_id = id_row[0]
+    all_nos = SHEET.worksheet("design_no").get_all_values()
+    design_no_row = all_nos[-1]  # Slice final item from the list
+    design_no = design_no_row[0]
 
-    unique_new_id = bag_id + youridname
+    unique_new_id = design_no + youridname
     print("Your unique design ID is being created...\n")
     # Access Google Sheets worksheet
     unique_id_worksheet = SHEET.worksheet("unique_id")
@@ -392,14 +392,11 @@ def find_bag_design():
     all_info = SHEET.worksheet("all_info").get_all_values()
     id_to_find = input(colored("Want to see a present or previous design? "
                                "Enter your design ID: \n", "cyan"))
-    print(all_info)
 
     # Tip from tutor on different ways to go about using the ID to extract
     # the correct list
     design_info_row = [list for list in all_info if id_to_find in list]
     design_row = design_info_row[0]
-
-    print(design_row)
 
     unique_id_design = design_row[1]
     name_design = design_row[2]
@@ -430,8 +427,8 @@ def main():
     h_color = get_and_validate_handle_color()
     update_design_worksheet(o_color, o_fabric, i_color, i_fabric,
                             h_color, h_fabric)
-    present_id = get_id_from_worksheet()
-    return_new_id_to_worksheet(present_id)
+    present_no = get_design_no_from_worksheet()
+    return_new_no_to_worksheet(present_no)
     create_unique_id()
     get_data_from_worksheets()
 
