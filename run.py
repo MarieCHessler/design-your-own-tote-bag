@@ -115,11 +115,12 @@ def get_and_validate_outer_fabric():
     linen or denim a ValueError is raised.
     """
     while True:
+        o_fabric_options = ["cotton", "linen", "denim"]
         o_fabric = input(colored("Would you like the outer fabric to be "
                                  "cotton, linen or denim? \n", "cyan")).lower()
 
         try:
-            if o_fabric.isalpha():
+            if o_fabric.isalpha() and o_fabric in o_fabric_options:
                 print(colored(f"\nYou chose {o_fabric} for the outside. "
                               "Nice!\n", "green"))
                 break
@@ -144,11 +145,12 @@ def get_and_validate_outer_color():
     cream or grey a ValueError is raised.
     """
     while True:
+        o_color_options = ["blue", "cream", "pink", "grey"]
         o_color = input(colored("Do you prefer the outer color to be "
-                        "blue, cream or grey? \n", "cyan")).lower()
+                        "blue, cream, pink or grey? \n", "cyan")).lower()
 
         try:
-            if o_color.isalpha():
+            if o_color.isalpha() and o_color in o_color_options:
                 print(colored(f"\nYou chose {o_color} for the outside. "
                               "Looks good!\n", "green"))
                 break
@@ -156,7 +158,7 @@ def get_and_validate_outer_color():
                 print("\nYou forgot to make a choice.\n")
             else:
                 raise ValueError(f"You wrote {o_color}, but we need a choice "
-                                 "between blue, cream and grey, "
+                                 "between blue, cream, pink and grey, "
                                  "in letters please.")
         except ValueError as e:
             print(f"{e}\n")
@@ -173,11 +175,12 @@ def get_and_validate_inner_fabric():
     spinnaker a ValueError is raised.
     """
     while True:
+        i_fabric_options = ["cotton", "spinnaker"]
         i_fabric = input(colored("What kind of inner fabric do you prefer, "
                                  "cotton or spinnaker? \n", "cyan")).lower()
 
         try:
-            if i_fabric.isalpha():
+            if i_fabric.isalpha() and i_fabric in i_fabric_options:
                 print(colored(f"\nYou chose {i_fabric} for the inside. "
                               "Good choice!\n", "green"))
                 break
@@ -202,11 +205,12 @@ def get_and_validate_inner_color():
     a ValueError is raised.
     """
     while True:
+        i_color_options = ["blue", "white", "black"]
         i_color = input(colored("Do you prefer the inner color to be "
-                        "black or white? \n", "cyan")).lower()
+                        "blue, white or black? \n", "cyan")).lower()
 
         try:
-            if i_color.isalpha():
+            if i_color.isalpha() and i_color in i_color_options:
                 print(colored(f"\nYou chose {i_color} for the inside. "
                               "Perfect!\n", "green"))
                 break
@@ -214,7 +218,8 @@ def get_and_validate_inner_color():
                 print("\nYou forgot to make a choice.\n")
             else:
                 raise ValueError(f"You wrote {i_color}, but we need a choice "
-                                 "between black and white, in letters please.")
+                                 "between blue, white and black, in letters "
+                                 "please.")
         except ValueError as e:
             print(f"{e}\n")
 
@@ -230,12 +235,13 @@ def get_and_validate_handle_fabric():
     a ValueError is raised.
     """
     while True:
+        h_fabric_options = ["cotton", "belt"]
         h_fabric = input(colored("For the handles, would you like them to be "
                                  "made from cotton or belt? \n",
                                  "cyan")).lower()
 
         try:
-            if h_fabric.isalpha():
+            if h_fabric.isalpha() and h_fabric in h_fabric_options:
                 print(colored(f"\nYou chose {h_fabric} for the handles. "
                               "Great!\n", "green"))
                 break
@@ -259,11 +265,12 @@ def get_and_validate_handle_color():
     white or grey a ValueError is raised.
     """
     while True:
+        h_color_options = ["blue", "white", "grey"]
         h_color = input(colored("Do you prefer the handle color to be "
                                 "blue, white or grey? \n", "cyan")).lower()
 
         try:
-            if h_color.isalpha():
+            if h_color.isalpha() and h_color in h_color_options:
                 print(colored(f"\nYou chose {h_color} for the handles. "
                               "Stylish!\n", "green"))
                 break
@@ -271,7 +278,7 @@ def get_and_validate_handle_color():
                 print("\nYou forgot to make a choice.\n")
             else:
                 raise ValueError(f"You wrote {h_color}, but we need a choice "
-                                 "between blue, cream and grey, "
+                                 "between blue, white and grey, "
                                  "in letters please.")
         except ValueError as e:
             print(f"{e}\n")
