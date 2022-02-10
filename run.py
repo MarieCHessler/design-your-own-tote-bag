@@ -385,21 +385,6 @@ def get_data_from_worksheets():
     print(colored("Thank you for designing your bag with us!\n\n", "blue"))
 
 
-def check_design_id():
-    """
-    Check if ID exists in a sublist of all_info
-    """
-    all_info = SHEET.worksheet("all_info").get_all_values()
-    id_to_find = input(colored("Want to see a present or previous design? "
-                               "Enter your design ID: \n", "cyan"))
-
-    id_exists = any(id_to_find in sublist for sublist in all_info)
-    if id_exists:
-        print()
-    else:
-        print("ID not found, please try again\n")
-
-
 def find_bag_design():
     """
     Search for bag ID and return design.
@@ -411,9 +396,10 @@ def find_bag_design():
 
     # Tip from tutor on different ways to go about using the ID to extract
     # the correct list
-    for list in all_info:
-        if id_to_find in list:
-            design_row = list
+    design_info_row = [list for list in all_info if id_to_find in list]
+    design_row = design_info_row[0]
+
+    print(design_row)
 
     unique_id_design = design_row[1]
     name_design = design_row[2]
@@ -448,7 +434,7 @@ def main():
     return_new_id_to_worksheet(present_id)
     create_unique_id()
     get_data_from_worksheets()
-    check_design_id()
+
     find_bag_design()
 
 
