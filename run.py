@@ -44,7 +44,7 @@ def intro():
 
 def get_and_validate_fname():
     """
-    Collect and validate user first name in a while True loop with a 
+    Collect and validate user first name in a while True loop with a
     break statement.
     Make sure, using the True loop, the name is in letters, and starts
     with a capital letter.
@@ -71,7 +71,7 @@ def get_and_validate_fname():
 
 def get_and_validate_lname(fname):
     """
-    Collect and validate user last name in a while True loop with a 
+    Collect and validate user last name in a while True loop with a
     break statement.
     Make sure, using the True loop, the name is in letters, and starts
     with a capital letter.
@@ -100,7 +100,7 @@ def get_and_validate_lname(fname):
 
 def update_name_worksheet(full_name):
     """
-    Update the Google Sheets name worksheet with the full name, using 
+    Update the Google Sheets name worksheet with the full name, using
     the append() method.
     """
     print("Your name is being saved...\n")
@@ -112,7 +112,7 @@ def update_name_worksheet(full_name):
 
 def get_and_validate_outer_fabric():
     """
-    Collect and validate outer fabric in a while True loop with a 
+    Collect and validate outer fabric in a while True loop with a
     break statement.
     Make sure, using the True loop, the choice is the correct word, in letters,
     and lower case.
@@ -143,7 +143,7 @@ def get_and_validate_outer_fabric():
 
 def get_and_validate_outer_color():
     """
-    Collect and validate outer color in a while True loop with a 
+    Collect and validate outer color in a while True loop with a
     break statement.
     Make sure, using the True loop, the choice is the correct word, in letters,
     and lower case.
@@ -174,7 +174,7 @@ def get_and_validate_outer_color():
 
 def get_and_validate_inner_fabric():
     """
-    Collect and validate inner fabric in a while True loop with a 
+    Collect and validate inner fabric in a while True loop with a
     break statement.
     Make sure, using the True loop, the choice is the correct word, in letters,
     and lower case.
@@ -205,7 +205,7 @@ def get_and_validate_inner_fabric():
 
 def get_and_validate_inner_color():
     """
-    Collect and validate inner color in a while True loop with a 
+    Collect and validate inner color in a while True loop with a
     break statement.
     Make sure, using the True loop, the choice is the correct word, in letters,
     and lower case.
@@ -236,7 +236,7 @@ def get_and_validate_inner_color():
 
 def get_and_validate_handle_fabric():
     """
-    Collect and validate handle fabric in a while True loop with a 
+    Collect and validate handle fabric in a while True loop with a
     break statement.
     Make sure, using the True loop, the choice is the correct word, in letters,
     and lower case.
@@ -267,7 +267,7 @@ def get_and_validate_handle_fabric():
 
 def get_and_validate_handle_color():
     """
-    Collect and validate handle color in a while True loop with a 
+    Collect and validate handle color in a while True loop with a
     break statement.
     Make sure, using the True loop, the choice is the correct word, in letters,
     and lower case.
@@ -324,7 +324,7 @@ def get_design_no_from_worksheet():
 
 def return_new_no_to_worksheet(present_no):
     """
-    Increment the present design number by one, to create a 
+    Increment the present design number by one, to create a
     new number.
     Pass the new number to the worksheet.
     """
@@ -341,7 +341,7 @@ def return_new_no_to_worksheet(present_no):
 
 def create_unique_id():
     """
-    Remove white space between first and last name using the 
+    Remove white space between first and last name using the
     replace() method.
     Combine design number and full name to create a unique design ID.
     """
@@ -365,7 +365,7 @@ def create_unique_id():
 
 def get_data_from_worksheets():
     """
-    Get the data back from the Google Sheets name and design worksheets. 
+    Get the data back from the Google Sheets name and design worksheets.
     Use slice and index methods to get the correct row and
     combine choices.
     Sum up the tote bag design, by showing the selection of fabrics, colors
@@ -427,14 +427,11 @@ def find_bag_design():
     i_design = design_row[5] + " " + design_row[6]
     h_design = design_row[7] + " " + design_row[8]
 
-    if id_to_find == unique_id_design:
-        print(colored(f"\n{name_design}, your design ID number is "
-                      f"{unique_id_design}. The bag is made from an "
-                      f"outside of {o_design}, an inside of {i_design}, "
-                      f"and {h_design} handles. Looks very stylish!"
-                      "\n\n", "green"))
-    else:
-        print("Tote bag design not found, please try again")
+    print(colored(f"\n{name_design}, your design ID number is "
+                  f"{unique_id_design}. The bag is made from an "
+                  f"outside of {o_design}, an inside of {i_design}, "
+                  f"and {h_design} handles. Looks very neat!"
+                  "\n\n", "green"))
 
 
 def main():
