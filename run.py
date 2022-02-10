@@ -296,7 +296,7 @@ def update_design_worksheet(o_color, o_fabric, i_color, i_fabric,
 
 def get_design_no_from_worksheet():
     """
-    Get present design number from design no worksheet.
+    Get present design number from the design no worksheet.
     """
     all_nos = SHEET.worksheet("design_no").get_all_values()
     design_no_row = all_nos[-1]  # Slice final item from the list
@@ -307,7 +307,7 @@ def get_design_no_from_worksheet():
 
 def return_new_no_to_worksheet(present_no):
     """
-    Increment present design no and pass new no to worksheet.
+    Increment present design no and pass the new no to worksheet.
     """
     new_no = present_no
     new_no = int(new_no) + 1
@@ -315,7 +315,7 @@ def return_new_no_to_worksheet(present_no):
     print("A design number is being created...\n")
     # Access Google Sheets worksheet
     design_no_worksheet = SHEET.worksheet("design_no")
-    # The ID is saved in the id worksheet
+    # The number is saved in the id worksheet
     design_no_worksheet.append_row([new_no])
     print("The number has been saved successfully.\n")
 
@@ -387,7 +387,9 @@ def get_data_from_worksheets():
 
 def find_bag_design():
     """
-    Search for bag ID and return design.
+    Search for design ID in list of lists
+    Return a design info list using list comprehension and indexing
+    Create variables using indexing
     """
     all_info = SHEET.worksheet("all_info").get_all_values()
     id_to_find = input(colored("Want to see a present or previous design? "
@@ -404,11 +406,14 @@ def find_bag_design():
     i_design = design_row[5] + " " + design_row[6]
     h_design = design_row[7] + " " + design_row[8]
 
-    print(colored(f"\n{name_design}, your design ID number is "
-                  f"{unique_id_design}. The bag is made from an "
-                  f"outside of {o_design}, an inside of {i_design}, "
-                  f"and {h_design} handles. Looks very stylish!"
-                  "\n\n", "green"))
+    if id_to_find == unique_id_design:
+        print(colored(f"\n{name_design}, your design ID number is "
+                      f"{unique_id_design}. The bag is made from an "
+                      f"outside of {o_design}, an inside of {i_design}, "
+                      f"and {h_design} handles. Looks very stylish!"
+                      "\n\n", "green"))
+    else:
+        print("Tote bag design not found, please try again")
 
 
 def main():
@@ -431,7 +436,6 @@ def main():
     return_new_no_to_worksheet(present_no)
     create_unique_id()
     get_data_from_worksheets()
-
     find_bag_design()
 
 
