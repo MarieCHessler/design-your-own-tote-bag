@@ -354,7 +354,7 @@ def create_unique_id():
     design_no_row = all_nos[-1]  # Slice final item from the list
     design_no = design_no_row[0]
 
-    unique_new_id = design_no + youridname
+    unique_new_id = youridname + design_no
     print("Your unique design ID is being created...\n")
     # Access Google Sheets worksheet
     unique_id_worksheet = SHEET.worksheet("unique_id")
@@ -416,8 +416,8 @@ def find_bag_design():
     id_to_find = input(colored("Want to see a present or previous design? "
                                "Enter your design ID: \n", "cyan"))
 
-    # Tip from tutor on different ways to go about using the ID to extract
-    # the correct list
+    # Tips from tutor on different ways to go about using the ID to extract
+    # the correct list 
     design_info_row = [list for list in all_info if id_to_find in list]
     design_row = design_info_row[0]
 
