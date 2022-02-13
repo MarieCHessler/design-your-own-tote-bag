@@ -38,9 +38,9 @@ def intro():
                           (/                  (/ \n\n
     """)
     print(colored("Welcome to Tote Bag Design!\n", "blue"))
-    print("Here you can custom design you tote bag.")
-    print("You can choose from different fabrics and colors for ")
-    print("the inside, the outside and the handles.\n\n")
+    print("Here you can custom design your tote bag. "
+          "You can choose from different fabrics and colors "
+          "for the inside, the outside and the handles.\n\n")
 
 
 def new_or_existing_design():
@@ -62,7 +62,7 @@ def new_or_existing_design():
                 find_bag_design()
                 break
             elif choice_e_or_n == choice_n:
-                get_and_validate_fname()
+                pass
                 break
             elif choice_e_or_n != choice_e or choice_e_or_n != choice_n:
                  raise ValueError("\nPlease enter E for existing or N for new.\n")
