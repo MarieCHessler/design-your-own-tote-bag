@@ -4,8 +4,8 @@ and wireup APIS, based on instructions from CI's Love Sandwiches project
 Import of colorama module to be able to color text and thus improve
 readability and accessibility for the user.
 """
-import gspread
 import time
+import gspread
 from google.oauth2.service_account import Credentials
 from colorama import init
 from termcolor import colored
@@ -40,7 +40,11 @@ def intro():
     print(colored("Welcome to Tote Bag Design!\n", "blue"))
     print("Here you can custom design your tote bag. "
           "You can choose from different fabrics and colors "
-          "for the inside, the outside and the handles.\n\n")
+          "for the inside, the outside and the handles.\n")
+    print("You can also pick up a previously made design "
+          "with the design ID you get on creation.\n\n")
+
+    time.sleep(2)
 
 
 def new_or_existing_design():
@@ -62,15 +66,16 @@ def new_or_existing_design():
                 find_bag_design()
                 break
             elif choice_e_or_n == choice_n:
-                pass
                 break
             elif choice_e_or_n != choice_e or choice_e_or_n != choice_n:
-                 raise ValueError("\nPlease enter E for existing or N for new.\n")
+                raise ValueError("\nPlease enter E for existing or N for "
+                                 "new.\n")
             else:
-                raise ValueError("\nPlease enter E for existing or N for new.\n")
+                raise ValueError("\nPlease enter E for existing or N for "
+                                 "new.\n")
         except ValueError as e:
-            print(f"{e}\n")        
-    
+            print(f"{e}\n")
+
     return choice_e_or_n
 
 
@@ -90,7 +95,7 @@ def get_and_validate_fname():
                               "cyan")).capitalize()
 
         try:
-             # Make sure the name is in letters. 
+            # Make sure the name is in letters.
             if fname.isalpha():
                 print()
                 break
@@ -398,7 +403,7 @@ def get_design_no_from_worksheet():
 
 def return_new_no_to_worksheet(present_no):
     """
-    Increment the present design number by one, by creating a new 
+    Increment the present design number by one, by creating a new
     design number variable, making it an integer and adding 1.
     Pass the new number to the worksheet.
     """
@@ -425,7 +430,7 @@ def create_unique_id():
     your_id_name = your_id_name_row[0].lower()  # Select the first item.
     youridname = your_id_name.replace(" ", "")  # Remove white space.
 
-    # Access Google Sheets worksheet to get all values in worksheet. 
+    # Access Google Sheets worksheet to get all values in worksheet.
     all_nos = SHEET.worksheet("design_no").get_all_values()
     design_no_row = all_nos[-1]  # Slice final item from the list.
     design_no = design_no_row[0]  # Select the first item from the row.
@@ -485,6 +490,8 @@ def get_data_from_worksheets():
     """)
 
     print(colored("Thank you for designing your bag with us!\n\n", "blue"))
+    print(colored("If you want to design a new tote bag, click the "
+                  "Run Program button above the window \n\n", "blue"))
 
     quit()
 
@@ -518,7 +525,7 @@ def find_bag_design():
                   f"outside of {o_design}, an inside of {i_design}, "
                   f"and {h_design} handles. Looks very neat!"
                   "\n\n", "green"))
-    
+
     print("""
          _______
          |     |
@@ -531,6 +538,8 @@ def find_bag_design():
     """)
 
     print(colored("Thank you for designing your bag with us!\n\n", "blue"))
+    print(colored("If you want to design a new tote bag, click the "
+                  "Run Program button above the window \n\n", "blue"))
 
     quit()
 
