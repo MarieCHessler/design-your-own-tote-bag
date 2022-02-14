@@ -526,7 +526,7 @@ def find_bag_design():
     
     not_in_design_row = [unique_id_design != id_to_find]
 
-    if id_to_find in all_info:
+    if unique_id_design == id_to_find:
         print(colored(f"\n{name_design}, your tote bag's outside is made "
                       f"of {o_design}, the inside is {i_design}, "
                       f"and the handles {h_design}. Looks very neat!"
