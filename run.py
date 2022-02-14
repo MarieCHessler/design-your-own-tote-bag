@@ -31,7 +31,7 @@ def intro():
     # Idea from ASCII ART https://patorjk.com/software/taag, but revised.
     print("""
      ______       _ __            ___
-    (  /  _/_    ( /  )          ( / \
+    (  /  _/_    ( /  )          ( / \ 
       /__ /  _    /--< __, _,     /  /_  (  o  _,  __
     _/(_)(__(/_  /__ /(_(_(_)_  (/\_/(/_/_)_(_(_)_/ /_
                            /|                  /|
