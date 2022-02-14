@@ -31,16 +31,18 @@ def intro():
     # Idea from ASCII ART https://patorjk.com/software/taag, but revised.
     print("""
      ______       _ __            ___
-    (  /  _/_    ( /  )          ( / \ 
+    (  /  _/_    ( /  )          ( / \
       /__ /  _    /--< __, _,     /  /_  (  o  _,  __
     _/(_)(__(/_  /__ /(_(_(_)_  (/\_/(/_/_)_(_(_)_/ /_
                            /|                  /|
                           (/                  (/ \n\n
     """)
     print(colored("Welcome to Tote Bag Design!\n", "blue"))
-    print("Here you can custom design your tote bag. "
-          "You can choose from different fabrics and colors "
-          "for the inside, the outside and the handles.\n")
+    print("Here you can custom design your tote bag.")
+    print("We reuse old spinnakers, scrap furnishing fabrics, ")
+          "and belts, where you can choose from different fabrics "
+          "and colors for the inside, the outside and the handles.\n")
+    
     print("You can also pick up a previously made design "
           "with the design ID you get on creation.\n\n")
 
@@ -475,8 +477,8 @@ def get_data_from_worksheets():
     print(colored(f"You are a great designer {user_name}! Your own cool tote "
                   f"bag is made from an outside of {o_choice}, an inside "
                   f"of {i_choice}, and {h_choice} handles. Your unique design "
-                  f"ID is {unique_id}, and you can use it to revisit your design."
-                  "\n\n", "green"))
+                  f"ID is {unique_id}, and you can use it to revisit your "
+                  "design.\n\n", "green"))
 
     print("""
          _______
@@ -503,7 +505,7 @@ def find_bag_design():
     Return a design info list using list comprehension and indexing.
     Create variables using indexing.
     """
-    
+
     # Access Google Sheets worksheet to get all values in worksheet.
     all_info = SHEET.worksheet("all_info").get_all_values()
     # Have user enter unique ID
@@ -521,7 +523,7 @@ def find_bag_design():
     o_design = design_row[3] + " " + design_row[4]
     i_design = design_row[5] + " " + design_row[6]
     h_design = design_row[7] + " " + design_row[8]
-    
+
     if id_to_find in all_info:
         print(colored(f"\n{name_design}, your tote bag's outside is made "
                       f"of {o_design}, the inside is {i_design}, "
@@ -529,7 +531,7 @@ def find_bag_design():
                       "\n\n", "green"))
     else:
         raise IndexError("That ID does not exist.\n")
-    
+
     print("""
          _______
          |     |
