@@ -39,7 +39,7 @@ def intro():
     """)
     print(colored("Welcome to Tote Bag Design!\n", "blue"))
     print("Here you can custom design your tote bag.")
-    print("We reuse old spinnakers, scrap furnishing fabrics, ")
+    print("We reuse old spinnakers, scrap furnishing fabrics, "
           "and belts, where you can choose from different fabrics "
           "and colors for the inside, the outside and the handles.\n")
     
@@ -523,6 +523,8 @@ def find_bag_design():
     o_design = design_row[3] + " " + design_row[4]
     i_design = design_row[5] + " " + design_row[6]
     h_design = design_row[7] + " " + design_row[8]
+    
+    not_in_design_row = [unique_id_design != id_to_find]
 
     if id_to_find in all_info:
         print(colored(f"\n{name_design}, your tote bag's outside is made "
@@ -530,7 +532,7 @@ def find_bag_design():
                       f"and the handles {h_design}. Looks very neat!"
                       "\n\n", "green"))
     else:
-        raise IndexError("That ID does not exist.\n")
+        print("ID does not exist")
 
     print("""
          _______
