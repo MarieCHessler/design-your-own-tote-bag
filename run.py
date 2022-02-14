@@ -40,11 +40,14 @@ def intro():
     print(colored("Welcome to Tote Bag Design!\n", "blue"))
     print("Here you can custom design your tote bag.")
     print("We reuse old spinnakers, scrap furnishing fabrics, "
-          "and belts, where you can choose from different fabrics "
-          "and colors for the inside, the outside and the handles.\n")
-    
+          "and belts,")
+    print("where you can choose from different fabrics "
+          "and colors for the inside,")
+    print("the outside and the handles.\n")
+
     print("You can also pick up a previously made design "
-          "with the design ID you get on creation.\n\n")
+          "with the design ID you")
+    print("get on creation.\n\n")
 
     time.sleep(3)
 
@@ -475,10 +478,11 @@ def get_data_from_worksheets():
     unique_id = unique_id_row[0]  # Select the first item from the row.
 
     print(colored(f"You are a great designer {user_name}! Your own cool tote "
-                  f"bag is made from an outside of {o_choice}, an inside "
-                  f"of {i_choice}, and {h_choice} handles. Your unique design "
-                  f"ID is {unique_id}, and you can use it to revisit your "
-                  "design.\n\n", "green"))
+                  "bag is made from", "green"))
+    print(colored(f"an outside of {o_choice}, an inside of {i_choice}, and "
+                  f"{h_choice} handles.", "green"))
+    print(colored(f"Your unique design ID is {unique_id}, and you can use it "
+                  "to revisit your design.\n\n", "green"))
 
     print("""
          _______
@@ -493,7 +497,8 @@ def get_data_from_worksheets():
 
     time.sleep(3)
     print(colored("If you want to design a new tote bag, click the "
-                  "Run Program button above the window \n", "blue"))
+                  "Run Program button", "blue"))
+    print(colored("above the window \n", "blue"))
     print(colored("Thank you for designing your bag with us!\n\n", "blue"))
 
     quit()
@@ -518,19 +523,17 @@ def find_bag_design():
     design_row = design_info_row[0]
 
     # Select items from the row.
-    unique_id_design = design_row[1]
     name_design = design_row[2]
     o_design = design_row[3] + " " + design_row[4]
     i_design = design_row[5] + " " + design_row[6]
     h_design = design_row[7] + " " + design_row[8]
-    
-    not_in_design_row = [unique_id_design != id_to_find]
 
-    if unique_id_design == id_to_find:
+    if design_info_row[0]:
         print(colored(f"\n{name_design}, your tote bag's outside is made "
-                      f"of {o_design}, the inside is {i_design}, "
-                      f"and the handles {h_design}. Looks very neat!"
-                      "\n\n", "green"))
+                      f"of {o_design},", "green"))
+        print(colored(f"the inside is {i_design}, and the handles "
+                      f"{h_design}.", "green"))
+        print(colored("Looks very neat! \n\n", "green"))
     else:
         print("ID does not exist")
 
@@ -547,7 +550,8 @@ def find_bag_design():
 
     time.sleep(3)
     print(colored("If you want to design a new tote bag, click the "
-                  "Run Program button above the window \n", "blue"))
+                  "Run Program button", "blue"))
+    print(colored("above the window \n", "blue"))
     print(colored("Thank you for designing your bag with us!\n\n", "blue"))
 
     quit()
