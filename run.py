@@ -44,7 +44,7 @@ def intro():
     print("You can also pick up a previously made design "
           "with the design ID you get on creation.\n\n")
 
-    time.sleep(2)
+    time.sleep(3)
 
 
 def new_or_existing_design():
@@ -475,7 +475,7 @@ def get_data_from_worksheets():
     print(colored(f"You are a great designer {user_name}! Your own cool tote "
                   f"bag is made from an outside of {o_choice}, an inside "
                   f"of {i_choice}, and {h_choice} handles. Your unique design "
-                  f"ID is {unique_id}, and you can use it to see your design."
+                  f"ID is {unique_id}, and you can use it to revisit your design."
                   "\n\n", "green"))
 
     print("""
@@ -489,9 +489,10 @@ def get_data_from_worksheets():
        -----------    \n\n
     """)
 
-    print(colored("Thank you for designing your bag with us!\n\n", "blue"))
+    time.sleep(3)
     print(colored("If you want to design a new tote bag, click the "
-                  "Run Program button above the window \n\n", "blue"))
+                  "Run Program button above the window \n", "blue"))
+    print(colored("Thank you for designing your bag with us!\n\n", "blue"))
 
     quit()
 
@@ -502,6 +503,7 @@ def find_bag_design():
     Return a design info list using list comprehension and indexing.
     Create variables using indexing.
     """
+    
     # Access Google Sheets worksheet to get all values in worksheet.
     all_info = SHEET.worksheet("all_info").get_all_values()
     # Have user enter unique ID
@@ -519,13 +521,18 @@ def find_bag_design():
     o_design = design_row[3] + " " + design_row[4]
     i_design = design_row[5] + " " + design_row[6]
     h_design = design_row[7] + " " + design_row[8]
+    
+    if unique_id_design == id_to_find:
+        print(colored(f"\n{name_design}, your tote bag's outside is made "
+                      f"of {o_design}, the inside is {i_design}, "
+                      f"and the handles {h_design}. Looks very neat!"
+                      "\n\n", "green"))
+    elif id_to_find not in all_info:
+        print("That ID does not exist.\n")
+    else:
+        raise IndexError("That ID does not exist.\n")
 
-    print(colored(f"\n{name_design}, your design ID number is "
-                  f"{unique_id_design}. The bag is made from an "
-                  f"outside of {o_design}, an inside of {i_design}, "
-                  f"and {h_design} handles. Looks very neat!"
-                  "\n\n", "green"))
-
+    
     print("""
          _______
          |     |
@@ -536,10 +543,11 @@ def find_bag_design():
       |  My Tote  |
        -----------    \n\n
     """)
-
-    print(colored("Thank you for designing your bag with us!\n\n", "blue"))
+    
+    time.sleep(3)
     print(colored("If you want to design a new tote bag, click the "
-                  "Run Program button above the window \n\n", "blue"))
+                  "Run Program button above the window \n", "blue"))
+    print(colored("Thank you for designing your bag with us!\n\n", "blue"))
 
     quit()
 
