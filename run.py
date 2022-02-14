@@ -522,16 +522,13 @@ def find_bag_design():
     i_design = design_row[5] + " " + design_row[6]
     h_design = design_row[7] + " " + design_row[8]
     
-    if unique_id_design == id_to_find:
+    if id_to_find in all_info:
         print(colored(f"\n{name_design}, your tote bag's outside is made "
                       f"of {o_design}, the inside is {i_design}, "
                       f"and the handles {h_design}. Looks very neat!"
                       "\n\n", "green"))
-    elif id_to_find not in all_info:
-        print("That ID does not exist.\n")
     else:
         raise IndexError("That ID does not exist.\n")
-
     
     print("""
          _______
@@ -543,7 +540,7 @@ def find_bag_design():
       |  My Tote  |
        -----------    \n\n
     """)
-    
+
     time.sleep(3)
     print(colored("If you want to design a new tote bag, click the "
                   "Run Program button above the window \n", "blue"))
