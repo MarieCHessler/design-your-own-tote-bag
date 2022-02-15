@@ -484,15 +484,15 @@ def get_data_from_worksheets():
     print(colored(f"an outside of {o_choice}, an inside of {i_choice}, and "
                   f"{h_choice} handles.", "green"))
     print(colored(f"Your unique design ID is {unique_id}, and you can use it "
-                  "to revisit your design.\n\n", "green"))
+                  "to revisit your design.\n", "green"))
 
     print("""
-        _____
-        |   |
-       -------
-      |       |
-      |My Tote|
-       -------   \n\n
+        ____
+        |  |
+       ------
+      |  My  |
+      | Tote |
+       ------   \n\n
     """)
 
     time.sleep(3)
@@ -533,17 +533,17 @@ def find_bag_design():
                       f"of {o_design},", "green"))
         print(colored(f"the inside is {i_design}, and the handles "
                       f"{h_design}.", "green"))
-        print(colored("Looks very neat! \n\n", "green"))
+        print(colored("Looks very neat!\n", "green"))
     else:
-        print("ID does not exist")
+        print("ID does not exist.\n")
 
     print("""
-        _____
-        |   |
-       -------
-      |       |
-      |My Tote|
-       -------   \n\n
+        ____
+        |  |
+       ------
+      |  My  |
+      | Tote |
+       ------   \n\n
     """)
 
     time.sleep(3)
