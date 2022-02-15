@@ -49,7 +49,7 @@ def intro():
           "with the design ID you")
     print("get on creation.\n\n")
 
-    time.sleep(3)
+    time.sleep(5)
 
 
 def new_or_existing_design():
@@ -148,6 +148,7 @@ def get_and_validate_lname(fname):
         except ValueError as e:
             print(f"{e}\n")
 
+    time.sleep(3)
     return full_name
 
 
@@ -479,13 +480,14 @@ def get_data_from_worksheets():
     unique_id_row = all_unique_ids[-1]  # Slice final item from the list.
     unique_id = unique_id_row[0]  # Select the first item from the row.
 
-    print(colored(f"You are a great designer {user_name}! Your own cool tote "
-                  "bag is made from", "green"))
-    print(colored(f"an outside of {o_choice}, an inside of {i_choice}, and "
-                  f"{h_choice}", "green"))
-    print(colored("handles.", "green"))
+    print(colored(f"You are a great designer {user_name}!", "green"))
+    print(colored(f"Your own cool tote bag is made from an outside of "
+                  f"{o_choice},", "green"))
+    print(colored(f"an inside of {i_choice}, and {h_choice} handles.",
+                  "green"))
     print(colored(f"Your unique design ID is {unique_id}, and you can use it "
-                  "to revisit your design.\n", "green"))
+                  "to revisit your", "green"))
+    print(colored("design.\n", "green"))
 
     print("""
         ____
@@ -500,7 +502,7 @@ def get_data_from_worksheets():
     print(colored("If you want to design a new tote bag, or look at a "
                   "previous one click the", "blue"))
     print(colored("Run Program button above the window \n", "blue"))
-    print(colored("Thank you for designing your bag with us!\n\n", "blue"))
+    print(colored("Thank you for designing your bag with us!\n", "blue"))
 
     quit()
 
@@ -552,7 +554,7 @@ def find_bag_design():
     print(colored("If you want to design a new tote bag, click the "
                   "Run Program button above", "blue"))
     print(colored("the window \n", "blue"))
-    print(colored("Thank you for designing your bag with us!\n\n", "blue"))
+    print(colored("Thank you for designing your bag with us!\n", "blue"))
 
     quit()
 
