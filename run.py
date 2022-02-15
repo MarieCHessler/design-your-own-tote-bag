@@ -35,7 +35,7 @@ def intro():
       /_  /  _    /--< _   _      /  /_  (  o  _   __
     _/(_)(__(/_  /__ /(_(_(_)_  (/__/(/_/_)_(_(_)_/ /_
                            /|                  /|
-                          (/                  (/ \n\n
+                          (/                  (/ \n
     """)
     print(colored("Welcome to Tote Bag Design!\n", "blue"))
     print("Here you can custom design your tote bag.")
@@ -49,7 +49,7 @@ def intro():
           "with the design ID you")
     print("get on creation.\n\n")
 
-    time.sleep(5)
+    time.sleep(7)
 
 
 def new_or_existing_design():
@@ -66,6 +66,7 @@ def new_or_existing_design():
                                       "cyan")).upper()
         choice_e = "E"
         choice_n = "N"
+        # Validate choice
         try:
             if choice_e_or_n == choice_e:
                 find_bag_design()
@@ -92,7 +93,7 @@ def get_and_validate_fname():
     with a capital letter.
     Raise ValueError if name is missing or is not in letters.
     """
-    print(colored("\nOkay, let's start designing!\n", "blue"))
+    print(colored("\n\nOkay, let's start designing!\n", "blue"))
 
     while True:
         # Have user enter first name and make first letter capitalized.
@@ -109,8 +110,8 @@ def get_and_validate_fname():
                 print("\nSorry, we did not catch you first name.\n")
             else:
                 # State that the input is incorrect.
-                raise ValueError(f"You wrote {fname}, but we need the "
-                                 "name, and in letters please.")
+                raise ValueError(f"\nYou wrote {fname}, but we need the "
+                                 "name, and in letters please.\n")
         except ValueError as e:
             print(f"{e}\n")
 
@@ -136,15 +137,15 @@ def get_and_validate_lname(fname):
         try:
             # Make sure the name is in letters.
             if lname.isalpha():
-                print(colored(f"\nWelcome {full_name}!\n", "green"))
+                print(colored(f"\n\nWelcome {full_name}!\n\n", "green"))
                 break
             if not lname:
                 # State that no input has been made.
                 print("\nSorry, we did not catch you last name.\n")
             else:
                 # State that the input is incorrect.
-                raise ValueError(f"You wrote {lname}, but we need the "
-                                 "name, and in letters please.")
+                raise ValueError(f"\nYou wrote {lname}, but we need the "
+                                 "name, and in letters please.\n")
         except ValueError as e:
             print(f"{e}\n")
 
@@ -161,7 +162,7 @@ def update_name_worksheet(full_name):
     name_worksheet = SHEET.worksheet("name")  # Access Google Sheets worksheet.
     # Save the full name in the worksheet.
     name_worksheet.append_row([full_name])
-    print("Now your name is in place. Thanks!\n")
+    print("Now your name is in place. Thanks!\n\n")
 
 
 def get_and_validate_outer_fabric():
@@ -178,7 +179,7 @@ def get_and_validate_outer_fabric():
         o_fabric_options = ["cotton", "linen", "denim"]
         # Have user enter fabric.
         o_fabric = input(colored("Would you like the outer fabric to be "
-                                 "cotton, linen or denim? \n", "cyan")).lower()
+                                 "cotton, linen or denim?\n", "cyan")).lower()
 
         try:
             # Make sure the text is in letters and one of the right fabrics.
@@ -191,9 +192,9 @@ def get_and_validate_outer_fabric():
                 print("\nYou forgot to make a choice.\n")
             else:
                 # State that the input is incorrect.
-                raise ValueError(f"You wrote {o_fabric}, but we need a choice "
-                                 "between cotton, linen and denim, "
-                                 "in letters please.")
+                raise ValueError(f"\nYou wrote {o_fabric}, but we need a "
+                                 "choice between cotton, linen and denim, "
+                                 "in letters please.\n")
         except ValueError as e:
             print(f"{e}\n")
 
@@ -227,9 +228,9 @@ def get_and_validate_outer_color():
                 print("\nYou forgot to make a choice.\n")
             else:
                 # State that the input is incorrect.
-                raise ValueError(f"You wrote {o_color}, but we need a choice "
-                                 "between blue, cream, pink and grey, "
-                                 "in letters please.")
+                raise ValueError(f"\nYou wrote {o_color}, but we need a "
+                                 "choice between blue, cream, pink and grey, "
+                                 "in letters please.\n")
         except ValueError as e:
             print(f"{e}\n")
 
@@ -250,7 +251,7 @@ def get_and_validate_inner_fabric():
         i_fabric_options = ["cotton", "spinnaker"]
         # Have user enter fabric.
         i_fabric = input(colored("What kind of inner fabric do you prefer, "
-                                 "cotton or spinnaker? \n", "cyan")).lower()
+                                 "cotton or spinnaker?\n", "cyan")).lower()
 
         try:
             # Make sure the text is in letters and one of the right fabrics.
@@ -263,9 +264,9 @@ def get_and_validate_inner_fabric():
                 print("\nYou forgot to make a choice.\n")
             else:
                 # State that the input is incorrect.
-                raise ValueError(f"You wrote {i_fabric}, but we need a choice "
-                                 "between cotton and spinnaker, "
-                                 "in letters please.")
+                raise ValueError(f"\nYou wrote {i_fabric}, but we need a "
+                                 "choice between cotton and spinnaker, "
+                                 "in letters please.\n")
         except ValueError as e:
             print(f"{e}\n")
 
@@ -299,9 +300,9 @@ def get_and_validate_inner_color():
                 print("\nYou forgot to make a choice.\n")
             else:
                 # State that the input is incorrect.
-                raise ValueError(f"You wrote {i_color}, but we need a choice "
-                                 "between blue, white and black, in letters "
-                                 "please.")
+                raise ValueError(f"\nYou wrote {i_color}, but we need a "
+                                 "choice between blue, white and black, "
+                                 "in letters please.\n")
         except ValueError as e:
             print(f"{e}\n")
 
@@ -336,8 +337,9 @@ def get_and_validate_handle_fabric():
                 print("\nYou forgot to make a choice.\n")
             else:
                 # State that the input is incorrect.
-                raise ValueError(f"You wrote {h_fabric}, but we need a choice "
-                                 "between cotton and belt, in letters please.")
+                raise ValueError(f"\nYou wrote {h_fabric}, but we need a "
+                                 "choice between cotton and belt, "
+                                 "in letters please.\n")
         except ValueError as e:
             print(f"{e}\n")
 
@@ -371,9 +373,9 @@ def get_and_validate_handle_color():
                 print("\nYou forgot to make a choice.\n")
             else:
                 # State that the input is incorrect.
-                raise ValueError(f"You wrote {h_color}, but we need a choice "
-                                 "between blue, white and grey, "
-                                 "in letters please.")
+                raise ValueError(f"\nYou wrote {h_color}, but we need a "
+                                 "choice between blue, white and grey, "
+                                 "in letters please.\n")
         except ValueError as e:
             print(f"{e}\n")
 
@@ -448,9 +450,9 @@ def create_unique_id():
     unique_id_worksheet = SHEET.worksheet("unique_id")
     # Save the unique ID in the unique ID worksheet.
     unique_id_worksheet.append_row([unique_new_id])
-    print("Your unique design ID has been saved successfully\n")
+    print("Your unique design ID has been saved successfully\n\n")
 
-    time.sleep(3)
+    time.sleep(5)
 
 
 def get_data_from_worksheets():
@@ -461,7 +463,9 @@ def get_data_from_worksheets():
     Sum up the tote bag design, by showing the selection of fabrics, colors
     and handles, and the design ID to the user in a print statement.
     """
-    print("Your tote bag is now being designed...\n")
+    print("Your tote bag is now being designed...\n\n")
+    time.sleep(3)
+
     # Access Google Sheets worksheet to get all values in worksheet.
     all_names = SHEET.worksheet("name").get_all_values()
     user_name_row = all_names[-1]  # Slice final item from the list.
@@ -480,7 +484,7 @@ def get_data_from_worksheets():
     unique_id_row = all_unique_ids[-1]  # Slice final item from the list.
     unique_id = unique_id_row[0]  # Select the first item from the row.
 
-    print(colored(f"You are a great designer {user_name}!", "green"))
+    print(colored(f"You are a great designer {user_name}!\n", "green"))
     print(colored(f"Your own cool tote bag is made from an outside of "
                   f"{o_choice},", "green"))
     print(colored(f"an inside of {i_choice}, and {h_choice} handles.",
@@ -498,10 +502,10 @@ def get_data_from_worksheets():
        ------   \n
     """)
 
-    time.sleep(5)
+    time.sleep(7)
     print(colored("If you want to design a new tote bag, or look at a "
                   "previous one click the", "blue"))
-    print(colored("Run Program button above the window \n", "blue"))
+    print(colored("Run Program button above the window. \n", "blue"))
     print(colored("Thank you for designing your bag with us!\n", "blue"))
 
     quit()
@@ -539,7 +543,7 @@ def find_bag_design():
                       f"{h_design}.", "green"))
         print(colored("Looks very neat!\n", "green"))
     else:
-        print("ID does not exist.\n")
+        print("\nID does not exist.\n")
 
     print("""
         ____
@@ -550,10 +554,10 @@ def find_bag_design():
        ------   \n
     """)
 
-    time.sleep(5)
+    time.sleep(7)
     print(colored("If you want to design a new tote bag, click the "
                   "Run Program button above", "blue"))
-    print(colored("the window \n", "blue"))
+    print(colored("the window.\n", "blue"))
     print(colored("Thank you for designing your bag with us!\n", "blue"))
 
     quit()
