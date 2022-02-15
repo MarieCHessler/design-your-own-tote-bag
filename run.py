@@ -33,7 +33,7 @@ def intro():
      ______       _ __            ___
     (  /  _/_    ( /  )          ( / \ 
       /_  /  _    /--< _   _      /  /_  (  o  _   __
-    _/(_)(__(/_  /__ /(_(_(_)_  (/\_/(/_/_)_(_(_)_/ /_
+    _/(_)(__(/_  /__ /(_(_(_)_  (/__/(/_/_)_(_(_)_/ /_
                            /|                  /|
                           (/                  (/ \n\n
     """)
@@ -160,7 +160,7 @@ def update_name_worksheet(full_name):
     name_worksheet = SHEET.worksheet("name")  # Access Google Sheets worksheet.
     # Save the full name in the worksheet.
     name_worksheet.append_row([full_name])
-    print("Now we have your name, thanks :-)\n")
+    print("Now your name is in place. Thanks!\n")
 
 
 def get_and_validate_outer_fabric():
@@ -482,7 +482,7 @@ def get_data_from_worksheets():
     print(colored(f"You are a great designer {user_name}! Your own cool tote "
                   "bag is made from", "green"))
     print(colored(f"an outside of {o_choice}, an inside of {i_choice}, and "
-                  f"{h_choice}, "green")) 
+                  f"{h_choice}", "green"))
     print(colored("handles.", "green"))
     print(colored(f"Your unique design ID is {unique_id}, and you can use it "
                   "to revisit your design.\n", "green"))
@@ -497,9 +497,9 @@ def get_data_from_worksheets():
     """)
 
     time.sleep(3)
-    print(colored("If you want to design a new tote bag, click the "
-                  "Run Program button above", "blue"))
-    print(colored("the window \n", "blue"))
+    print(colored("If you want to design a new tote bag, or look at a "
+                  "previous one click the", "blue"))
+    print(colored("Run Program button above the window \n", "blue"))
     print(colored("Thank you for designing your bag with us!\n\n", "blue"))
 
     quit()
@@ -529,6 +529,7 @@ def find_bag_design():
     i_design = design_row[5] + " " + design_row[6]
     h_design = design_row[7] + " " + design_row[8]
 
+    # Handle correct and incorrect input
     if design_info_row[0]:
         print(colored(f"\n{name_design}, your tote bag's outside is made "
                       f"of {o_design},", "green"))
