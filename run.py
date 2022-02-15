@@ -32,7 +32,7 @@ def intro():
     print("""
      ______       _ __            ___
     (  /  _/_    ( /  )          ( / \ 
-      /__ /  _    /--< __, _,     /  /_  (  o  _,  __
+      /_  /  _    /--< _   _      /  /_  (  o  _   __
     _/(_)(__(/_  /__ /(_(_(_)_  (/\_/(/_/_)_(_(_)_/ /_
                            /|                  /|
                           (/                  (/ \n\n
@@ -482,7 +482,8 @@ def get_data_from_worksheets():
     print(colored(f"You are a great designer {user_name}! Your own cool tote "
                   "bag is made from", "green"))
     print(colored(f"an outside of {o_choice}, an inside of {i_choice}, and "
-                  f"{h_choice} handles.", "green"))
+                  f"{h_choice}, "green")) 
+    print(colored("handles.", "green"))
     print(colored(f"Your unique design ID is {unique_id}, and you can use it "
                   "to revisit your design.\n", "green"))
 
@@ -497,8 +498,8 @@ def get_data_from_worksheets():
 
     time.sleep(3)
     print(colored("If you want to design a new tote bag, click the "
-                  "Run Program button", "blue"))
-    print(colored("above the window \n", "blue"))
+                  "Run Program button above", "blue"))
+    print(colored("the window \n", "blue"))
     print(colored("Thank you for designing your bag with us!\n\n", "blue"))
 
     quit()
@@ -548,8 +549,8 @@ def find_bag_design():
 
     time.sleep(3)
     print(colored("If you want to design a new tote bag, click the "
-                  "Run Program button", "blue"))
-    print(colored("above the window \n", "blue"))
+                  "Run Program button above", "blue"))
+    print(colored("the window \n", "blue"))
     print(colored("Thank you for designing your bag with us!\n\n", "blue"))
 
     quit()
