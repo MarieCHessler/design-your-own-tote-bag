@@ -485,9 +485,9 @@ def get_data_from_worksheets():
                   f"{o_choice},", "green"))
     print(colored(f"an inside of {i_choice}, and {h_choice} handles.",
                   "green"))
-    print(colored(f"Your unique design ID is {unique_id}, and you can use it "
-                  "to revisit your", "green"))
-    print(colored("design.\n", "green"))
+    print(colored(f"The unique ID for your design is {unique_id}, and you can "
+                  "use it to revisit", "green"))
+    print(colored("your design.\n", "green"))
 
     print("""
         ____
@@ -495,10 +495,10 @@ def get_data_from_worksheets():
        ------
       |  My  |
       | Tote |
-       ------   \n\n
+       ------   \n
     """)
 
-    time.sleep(3)
+    time.sleep(5)
     print(colored("If you want to design a new tote bag, or look at a "
                   "previous one click the", "blue"))
     print(colored("Run Program button above the window \n", "blue"))
@@ -547,10 +547,10 @@ def find_bag_design():
        ------
       |  My  |
       | Tote |
-       ------   \n\n
+       ------   \n
     """)
 
-    time.sleep(3)
+    time.sleep(5)
     print(colored("If you want to design a new tote bag, click the "
                   "Run Program button above", "blue"))
     print(colored("the window \n", "blue"))
