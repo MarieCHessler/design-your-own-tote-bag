@@ -28,7 +28,8 @@ def intro():
     Printed logo, welcome message and information on how to design
     your own bag.
     """
-    # Idea from ASCII ART https://patorjk.com/software/taag, but revised.
+    # Idea for logo design from ASCII ART https://patorjk.com/software/taag,
+    # but revised.
     print("""
      ______       _ __            ___
     (  /  _/_    ( /  )          ( / \ 
@@ -37,7 +38,9 @@ def intro():
                            /|                  /|
                           (/                  (/ \n
     """)
+
     print(colored("Welcome to Tote Bag Design!\n", "blue"))
+
     print("Here you can custom design your tote bag.")
     print("We reuse old spinnakers, scrap furnishing fabrics, "
           "and belts,")
@@ -159,9 +162,12 @@ def update_name_worksheet(full_name):
     the append() method.
     """
     print("Your name is being saved...\n")
-    name_worksheet = SHEET.worksheet("name")  # Access Google Sheets worksheet.
+
+    # Access Google Sheets worksheet.
+    name_worksheet = SHEET.worksheet("name")
     # Save the full name in the worksheet.
     name_worksheet.append_row([full_name])
+
     print("Now your name is in place. Thanks!\n\n")
 
 
@@ -388,12 +394,14 @@ def update_design_worksheet(o_color, o_fabric, i_color, i_fabric,
     Update the Google Sheets design worksheet with the collected choices of
     fabrics, colors and handles using the append() method.
     """
-    print("Your design choices are being saved...\n")
+    print("\nYour design choices are being saved...\n")
+
     # Access Google Sheets worksheet.
     design_worksheet = SHEET.worksheet("design")
     # Save the choices in the design worksheet.
     design_worksheet.append_row([o_color, o_fabric, i_color, i_fabric,
                                  h_color, h_fabric])
+
     print("Your choices have been saved successfully.\n")
 
 
@@ -419,10 +427,12 @@ def return_new_no_to_worksheet(present_no):
     new_no = int(new_no) + 1  # Increment the new design number by one.
 
     print("A design number is being created...\n")
+
     # Access Google Sheets worksheet.
     design_no_worksheet = SHEET.worksheet("design_no")
     # Save the number in the design number worksheet.
     design_no_worksheet.append_row([new_no])
+
     print("The number has been saved successfully.\n")
 
 
@@ -444,15 +454,16 @@ def create_unique_id():
     design_no = design_no_row[0]  # Select the first item from the row.
     # Create unique ID from name and design number.
     unique_new_id = youridname + design_no
+
     print("Your unique design ID is being created...\n")
 
     # Access Google Sheets worksheet.
     unique_id_worksheet = SHEET.worksheet("unique_id")
     # Save the unique ID in the unique ID worksheet.
     unique_id_worksheet.append_row([unique_new_id])
-    print("Your unique design ID has been saved successfully\n\n")
 
-    time.sleep(5)
+    print("Your unique design ID has been saved successfully\n\n")
+    time.sleep(3)
 
 
 def get_data_from_worksheets():
@@ -504,7 +515,7 @@ def get_data_from_worksheets():
 
     time.sleep(7)
     print(colored("If you want to design a new tote bag, or look at a "
-                  "previous one click the", "blue"))
+                  "previous one, click the", "blue"))
     print(colored("Run Program button above the window. \n", "blue"))
     print(colored("Thank you for designing your bag with us!\n", "blue"))
 
