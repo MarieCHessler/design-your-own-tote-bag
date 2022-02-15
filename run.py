@@ -449,6 +449,8 @@ def create_unique_id():
     unique_id_worksheet.append_row([unique_new_id])
     print("Your unique design ID has been saved successfully\n")
 
+    time.sleep(3)
+
 
 def get_data_from_worksheets():
     """
@@ -485,14 +487,12 @@ def get_data_from_worksheets():
                   "to revisit your design.\n\n", "green"))
 
     print("""
-         _______
-         |     |
-       -----------
-      |           |
-      |           |
-      |           |
-      |  My Tote  |
-       -----------    \n\n
+        _____
+        |   |
+       -------
+      |       |
+      |My Tote|
+       -------   \n\n
     """)
 
     time.sleep(3)
@@ -538,14 +538,12 @@ def find_bag_design():
         print("ID does not exist")
 
     print("""
-         _______
-         |     |
-       -----------
-      |           |
-      |           |
-      |           |
-      |  My Tote  |
-       -----------    \n\n
+        _____
+        |   |
+       -------
+      |       |
+      |My Tote|
+       -------   \n\n
     """)
 
     time.sleep(3)
