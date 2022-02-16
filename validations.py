@@ -7,7 +7,7 @@ from constants import NEW_DESIGN, EXISTING_DESIGN, OUTER_FABRIC_OPTIONS
 from constants import OUTER_COLOR_OPTIONS, INNER_FABRIC_OPTIONS
 from constants import INNER_COLOR_OPTIONS, HANDLE_FABRIC_OPTIONS
 from constants import HANDLE_COLOR_OPTIONS
-# from run import find_bag_design
+from google_sheets_api import find_bag_design
 
 
 def new_or_existing_design():
