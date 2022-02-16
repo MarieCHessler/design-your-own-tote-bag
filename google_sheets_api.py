@@ -1,5 +1,10 @@
 """
-Move data to and from worksheets in Google Sheets
+Import of time module to set times for pause.
+Import of gspread library and Credentials class from Google auth library
+and wireup APIS, based on instructions from CI's Love Sandwiches project.
+Import of colorama and termcolor modules to be able to color text
+and thus improve readability and accessibility for the user.
+Import function from validations to run code.
 """
 import time
 import gspread
@@ -170,10 +175,7 @@ def get_data_from_worksheets():
     print(colored("If you want to design a new tote bag, you can do so "
                   "shortly, when you have", "blue"))
     print(colored("been returned to the start page.\n", "blue"))
-    print(colored("If you want to design a new tote bag, or look at a "
-                  "previous one, you can do so", "blue"))
-    print(colored("shortly, when you have been returned to the start "
-                  "page.\n", "blue"))
+
     print(colored("Thank you for designing your bag with us!\n\n", "blue"))
     time.sleep(5)
 

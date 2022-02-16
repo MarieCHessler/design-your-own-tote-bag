@@ -2,15 +2,10 @@
 Import of time module to set times for pause.
 Import of gspread library and Credentials class from Google auth library
 and wireup APIS, based on instructions from CI's Love Sandwiches project.
-Import of colorama module to be able to color text and thus improve
-readability and accessibility for the user.
-Import functions from validations to run code
+Import of colorama and termcolor modules to be able to color text
+and thus improve readability and accessibility for the user.
+Import functions from validations to run code.
 """
-import time
-import gspread
-from google.oauth2.service_account import Credentials
-from colorama import init
-from termcolor import colored
 from validations import new_or_existing_design
 from validations import input_and_validate_first_name
 from validations import input_and_validate_last_name
@@ -27,51 +22,7 @@ from google_sheets_api import get_design_no_from_worksheet
 from google_sheets_api import return_new_no_to_worksheet
 from google_sheets_api import create_unique_id
 from google_sheets_api import get_data_from_worksheets
-
-init()
-
-SCOPE = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive.file",
-    "https://www.googleapis.com/auth/drive"
-    ]
-
-CREDS = Credentials.from_service_account_file('creds.json')
-SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('design_your_own_tote_bag')  # Access Google sheet.
-
-
-def intro():
-    """
-    Printed logo, welcome message and information on how to design
-    your own bag.
-    """
-    # Idea for logo design from ASCII ART https://patorjk.com/software/taag,
-    # but revised.
-    print("""
-     ______       _ __            ___
-    (  /  _/_    ( /  )          ( / \ 
-      /_  /  _    /--< _   _      /  /_  (  o  _   __
-    _/(_)(__(/_  /__ /(_(_(_)_  (/__/(/_/_)_(_(_)_/ /_
-                           /|                  /|
-                          (/                  (/ \n
-    """)
-
-    print(colored("Welcome to Tote Bag Design!\n", "blue"))
-
-    print("Here you can custom design your tote bag.")
-    print("We reuse old spinnakers, scrap furnishing fabrics, "
-          "and belts,")
-    print("where you can choose from different fabrics "
-          "and colors for the inside,")
-    print("the outside and the handles.\n")
-
-    print("You can also pick up a previously made design "
-          "with the design ID you")
-    print("get on creation.\n\n")
-
-    time.sleep(7)
+from logo_and_intro import intro
 
 
 def main():

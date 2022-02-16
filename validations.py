@@ -1,5 +1,10 @@
 """
-Validations made to make sure user input is correct
+Import of time module to set times for pause.
+Import of gspread library and Credentials class from Google auth library
+and wireup APIS, based on instructions from CI's Love Sandwiches project.
+Import of colorama and termcolor modules to be able to color text
+and thus improve readability and accessibility for the user.
+Import functions from validations to run code.
 """
 import time
 import gspread
@@ -10,7 +15,6 @@ from constants import NEW_DESIGN, EXISTING_DESIGN, OUTER_FABRIC_OPTIONS
 from constants import OUTER_COLOR_OPTIONS, INNER_FABRIC_OPTIONS
 from constants import INNER_COLOR_OPTIONS, HANDLE_FABRIC_OPTIONS
 from constants import HANDLE_COLOR_OPTIONS
-from run import intro
 
 init()
 
