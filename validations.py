@@ -48,6 +48,7 @@ def new_or_existing_design():
                 find_and_validate_bag_design()
                 break
             elif choice_e_or_n == NEW_DESIGN:
+                input_and_validate_first_name()
                 break
             else:
                 raise ValueError("\nPlease enter E for existing or N for "
