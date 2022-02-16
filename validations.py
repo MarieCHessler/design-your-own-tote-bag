@@ -382,14 +382,15 @@ def find_and_validate_bag_design():
       | Tote |
        ------   \n
     """)
-
     time.sleep(7)
+
     print(colored("If you want to design a new tote bag, you can do so "
                   "shortly, when you have", "blue"))
     print(colored("been returned to the start page.\n", "blue"))
-    print(colored("Thank you for designing your bag with us!\n", "blue"))
-
+    print(colored("Thank you for designing your bag with us!\n\n", "blue"))
     time.sleep(5)
-    print(colored("You will now be returned to the start page.\n", "blue"))
 
-    intro()
+    print(colored("You will now be returned to the start page.\n\n", "blue"))
+    time.sleep(3)
+
+    new_or_existing_design()
