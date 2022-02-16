@@ -2,12 +2,28 @@
 Validations made to make sure user input is correct
 """
 import time
+import gspread
+from google.oauth2.service_account import Credentials
+from colorama import init
 from termcolor import colored
 from constants import NEW_DESIGN, EXISTING_DESIGN, OUTER_FABRIC_OPTIONS
 from constants import OUTER_COLOR_OPTIONS, INNER_FABRIC_OPTIONS
 from constants import INNER_COLOR_OPTIONS, HANDLE_FABRIC_OPTIONS
 from constants import HANDLE_COLOR_OPTIONS
-from google_sheets_api import find_bag_design
+from run import intro
+
+init()
+
+SCOPE = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
+    ]
+
+CREDS = Credentials.from_service_account_file('creds.json')
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+SHEET = GSPREAD_CLIENT.open('design_your_own_tote_bag')  # Access Google sheet.
 
 
 def new_or_existing_design():
@@ -25,7 +41,7 @@ def new_or_existing_design():
         # Validate choice
         try:
             if choice_e_or_n == EXISTING_DESIGN:
-                find_bag_design()
+                find_and_validate_bag_design()
                 break
             elif choice_e_or_n == NEW_DESIGN:
                 break
@@ -314,3 +330,66 @@ def input_and_validate_handle_color():
             print(f"{e}\n")
 
     return handle_color
+
+
+def find_and_validate_bag_design():
+    """
+    Search for design ID in list of lists.
+    Return a design info list using list comprehension and indexing.
+    Create variables using indexing.
+    """
+
+    # Access Google Sheets worksheet to get all values in worksheet.
+    all_info = SHEET.worksheet("all_info").get_all_values()
+    # Have user enter unique ID
+    while True:
+        id_to_find = input(colored("\nWant to see a present or previous "
+                                   "design? Enter your design ID: \n", "cyan"))
+        # Get the correct row in the all values list, based on input value.
+        if design_info_row := [i for i in all_info if id_to_find in i]:
+            break
+        else:
+            print("\nID does not exist.\n")
+            time.sleep(3)
+            new_or_existing_design()
+
+    # Select the first item from the row.
+    design_row = design_info_row[0]
+
+    # Select items from the design_row.
+    # name_design[2] = user name
+    # design_row[3] = outer color, design_row[4] = outer fabric
+    # design_row[5] = inner color, design_row[6] = inner fabric
+    # design_row[7] = handle color, design_row[8] = handle fabric
+    name_design = design_row[2]
+    outer_design = design_row[3] + " " + design_row[4]
+    inner_design = design_row[5] + " " + design_row[6]
+    handle_design = design_row[7] + " " + design_row[8]
+
+    # Handle correct and incorrect input
+    if design_info_row[0]:
+        print(colored(f"\n{name_design}, your tote bag's outside is made "
+                      f"of {outer_design},", "green"))
+        print(colored(f"the inside is {inner_design}, and the handles "
+                      f"{handle_design}.", "green"))
+        print(colored("Looks very neat!\n", "green"))
+
+    print("""
+        ____
+        |  |
+       ------
+      |  My  |
+      | Tote |
+       ------   \n
+    """)
+
+    time.sleep(7)
+    print(colored("If you want to design a new tote bag, you can do so "
+                  "shortly, when you have", "blue"))
+    print(colored("been returned to the start page.\n", "blue"))
+    print(colored("Thank you for designing your bag with us!\n", "blue"))
+
+    time.sleep(5)
+    print(colored("You will now be returned to the start page.\n", "blue"))
+
+    intro()

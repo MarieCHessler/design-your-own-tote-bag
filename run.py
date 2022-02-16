@@ -11,7 +11,8 @@ import gspread
 from google.oauth2.service_account import Credentials
 from colorama import init
 from termcolor import colored
-from validations import new_or_existing_design, input_and_validate_first_name
+from validations import new_or_existing_design
+from validations import input_and_validate_first_name
 from validations import input_and_validate_last_name
 from validations import input_and_validate_outer_fabric
 from validations import input_and_validate_outer_color
@@ -19,12 +20,13 @@ from validations import input_and_validate_inner_fabric
 from validations import input_and_validate_inner_color
 from validations import input_and_validate_handle_fabric
 from validations import input_and_validate_handle_color
-from google_sheets_api import update_name_worksheet, update_design_worksheet
+from validations import find_and_validate_bag_design
+from google_sheets_api import update_name_worksheet
+from google_sheets_api import update_design_worksheet
 from google_sheets_api import get_design_no_from_worksheet
 from google_sheets_api import return_new_no_to_worksheet
 from google_sheets_api import create_unique_id
 from google_sheets_api import get_data_from_worksheets
-from google_sheets_api import find_bag_design
 
 init()
 
@@ -93,7 +95,7 @@ def main():
     return_new_no_to_worksheet(present_no)
     create_unique_id()
     get_data_from_worksheets()
-    find_bag_design()
+    find_and_validate_bag_design()
 
 
 main()
