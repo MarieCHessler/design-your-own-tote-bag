@@ -1,8 +1,10 @@
 """
+Import of time module to set times for pause.
 Import of gspread library and Credentials class from Google auth library
-and wireup APIS, based on instructions from CI's Love Sandwiches project
+and wireup APIS, based on instructions from CI's Love Sandwiches project.
 Import of colorama module to be able to color text and thus improve
 readability and accessibility for the user.
+Import functions from validations to run code
 """
 import time
 import gspread

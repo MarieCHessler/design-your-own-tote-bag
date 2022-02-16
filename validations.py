@@ -1,5 +1,5 @@
 """
-Validate to make sure user input is correct
+Validations made to make sure user input is correct
 """
 import time
 from termcolor import colored

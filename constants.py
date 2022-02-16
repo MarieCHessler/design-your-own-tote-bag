@@ -1,7 +1,6 @@
 """
 Constants used in run.py, validations.py and google_sheets_api.py
 """
-
 EXISTING_DESIGN = "E"
 NEW_DESIGN = "N"
 
@@ -12,7 +11,3 @@ INNER_FABRIC_OPTIONS = ["cotton", "spinnaker"]
 INNER_COLOR_OPTIONS = ["blue", "white", "black"]
 HANDLE_FABRIC_OPTIONS = ["cotton", "belt"]
 HANDLE_COLOR_OPTIONS = ["blue", "white", "grey"]
-
-
-def print_bag():
-    ...
