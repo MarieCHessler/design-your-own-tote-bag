@@ -39,7 +39,7 @@ def new_or_existing_design():
         # Have user choose if he/she wants to pick up his/her existing design
         # or create a new one.
         choice_e_or_n = input(colored("Would you like to create a new design, "
-                                      "or pick up an existing one?\n"
+                                      "or pick up one created before?\n"
                                       "Enter N for new and E for existing: \n",
                                       "cyan")).upper()
         # Validate choice
@@ -348,8 +348,8 @@ def find_and_validate_bag_design():
     all_info = SHEET.worksheet("all_info").get_all_values()
     # Have user enter unique ID
     while True:
-        id_to_find = input(colored("\nWant to see a present or previous "
-                                   "design? Enter your design ID: \n", "cyan"))
+        id_to_find = input(colored("\nWant to see your present or previous "
+                                   "design? Enter the design ID \n", "cyan"))
         # Get the correct row in the all values list, based on input value.
         if design_info_row := [i for i in all_info if id_to_find in i]:
             break
