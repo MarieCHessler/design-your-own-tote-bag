@@ -15,6 +15,7 @@ from constants import NEW_DESIGN, EXISTING_DESIGN, OUTER_FABRIC_OPT
 from constants import OUTER_COLOR_OPT, INNER_FABRIC_OPT
 from constants import INNER_COLOR_OPT, HANDLE_FABRIC_OPT
 from constants import HANDLE_COLOR_OPT
+import os
 
 init()
 
@@ -357,7 +358,7 @@ def find_and_validate_bag_design():
             print("\nThe ID you provided does not exist. You will be "
                   "returned to the start page.\n")
             time.sleep(3)
-            new_or_existing_design()
+            os.system("python run.py")
 
     # Select the first item from the row.
     design_row = design_info_row[0]
@@ -399,4 +400,4 @@ def find_and_validate_bag_design():
     print(colored("You will now be returned to the start page.\n\n", "blue"))
     time.sleep(3)
 
-    raise SystemExit()
+    os.system("python run.py")

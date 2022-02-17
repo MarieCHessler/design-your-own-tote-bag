@@ -12,6 +12,7 @@ from google.oauth2.service_account import Credentials
 from colorama import init
 from termcolor import colored
 # from validations import new_or_existing_design
+import os
 
 init()
 
@@ -182,4 +183,4 @@ def get_data_from_worksheets():
     print(colored("You will now be returned to the start page.\n\n", "blue"))
     time.sleep(3)
 
-    raise SystemExit()
+    os.system("python run.py")
