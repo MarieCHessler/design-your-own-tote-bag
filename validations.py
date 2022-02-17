@@ -45,7 +45,7 @@ def new_or_existing_design():
         # Validate choice
         try:
             if choice_e_or_n == NEW_DESIGN:
-                input_and_validate_first_name()
+                # input_and_validate_first_name()
                 break
             elif choice_e_or_n == EXISTING_DESIGN:
                 find_and_validate_bag_design()
@@ -355,7 +355,7 @@ def find_and_validate_bag_design():
             break
         else:
             print("\nThe ID you provided does not exist. You will be "
-                  "returned to the start page\n")
+                  "returned to the start page.\n")
             time.sleep(3)
             new_or_existing_design()
 
@@ -388,15 +388,15 @@ def find_and_validate_bag_design():
       | Tote |
        ------   \n
     """)
-    time.sleep(7)
+    time.sleep(4)
 
     print(colored("If you want to design a new tote bag, you can do so "
                   "shortly, when you have", "blue"))
     print(colored("been returned to the start page.\n", "blue"))
     print(colored("Thank you for designing your bag with us!\n\n", "blue"))
-    time.sleep(5)
+    time.sleep(4)
 
     print(colored("You will now be returned to the start page.\n\n", "blue"))
     time.sleep(3)
 
-    new_or_existing_design()
+    raise SystemExit()

@@ -39,4 +39,4 @@ def intro():
           "with the design ID you")
     print("get on creation.\n\n")
 
-    time.sleep(7)
+    time.sleep(5)

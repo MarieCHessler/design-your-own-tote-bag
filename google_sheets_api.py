@@ -11,7 +11,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 from colorama import init
 from termcolor import colored
-from validations import new_or_existing_design
+# from validations import new_or_existing_design
 
 init()
 
@@ -170,16 +170,16 @@ def get_data_from_worksheets():
       | Tote |
        ------   \n
     """)
-    time.sleep(7)
+    time.sleep(5)
 
     print(colored("If you want to design a new tote bag, you can do so "
                   "shortly, when you have", "blue"))
     print(colored("been returned to the start page.\n", "blue"))
 
     print(colored("Thank you for designing your bag with us!\n\n", "blue"))
-    time.sleep(5)
+    time.sleep(4)
 
     print(colored("You will now be returned to the start page.\n\n", "blue"))
     time.sleep(3)
 
-    new_or_existing_design()
+    raise SystemExit()
