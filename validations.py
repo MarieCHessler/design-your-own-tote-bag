@@ -38,17 +38,17 @@ def new_or_existing_design():
     while True:
         # Have user choose if he/she wants to pick up his/her existing design
         # or create a new one.
-        choice_e_or_n = input(colored("Would you like to pick up your "
-                                      "existing design, or create a new one?\n"
-                                      "Enter E for existing or N for new: \n",
+        choice_e_or_n = input(colored("Would you like to create a new design, "
+                                      "or pick up an existing one?\n"
+                                      "Enter N for new and E for existing: \n",
                                       "cyan")).upper()
         # Validate choice
         try:
-            if choice_e_or_n == EXISTING_DESIGN:
-                find_and_validate_bag_design()
-                break
-            elif choice_e_or_n == NEW_DESIGN:
+            if choice_e_or_n == NEW_DESIGN:
                 input_and_validate_first_name()
+                break
+            elif choice_e_or_n == EXISTING_DESIGN:
+                find_and_validate_bag_design()
                 break
             else:
                 raise ValueError("\nPlease enter E for existing or N for "
