@@ -26,17 +26,17 @@ def intro():
                           (/                  (/ \n
     """)
 
-    print(colored("  Welcome to Tote Bag Design!\n", "blue"))
+    print(colored("Welcome to Tote Bag Design!\n", "blue"))
 
-    print("  Here you can custom design your tote bag.")
-    print("  We reuse old spinnakers, scrap furnishing fabrics, "
+    print("Here you can custom design your tote bag.")
+    print("We reuse old spinnakers, scrap furnishing fabrics, "
           "and belts,")
-    print("  where you can choose from different fabrics "
+    print("where you can choose from different fabrics "
           "and colors for the inside,")
-    print("  the outside and the handles.\n")
+    print("the outside and the handles.\n")
 
-    print("  You can also pick up a previously made design "
+    print("You can also pick up a previously made design "
           "with the design ID you")
-    print("  get on creation.\n\n")
+    print("get on creation.\n\n")
 
     time.sleep(5)
