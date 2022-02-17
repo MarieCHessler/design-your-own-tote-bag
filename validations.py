@@ -11,10 +11,10 @@ import gspread
 from google.oauth2.service_account import Credentials
 from colorama import init
 from termcolor import colored
-from constants import NEW_DESIGN, EXISTING_DESIGN, OUTER_FABRIC_OPTIONS
-from constants import OUTER_COLOR_OPTIONS, INNER_FABRIC_OPTIONS
-from constants import INNER_COLOR_OPTIONS, HANDLE_FABRIC_OPTIONS
-from constants import HANDLE_COLOR_OPTIONS
+from constants import NEW_DESIGN, EXISTING_DESIGN, OUTER_FABRIC_OPT
+from constants import OUTER_COLOR_OPT, INNER_FABRIC_OPT
+from constants import INNER_COLOR_OPT, HANDLE_FABRIC_OPT
+from constants import HANDLE_COLOR_OPT
 
 init()
 
@@ -144,7 +144,7 @@ def input_and_validate_outer_fabric():
 
         try:
             # Make sure the text is in letters and one of the right fabrics.
-            if outer_fabric.isalpha() and outer_fabric in OUTER_FABRIC_OPTIONS:
+            if outer_fabric.isalpha() and outer_fabric in OUTER_FABRIC_OPT:
                 print(colored(f"\nYou chose {outer_fabric} for the outside. "
                               "Nice!\n", "green"))
                 break
@@ -179,7 +179,7 @@ def input_and_validate_outer_color():
 
         try:
             # Make sure the text is in letters and one of the right colors.
-            if outer_color.isalpha() and outer_color in OUTER_COLOR_OPTIONS:
+            if outer_color.isalpha() and outer_color in OUTER_COLOR_OPT:
                 print(colored(f"\nYou chose {outer_color} for the outside. "
                               "Looks good!\n", "green"))
                 break
@@ -214,7 +214,7 @@ def input_and_validate_inner_fabric():
 
         try:
             # Make sure the text is in letters and one of the right fabrics.
-            if inner_fabric.isalpha() and inner_fabric in INNER_FABRIC_OPTIONS:
+            if inner_fabric.isalpha() and inner_fabric in INNER_FABRIC_OPT:
                 print(colored(f"\nYou chose {inner_fabric} for the inside. "
                               "Good choice!\n", "green"))
                 break
@@ -249,7 +249,7 @@ def input_and_validate_inner_color():
 
         try:
             # Make sure the text is in letters and one of the right colors.
-            if inner_color.isalpha() and inner_color in INNER_COLOR_OPTIONS:
+            if inner_color.isalpha() and inner_color in INNER_COLOR_OPT:
                 print(colored(f"\nYou chose {inner_color} for the inside. "
                               "Perfect!\n", "green"))
                 break
@@ -284,7 +284,7 @@ def input_and_validate_handle_fabric():
 
         try:
             # Make sure the text is in letters and one of the right fabrics.
-            if handle_fabric.isalpha() and handle_fabric in HANDLE_FABRIC_OPTIONS:
+            if handle_fabric.isalpha() and handle_fabric in HANDLE_FABRIC_OPT:
                 print(colored(f"\nYou chose {handle_fabric} for the handles. "
                               "Great!\n", "green"))
                 break
@@ -319,7 +319,7 @@ def input_and_validate_handle_color():
 
         try:
             # Make sure the text is in letters and one of the right colors.
-            if handle_color.isalpha() and handle_color in HANDLE_COLOR_OPTIONS:
+            if handle_color.isalpha() and handle_color in HANDLE_COLOR_OPT:
                 print(colored(f"\nYou chose {handle_color} for the handles. "
                               "Stylish!\n", "green"))
                 break
