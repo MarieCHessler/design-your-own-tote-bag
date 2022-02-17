@@ -167,7 +167,7 @@ def get_data_from_worksheets():
         ____
         |  |
        ------
-      |  My  |
+      | Cool |
       | Tote |
        ------   \n
     """)
