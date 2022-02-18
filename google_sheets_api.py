@@ -159,9 +159,9 @@ def get_data_from_worksheets():
                   f"{outer_choice},", "green"))
     print(colored(f"an inside of {inner_choice}, and {handle_choice} "
                   "handles.", "green"))
-    print(colored(f"The unique ID for your design is {unique_id}, and you "
-                  "can use it to revisit", "green"))
-    print(colored("your design.\n", "green"))
+    print(colored(f"The unique ID for your design is {unique_id}. Keep it "
+                  "safe, in case you", "green"))
+    print(colored("want to revisit your design at another time.\n", "green"))
 
     print("""
         ____
@@ -177,7 +177,7 @@ def get_data_from_worksheets():
                   "shortly, when you have", "blue"))
     print(colored("been returned to the start page.\n", "blue"))
 
-    print(colored("Thank you for designing your bag with us!\n\n", "blue"))
+    print(colored("Thank you for designing your bag with us!\n", "blue"))
     time.sleep(5)
 
     print(colored("We will now take you back to the start page.\n\n",
