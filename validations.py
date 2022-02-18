@@ -357,7 +357,7 @@ def find_and_validate_bag_design():
         if design_info_row := [i for i in all_info if id_to_find in i]:
             break
         else:
-            print("\nThe ID you provided does not exist, so we will take you\n"
+            print("\nThe ID you provided does not exist, so we will take you "
                   "back to the start page.\n")
             time.sleep(3)
             os.system("python run.py")
