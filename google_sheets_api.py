@@ -171,14 +171,14 @@ def get_data_from_worksheets():
       | Tote |
        ------   \n
     """)
-    time.sleep(6)
+    time.sleep(7)
 
     print(colored("If you want to design a new tote bag, you can do so "
                   "shortly, when you have", "blue"))
     print(colored("been returned to the start page.\n", "blue"))
 
     print(colored("Thank you for designing your bag with us!\n", "blue"))
-    time.sleep(5)
+    time.sleep(6)
 
     print(colored("We will now take you back to the start page.\n\n",
                   "blue"))
