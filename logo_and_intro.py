@@ -34,10 +34,10 @@ def intro():
           "and belts,\n"
           "where you can choose from different fabrics "
           "and colors for the inside,\n"
-          "the outside and the handles.\n\n")
+          "the outside and the handles.\n")
 
     print("You can also pick up a previously made design "
           "with the design ID you\n"
           "get on creation.\n\n")
 
-    time.sleep(5)
+    time.sleep(6)
