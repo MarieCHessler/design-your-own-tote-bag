@@ -156,7 +156,7 @@ def input_and_validate_outer_fabric():
             else:
                 # State that the input is incorrect.
                 raise ValueError(f"\nYou wrote {outer_fabric}, but we need "
-                                 "a choice between cotton, linen and denim, "
+                                 "a choice between cotton, linen and denim,\n"
                                  "in letters please.\n")
         except ValueError as e:
             print(f"{e}\n")
@@ -192,7 +192,7 @@ def input_and_validate_outer_color():
                 # State that the input is incorrect.
                 raise ValueError(f"\nYou wrote {outer_color}, but we need "
                                  "a choice between blue, cream, pink and "
-                                 "grey, in letters please.\n")
+                                 "grey,\n in letters please.\n")
         except ValueError as e:
             print(f"{e}\n")
 
@@ -226,7 +226,7 @@ def input_and_validate_inner_fabric():
             else:
                 # State that the input is incorrect.
                 raise ValueError(f"\nYou wrote {inner_fabric}, but we need "
-                                 "a choice between cotton and spinnaker, "
+                                 "a choice between cotton and spinnaker,\n"
                                  "in letters please.\n")
         except ValueError as e:
             print(f"{e}\n")
@@ -261,7 +261,7 @@ def input_and_validate_inner_color():
             else:
                 # State that the input is incorrect.
                 raise ValueError(f"\nYou wrote {inner_color}, but we need "
-                                 "a choice between blue, white and black, "
+                                 "a choice between blue, white and black,\n"
                                  "in letters please.\n")
         except ValueError as e:
             print(f"{e}\n")
@@ -296,7 +296,7 @@ def input_and_validate_handle_fabric():
             else:
                 # State that the input is incorrect.
                 raise ValueError(f"\nYou wrote {handle_fabric}, but we need "
-                                 "a choice between cotton and belt, "
+                                 "a choice between cotton and belt,\n"
                                  "in letters please.\n")
         except ValueError as e:
             print(f"{e}\n")
@@ -331,7 +331,7 @@ def input_and_validate_handle_color():
             else:
                 # State that the input is incorrect.
                 raise ValueError(f"\nYou wrote {handle_color}, but we need "
-                                 "a choice between blue, white and grey, "
+                                 "a choice between blue, white and grey,\n"
                                  "in letters please.\n")
         except ValueError as e:
             print(f"{e}\n")
