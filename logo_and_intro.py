@@ -28,16 +28,16 @@ def intro():
 
     print(colored("Welcome to Tote Bag Design!\n", "blue"))
 
-    print(colored("Here you can custom design your tote bag :-)\n\n"
+    print("Here you can custom design your tote bag :-)\n\n"
 
-                  "We reuse old spinnakers, scrap furnishing fabrics, "
-                  "and belts,\n"
-                  "where you can choose from different fabrics "
-                  "and colors for the inside,\n"
-                  "the outside and the handles.\n\n"
+          "We reuse old spinnakers, scrap furnishing fabrics, "
+          "and belts,\n"
+          "where you can choose from different fabrics "
+          "and colors for the inside,\n"
+          "the outside and the handles.\n\n"
 
-                  "You can also pick up a previously made design "
-                  "with the design ID you\n"
-                  "get on creation.\n\n", "grey"))
+          "You can also pick up a previously made design "
+          "with the design ID you\n"
+          "get on creation.\n\n")
 
     time.sleep(6)
