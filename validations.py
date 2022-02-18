@@ -393,14 +393,14 @@ def find_and_validate_bag_design():
     """)
     time.sleep(6)
 
-    print("If you want to design a new tote bag, you can do so "
-          "shortly, when you have\n"
-          "been returned to the start page.\n\n")
+    print(colored("If you want to design a new tote bag, you can do so "
+                  "shortly, when you have\n"
+                  "been returned to the start page.\n", "grey"))
 
     print(colored("Thank you for designing your bag with us!\n", "blue"))
     time.sleep(5)
 
-    print("We will now take you back to the start page.\n\n")
+    print(colored("We will now take you back to the start page.\n\n", "grey"))
     time.sleep(3)
 
     os.system("python run.py")

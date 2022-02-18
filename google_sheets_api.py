@@ -173,16 +173,16 @@ def get_data_from_worksheets():
     """)
     time.sleep(7)
 
-    print("If you want to design a new tote bag, or revisit a "
-          "previously created design,\n"
-          "you can do so shortly, when you have been returned "
-          "to the start page.\n\n")
+    print(colored("If you want to design a new tote bag, or revisit a "
+                  "previously created design,\n"
+                  "you can do so shortly, when you have been returned "
+                  "to the start page.\n", "grey"))
 
     print(colored("Thank you for designing your bag with us!\n", "blue"))
     time.sleep(6)
 
-    print("We will now take you back to the start page.\n\n",
-          "blue")
+    print(colored("We will now take you back to the start page.\n\n",
+                  "grey"))
     time.sleep(3)
 
     os.system("python run.py")
