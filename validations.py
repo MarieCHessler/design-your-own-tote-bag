@@ -192,7 +192,8 @@ def input_and_validate_outer_color():
                 # State that the input is incorrect.
                 raise ValueError(f"\nYou wrote {outer_color}, but we need "
                                  "a choice between blue, cream, pink and "
-                                 "grey,\n in letters please.\n")
+                                 "grey,\n"
+                                 "in letters please.\n")
         except ValueError as e:
             print(f"{e}\n")
 
@@ -351,13 +352,13 @@ def find_and_validate_bag_design():
     # Have user enter unique ID
     while True:
         id_to_find = input(colored("\nWant to see your present or previous "
-                                   "design? Enter the design ID \n", "cyan"))
+                                   "design? Enter the design ID: \n", "cyan"))
         # Get the correct row in the all values list, based on input value.
         if design_info_row := [i for i in all_info if id_to_find in i]:
             break
         else:
-            print("\nThe ID you provided does not exist, so we will take "
-                  "you back to the start page.\n")
+            print("\nThe ID you provided does not exist, so we will take you\n"
+                  "back to the start page.\n")
             time.sleep(3)
             os.system("python run.py")
 
@@ -377,10 +378,10 @@ def find_and_validate_bag_design():
     # Handle correct and incorrect input
     if design_info_row[0]:
         print(colored(f"\n{name_design}, your tote bag's outside is made "
-                      f"of {outer_design},", "green"))
-        print(colored(f"the inside is {inner_design}, and the handles "
-                      f"{handle_design}.", "green"))
-        print(colored("Looks very neat!\n", "green"))
+                      f"of {outer_design},\n"
+                      f"the inside is {inner_design}, and the handles "
+                      f"{handle_design}.\n"
+                      "Looks very neat!\n", "green"))
 
     print("""
         ____
@@ -393,9 +394,10 @@ def find_and_validate_bag_design():
     time.sleep(6)
 
     print(colored("If you want to design a new tote bag, you can do so "
-                  "shortly, when you have", "blue"))
-    print(colored("been returned to the start page.\n", "blue"))
-    print(colored("Thank you for designing your bag with us!\n\n", "blue"))
+                  "shortly, when you have\n"
+                  "been returned to the start page.\n\n"
+
+                  "Thank you for designing your bag with us!\n", "blue"))
     time.sleep(5)
 
     print(colored("We will now take you back to the start page.\n\n",

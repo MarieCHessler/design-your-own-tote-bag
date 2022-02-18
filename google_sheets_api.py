@@ -154,14 +154,14 @@ def get_data_from_worksheets():
     unique_id_row = all_unique_ids[-1]  # Slice final item from the list.
     unique_id = unique_id_row[0]  # Select the first item from the row.
 
-    print(colored(f"You are a great designer {user_name}!\n", "green"))
-    print(colored(f"Your own cool tote bag is made from an outside of "
-                  f"{outer_choice},", "green"))
-    print(colored(f"an inside of {inner_choice}, and {handle_choice} "
-                  "handles.", "green"))
-    print(colored(f"The unique ID for your design is {unique_id}. Keep it "
-                  "safe, in case you", "green"))
-    print(colored("want to revisit your design at another time.\n", "green"))
+    print(colored(f"You are a great designer {user_name}!\n\n"
+                  f"Your own cool tote bag is made from an outside of "
+                  f"{outer_choice},\n"
+                  f"an inside of {inner_choice}, and {handle_choice} "
+                  "handles.\n"
+                  f"The unique ID for your design is {unique_id}. Keep it "
+                  "safe, in case you\n"
+                  "want to revisit your design at another time.\n", "green"))
 
     print("""
         ____
@@ -173,11 +173,12 @@ def get_data_from_worksheets():
     """)
     time.sleep(7)
 
-    print(colored("If you want to design a new tote bag, you can do so "
-                  "shortly, when you have", "blue"))
-    print(colored("been returned to the start page.\n", "blue"))
+    print(colored("If you want to design a new tote bag, or revisit a "
+                  "previously created design,\n"
+                  "you can do so shortly, when you have been returned "
+                  "to the start page.\n\n"
 
-    print(colored("Thank you for designing your bag with us!\n", "blue"))
+                  "Thank you for designing your bag with us!\n", "blue"))
     time.sleep(6)
 
     print(colored("We will now take you back to the start page.\n\n",
