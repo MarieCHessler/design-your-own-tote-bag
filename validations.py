@@ -359,7 +359,7 @@ def find_and_validate_bag_design():
         else:
             print("\nThe ID you provided does not exist, so we will take you "
                   "back to the start page.\n")
-            time.sleep(3)
+            time.sleep(4)
             os.system("python run.py")
 
     # Select the first item from the row.
