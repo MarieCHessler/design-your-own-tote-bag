@@ -121,7 +121,7 @@ def create_unique_id():
     time.sleep(3)
 
 
-def get_data_from_worksheets():
+def presentation_of_created_tote_bag():
     """
     Get the data back from the Google Sheets name and design worksheets.
     Use slice and index methods to get the correct row and
