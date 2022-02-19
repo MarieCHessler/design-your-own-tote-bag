@@ -18,7 +18,7 @@ def new_or_existing_design():
     while True:
         # Have user choose if he/she wants to pick up his/her existing design
         # or create a new one.
-        choice_e_or_n = input(colored("Would you like to create a new "
+        choice_e_or_n = input(colored("\nWould you like to create a new "
                                       "design, or pick up one created "
                                       "before?\n"
                                       "Enter N for new and E for existing: "

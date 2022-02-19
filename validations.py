@@ -330,7 +330,7 @@ def find_and_validate_bag_design():
     while True:
         id_to_find = input(colored("\nWant to see your present or previous "
                                    "design? Enter the design ID, or type "
-                                   "Exit to go back: \n", "cyan"))
+                                   "Exit to go back: \n", "cyan")).lower()
         # Get the correct row in the all values list, based on input value.
         if design_info_row := [i for i in all_info if id_to_find in i]:
             break
@@ -378,5 +378,5 @@ def find_and_validate_bag_design():
     print(colored("Thank you for designing your bag with us!\n", "blue"))
     time.sleep(5)
 
-    print("We will now take you back to the start page.\n\n")
+    print("We will now take you back to the start.\n\n")
     time.sleep(3)

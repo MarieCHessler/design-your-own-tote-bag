@@ -179,5 +179,5 @@ def presentation_of_created_tote_bag():
     print(colored("Thank you for designing your bag with us!\n", "blue"))
     time.sleep(6)
 
-    print("We will now take you back to the start page.\n\n")
+    print("We will now take you back to the start.\n\n")
     time.sleep(3)
