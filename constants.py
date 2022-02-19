@@ -1,5 +1,6 @@
 """
-Use these constants in run.py, validations.py google_sheets_api.py, and logic.py
+Use these constants in run.py, validations.py google_sheets_api.py,
+and logic.py
 """
 EXISTING_DESIGN = "E"
 NEW_DESIGN = "N"
