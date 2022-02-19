@@ -4,7 +4,6 @@ Import of gspread library and Credentials class from Google auth library
 and wireup APIS, based on instructions from CI's Love Sandwiches project.
 Import of colorama and termcolor modules to be able to color text
 and thus improve readability and accessibility for the user.
-Import function from validations to run code.
 """
 import time
 import gspread
@@ -12,6 +11,7 @@ from google.oauth2.service_account import Credentials
 from colorama import init
 from termcolor import colored
 
+# Needed by colorama to run on Windows
 init()
 
 SCOPE = [

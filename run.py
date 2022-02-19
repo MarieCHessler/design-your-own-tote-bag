@@ -1,10 +1,6 @@
 """
-Import of time module to set times for pause.
-Import of gspread library and Credentials class from Google auth library
-and wireup APIS, based on instructions from CI's Love Sandwiches project.
-Import of colorama and termcolor modules to be able to color text
-and thus improve readability and accessibility for the user.
-Import functions from validations to run code.
+Import functions from logic.py, google_sheets_api.py and logo_and_intro.py
+to run code.
 """
 from logic import new_or_existing_design
 from google_sheets_api import presentation_of_created_tote_bag

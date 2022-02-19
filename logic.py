@@ -1,3 +1,10 @@
+"""
+Import of colorama and termcolor modules to be able to color text
+and thus improve readability and accessibility for the user.
+Import functions from constants.py, google_sheets_api.py and
+validations.py to run code.
+"""
+from colorama import init
 from termcolor import colored
 
 from constants import NEW_DESIGN, EXISTING_DESIGN
@@ -8,6 +15,9 @@ from validations import find_and_validate_bag_design, \
     input_and_validate_outer_fabric, input_and_validate_outer_color, \
     input_and_validate_inner_fabric, input_and_validate_inner_color, \
     input_and_validate_handle_fabric, input_and_validate_handle_color
+
+# Needed by colorama to run on Windows
+init()
 
 
 def new_or_existing_design():

@@ -4,7 +4,7 @@ Import of gspread library and Credentials class from Google auth library
 and wireup APIS, based on instructions from CI's Love Sandwiches project.
 Import of colorama and termcolor modules to be able to color text
 and thus improve readability and accessibility for the user.
-Import functions from validations to run code.
+Import functions from validations.py to run code.
 """
 import time
 import gspread
@@ -16,6 +16,7 @@ from constants import OUTER_COLOR_OPT, INNER_FABRIC_OPT
 from constants import INNER_COLOR_OPT, HANDLE_FABRIC_OPT
 from constants import HANDLE_COLOR_OPT
 
+# Needed by colorama to run on Windows
 init()
 
 SCOPE = [
