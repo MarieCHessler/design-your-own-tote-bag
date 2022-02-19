@@ -48,6 +48,9 @@ def new_or_existing_design():
             print(f"{e}\n")
 
 
+# Tips given on how to structure functions for best flow - Reuben Ferrante
+
+
 def update_names():
     """
     Define first, last and full names, and update the name worksheet
@@ -81,6 +84,13 @@ def save_bag_design():
     create_unique_id()
 
 
+def present_new_bag():
+    """
+    Present the new tote bag design to the user
+    """
+    presentation_of_created_tote_bag()
+
+
 def new_bag_design():
     """
     Update the names, validate the facbrics, and save the bag design
@@ -88,10 +98,4 @@ def new_bag_design():
     update_names()
     validate_fabrics()
     save_bag_design()
-
-
-def bag_design_presentation():
-    """
-    Present the created bag design
-    """
     presentation_of_created_tote_bag()
