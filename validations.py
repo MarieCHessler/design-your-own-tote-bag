@@ -55,6 +55,7 @@ def new_or_existing_design():
             else:
                 raise ValueError("\nPlease enter E for existing or N for "
                                  "new.\n")
+        # Error handling inspired by Code Institute's Love Sandwiches
         except ValueError as e:
             print(f"{e}\n")
 
@@ -88,6 +89,7 @@ def input_and_validate_first_name():
                 # State that the input is incorrect.
                 raise ValueError(f"\nYou wrote {first_name}, but we need "
                                  "the name, and in letters please.\n")
+        # Error handling inspired by Code Institute's Love Sandwiches
         except ValueError as e:
             print(f"{e}\n")
 
@@ -122,6 +124,7 @@ def input_and_validate_last_name(first_name):
                 # State that the input is incorrect.
                 raise ValueError(f"\nYou wrote {last_name}, but we need "
                                  "the name, and in letters please.\n")
+        # Error handling inspired by Code Institute's Love Sandwiches
         except ValueError as e:
             print(f"{e}\n")
 
@@ -158,6 +161,7 @@ def input_and_validate_outer_fabric():
                 raise ValueError(f"\nYou wrote {outer_fabric}, but we need "
                                  "a choice between cotton, linen and denim,\n"
                                  "in letters please.\n")
+        # Error handling inspired by Code Institute's Love Sandwiches
         except ValueError as e:
             print(f"{e}\n")
 
@@ -194,6 +198,7 @@ def input_and_validate_outer_color():
                                  "a choice between blue, cream, pink and "
                                  "grey,\n"
                                  "in letters please.\n")
+        # Error handling inspired by Code Institute's Love Sandwiches
         except ValueError as e:
             print(f"{e}\n")
 
@@ -229,6 +234,7 @@ def input_and_validate_inner_fabric():
                 raise ValueError(f"\nYou wrote {inner_fabric}, but we need "
                                  "a choice between cotton and spinnaker,\n"
                                  "in letters please.\n")
+        # Error handling inspired by Code Institute's Love Sandwiches
         except ValueError as e:
             print(f"{e}\n")
 
@@ -264,6 +270,7 @@ def input_and_validate_inner_color():
                 raise ValueError(f"\nYou wrote {inner_color}, but we need "
                                  "a choice between blue, white and black,\n"
                                  "in letters please.\n")
+        # Error handling inspired by Code Institute's Love Sandwiches
         except ValueError as e:
             print(f"{e}\n")
 
@@ -299,6 +306,7 @@ def input_and_validate_handle_fabric():
                 raise ValueError(f"\nYou wrote {handle_fabric}, but we need "
                                  "a choice between cotton and belt,\n"
                                  "in letters please.\n")
+        # Error handling inspired by Code Institute's Love Sandwiches
         except ValueError as e:
             print(f"{e}\n")
 
@@ -334,6 +342,7 @@ def input_and_validate_handle_color():
                 raise ValueError(f"\nYou wrote {handle_color}, but we need "
                                  "a choice between blue, white and grey,\n"
                                  "in letters please.\n")
+        # Error handling inspired by Code Institute's Love Sandwiches
         except ValueError as e:
             print(f"{e}\n")
 
