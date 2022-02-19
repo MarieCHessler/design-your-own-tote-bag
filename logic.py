@@ -9,7 +9,8 @@ from termcolor import colored
 
 from constants import NEW_DESIGN, EXISTING_DESIGN
 from google_sheets_api import update_name_worksheet, update_design_worksheet, \
-    get_design_no_from_worksheet, return_new_no_to_worksheet, create_unique_id
+    get_design_no_from_worksheet, return_new_no_to_worksheet, \
+    create_unique_id, presentation_of_created_tote_bag
 from validations import find_and_validate_bag_design, \
     input_and_validate_first_name, input_and_validate_last_name, \
     input_and_validate_outer_fabric, input_and_validate_outer_color, \
@@ -87,3 +88,10 @@ def new_bag_design():
     update_names()
     validate_fabrics()
     save_bag_design()
+
+
+def bag_design_presentation():
+    """
+    Present the created bag design
+    """
+    presentation_of_created_tote_bag()

@@ -7,6 +7,7 @@ import time
 from colorama import init
 from termcolor import colored
 
+# Needed by colorama to run on Windows
 init()
 
 
