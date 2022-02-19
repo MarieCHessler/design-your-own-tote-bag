@@ -52,7 +52,7 @@ As a user I would like a program that:
 
 ### Owner goals
 As a program owner, I would like to create a tool that:
-* Creates a unique design for the user.
+* Helps the user to create a tote bag in a unique design.
 * Is easy to understand and use and has an appealing look.
 * Validates the data to make sure the result is correct and easy to understand.
 * Saves the data and can return the design to the user, both straight away and later.
