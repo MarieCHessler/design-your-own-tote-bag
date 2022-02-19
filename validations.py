@@ -11,11 +11,10 @@ import gspread
 from google.oauth2.service_account import Credentials
 from colorama import init
 from termcolor import colored
-from constants import NEW_DESIGN, EXISTING_DESIGN, OUTER_FABRIC_OPT
+from constants import OUTER_FABRIC_OPT
 from constants import OUTER_COLOR_OPT, INNER_FABRIC_OPT
 from constants import INNER_COLOR_OPT, HANDLE_FABRIC_OPT
 from constants import HANDLE_COLOR_OPT
-import os
 
 init()
 
@@ -29,37 +28,6 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('design_your_own_tote_bag')  # Access Google sheet.
-
-
-def new_or_existing_design():
-    """
-    Let user choose between picking up his/her existing design
-    or creating a new one.
-    """
-    while True:
-        # Have user choose if he/she wants to pick up his/her existing design
-        # or create a new one.
-        choice_e_or_n = input(colored("Would you like to create a new "
-                                      "design, or pick up one created "
-                                      "before?\n"
-                                      "Enter N for new and E for existing: "
-                                      "\n", "cyan")).upper()
-        # Validate choice
-        try:
-            if choice_e_or_n == NEW_DESIGN:
-                # input_and_validate_first_name()
-                break
-            elif choice_e_or_n == EXISTING_DESIGN:
-                find_and_validate_bag_design()
-                break
-            else:
-                raise ValueError("\nPlease enter E for existing or N for "
-                                 "new.\n")
-        # Error handling inspired by Code Institute's Love Sandwiches
-        except ValueError as e:
-            print(f"{e}\n")
-
-    return choice_e_or_n
 
 
 def input_and_validate_first_name():
@@ -361,15 +329,16 @@ def find_and_validate_bag_design():
     # Have user enter unique ID
     while True:
         id_to_find = input(colored("\nWant to see your present or previous "
-                                   "design? Enter the design ID: \n", "cyan"))
+                                   "design? Enter the design ID, or type "
+                                   "Exit to go back: \n", "cyan"))
         # Get the correct row in the all values list, based on input value.
         if design_info_row := [i for i in all_info if id_to_find in i]:
             break
+        elif id_to_find == BACK_TO_START:
+            return
         else:
-            print("\nThe ID you provided does not exist, so we will take you "
-                  "back to the start page.\n")
+            print("\nThe ID you provided does not exist, please try again.\n")
             time.sleep(4)
-            os.system("python run.py")
 
     # Select the first item from the row.
     design_row = design_info_row[0]
@@ -411,5 +380,3 @@ def find_and_validate_bag_design():
 
     print("We will now take you back to the start page.\n\n")
     time.sleep(3)
-
-    os.system("python run.py")
