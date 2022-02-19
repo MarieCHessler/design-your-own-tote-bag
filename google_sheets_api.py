@@ -11,8 +11,6 @@ import gspread
 from google.oauth2.service_account import Credentials
 from colorama import init
 from termcolor import colored
-# from validations import new_or_existing_design
-import os
 
 init()
 
@@ -183,5 +181,3 @@ def presentation_of_created_tote_bag():
 
     print("We will now take you back to the start page.\n\n")
     time.sleep(3)
-
-    os.system("python run.py")
