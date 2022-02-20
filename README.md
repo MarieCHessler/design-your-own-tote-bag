@@ -107,7 +107,7 @@ The features described below have been implemented for the user to have a pleasa
 <br>
 
 **New design section** <br>
-In the New design section, the user name is collected for personification and recapture of design. The fabric and color choices the user makes are used to create the design. A design number and unique design ID are created in the background. At the end of the section, the user is presented with the custom-designed tote bag and a unique design ID that can be used to access the design at a later time. 
+In the New design section, the user name is collected for personification and recapture of design. The fabric and color choices the user makes are used to create the design. A design number and a unique design ID are created in the background. At the end of the section, the user is presented with the custom-designed tote bag and a unique design ID that can be used to access the design at a later time. 
 
 <br>
 
@@ -154,18 +154,44 @@ In the New design section, the user name is collected for personification and re
 <br>
 
 ***Presentation of the design***
-* In the final part, the user is presented with his or her design, including an image.
-* All the data from the different worksheets have automatically been copied into one single worksheet, called *all_info*, from which all the data is now collected and presented to the user.
-* In the message, the user is commended for his or her design, the fabrics and colors for the outside, the inside, and the handles are presented, together with the design ID, and an ASCCI image of the bag is shown.
+* In the final part, the user is presented with his or her design, including an ASCCI image.
+* All the data from the different worksheets have automatically been copied into a single worksheet, called *all_info*, from which it is now collected and presented to the user.
+* In the message, the user is commended for his or her design, the fabrics and colors for the outside, the inside, and the handles are presented, together with the design ID, and an ASCII image of the bag is shown.
 
 ![Presentation of design](assets/images/new_design_message.webp)
 
 <br>
 
 ***Information and thanks***
-* To end the section and return the user to the start, information on how to begin a new design or revisit a previously created one is presented, together with thanks and a heads up for the return.
+* To end the New design section and return the user to the starting point, information on how to create a new design or revisit a previously created one is presented, together with thanks and a heads up for the return.
 
 ![Information and thanks message](assets/images/new_info_and_thanks_message.webp)
 
 <br>
 
+**Existing design section** <br>
+In the Existing design section, the user can choose between visiting an already created design by entering the design ID, or returning to the start by entering Exit. If the design ID cannot be found or is incorrect, an error message is presented, and the user is asked to try again.
+
+![Input to revisit existing design](assets/images/existing_id.webp)
+![Input to exit](assets/images/existing_exit.webp)
+![Incorrect input](assets/images/existing_error_id.webp)
+
+<br>
+
+***Visit existing design***
+* When entering the design ID correctly, the user is presented with his or her design, including an ASCII image.
+* All the data from the different worksheets have automatically been copied into a single worksheet, called *all_info*, from which it is now collected and presented to the user.
+* In the message, the user gets a description of the fabrics and colors for the outside, the inside, and the handles of the tote bad he or she has designed, and an ASCII image of the bag is presented.
+
+![Visit existing design](assets/images/new_design_message.webp)
+
+<br>
+
+***Information and thanks***
+* To end the Existing design section and return the user to the starting point, information on how to create a new design is presented, together with thanks and a heads up for the return.
+
+![Information and thanks message](assets/images/existing_info_and_thanks_message.webp)
+
+**General features**
+* To give the user extra time to read the information, time.sleep() is used.
+* To make it easy for the user to separate information from questions, comments, and errors, different colors have been used. For more information, see the Color palette in the Design section.
