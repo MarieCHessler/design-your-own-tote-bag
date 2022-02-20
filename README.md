@@ -69,8 +69,8 @@ As a program owner, I would like to create a tool that:
     * **Blue** for information, such as the introduction and the information and instructions at the end.
     * **Cyan** for questions to the user.
     * **Green** for comments on choices and final design.
-    * **Red** for error messages.
     * **White** is the standard color, which is left unchanged for user input and save messages.
+    * **Red** for error messages.
 * The colors are chosen to give a good contrast, yet be comfortable for the user's eyes, on a black background. 
 * Blue, cyan, and green match each other well, and white is a good complement.
 * Red sticks out and therefore is a good choice to have the user react to the message.

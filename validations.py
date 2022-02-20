@@ -53,11 +53,13 @@ def input_and_validate_first_name():
                 break
             if not first_name:
                 # State that no input has been made.
-                print(colored("\nSorry, we did not catch your first name.\n", "red"))
+                print(colored("\nSorry, we did not catch your first "
+                              "name.\n", "red"))
             else:
                 # State that the input is incorrect.
-                raise ValueError(colored(f"\nYou wrote {first_name}, but we need "
-                                 "the name, and in letters please.\n", "red"))
+                raise ValueError(colored(f"\nYou wrote {first_name}, but we "
+                                         "need the name, and in letters "
+                                         "please.\n", "red"))
         # Error handling inspired by Code Institute's Love Sandwiches
         except ValueError as e:
             print(f"{e}\n")
@@ -88,11 +90,13 @@ def input_and_validate_last_name(first_name):
                 break
             if not last_name:
                 # State that no input has been made.
-                print(colored("\nSorry, we did not catch your last name.\n", "red"))
+                print(colored("\nSorry, we did not catch your last "
+                              "name.\n", "red"))
             else:
                 # State that the input is incorrect.
-                raise ValueError(colored(f"\nYou wrote {last_name}, but we need "
-                                 "the name, and in letters please.\n", "red"))
+                raise ValueError(colored(f"\nYou wrote {last_name}, but we "
+                                         "need the name, and in letters "
+                                         "please.\n", "red"))
         # Error handling inspired by Code Institute's Love Sandwiches
         except ValueError as e:
             print(f"{e}\n")
@@ -127,9 +131,10 @@ def input_and_validate_outer_fabric():
                 print(colored("\nYou forgot to make a choice.\n", "red"))
             else:
                 # State that the input is incorrect.
-                raise ValueError(colored(f"\nYou wrote {outer_fabric}, but we need "
-                                 "a choice between cotton, linen and denim,\n"
-                                 "in letters please.\n", "red"))
+                raise ValueError(colored(f"\nYou wrote {outer_fabric}, but we "
+                                         "need a choice between cotton, linen "
+                                         "and denim,\n"
+                                         "in letters please.\n", "red"))
         # Error handling inspired by Code Institute's Love Sandwiches
         except ValueError as e:
             print(f"{e}\n")
@@ -163,10 +168,10 @@ def input_and_validate_outer_color():
                 print(colored("\nYou forgot to make a choice.\n", "red"))
             else:
                 # State that the input is incorrect.
-                raise ValueError(colored(f"\nYou wrote {outer_color}, but we need "
-                                 "a choice between blue, cream, pink and "
-                                 "grey,\n"
-                                 "in letters please.\n", "red"))
+                raise ValueError(colored(f"\nYou wrote {outer_color}, but we "
+                                         "need a choice between blue, cream, "
+                                         "pink and grey,\n"
+                                         "in letters please.\n", "red"))
         # Error handling inspired by Code Institute's Love Sandwiches
         except ValueError as e:
             print(f"{e}\n")
@@ -200,9 +205,10 @@ def input_and_validate_inner_fabric():
                 print(colored("\nYou forgot to make a choice.\n", "red"))
             else:
                 # State that the input is incorrect.
-                raise ValueError(colored(f"\nYou wrote {inner_fabric}, but we need "
-                                 "a choice between cotton and spinnaker,\n"
-                                 "in letters please.\n", "red"))
+                raise ValueError(colored(f"\nYou wrote {inner_fabric}, but we "
+                                         "need a choice between cotton and "
+                                         "spinnaker,\n"
+                                         "in letters please.\n", "red"))
         # Error handling inspired by Code Institute's Love Sandwiches
         except ValueError as e:
             print(f"{e}\n")
@@ -236,9 +242,10 @@ def input_and_validate_inner_color():
                 print(colored("\nYou forgot to make a choice.\n", "red"))
             else:
                 # State that the input is incorrect.
-                raise ValueError(colored(f"\nYou wrote {inner_color}, but we need "
-                                 "a choice between blue, white and black,\n"
-                                 "in letters please.\n", "red"))
+                raise ValueError(colored(f"\nYou wrote {inner_color}, but we "
+                                         "need a choice between blue, white "
+                                         "and black,\n"
+                                         "in letters please.\n", "red"))
         # Error handling inspired by Code Institute's Love Sandwiches
         except ValueError as e:
             print(f"{e}\n")
@@ -272,9 +279,10 @@ def input_and_validate_handle_fabric():
                 print(colored("\nYou forgot to make a choice.\n", "red"))
             else:
                 # State that the input is incorrect.
-                raise ValueError(colored(f"\nYou wrote {handle_fabric}, but we need "
-                                 "a choice between cotton and belt,\n"
-                                 "in letters please.\n", "red"))
+                raise ValueError(colored(f"\nYou wrote {handle_fabric}, but "
+                                         "we need a choice between cotton "
+                                         "and belt,\n"
+                                         "in letters please.\n", "red"))
         # Error handling inspired by Code Institute's Love Sandwiches
         except ValueError as e:
             print(f"{e}\n")
@@ -308,9 +316,10 @@ def input_and_validate_handle_color():
                 print(colored("\nYou forgot to make a choice.\n", "red"))
             else:
                 # State that the input is incorrect.
-                raise ValueError(colored(f"\nYou wrote {handle_color}, but we need "
-                                 "a choice between blue, white and grey,\n"
-                                 "in letters please.\n", "red"))
+                raise ValueError(colored(f"\nYou wrote {handle_color}, but we "
+                                         "need a choice between blue, white "
+                                         "and grey,\n"
+                                         "in letters please.\n", "red"))
         # Error handling inspired by Code Institute's Love Sandwiches
         except ValueError as e:
             print(f"{e}\n")
