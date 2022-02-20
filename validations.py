@@ -330,8 +330,9 @@ def find_and_validate_bag_design():
     # Have user enter unique ID
     while True:
         id_to_find = input(colored("\nWant to see your present or previous "
-                                   "design? Enter the design ID, or type "
-                                   "Exit to go back: \n", "cyan")).lower()
+                                   "design? Enter the design ID, "
+                                   "\nor type Exit to go back: \n",
+                                   "cyan")).lower()
         # Get the correct row in the all values list, based on input value.
         if design_info_row := [i for i in all_info if id_to_find in i]:
             break
@@ -339,7 +340,7 @@ def find_and_validate_bag_design():
             return
         else:
             print("\nThe ID you provided does not exist, please try again.\n")
-            time.sleep(4)
+            time.sleep(3)
 
     # Select the first item from the row.
     design_row = design_info_row[0]

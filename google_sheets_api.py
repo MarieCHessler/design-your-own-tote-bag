@@ -169,7 +169,7 @@ def presentation_of_created_tote_bag():
       | Tote |
        ------   \n
     """)
-    time.sleep(7)
+    time.sleep(8)
 
     print(colored("If you want to design a new tote bag, or revisit a "
                   "previously created design,\n"
