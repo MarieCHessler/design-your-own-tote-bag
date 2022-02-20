@@ -18,7 +18,8 @@ A link to the live application can be found [here](https://design-your-own-tote-
     * [Owner goals]((https://github.com/MarieCHessler/design-your-own-tote-bag#owner_goals))
 
 2. [Design](https://github.com/MarieCHessler/design-your-own-tote-bag#design)
-    * 
+    * [Color palette](https://github.com/MarieCHessler/design-your-own-tote-bag#color_palette)
+    * [Structure](https://github.com/MarieCHessler/design-your-own-tote-bag#structure)
 
 3. [Features](https://github.com/MarieCHessler/design-your-own-tote-bag#features)
     * 
@@ -74,3 +75,14 @@ As a program owner, I would like to create a tool that:
 * The colors are chosen to give a good contrast, yet be comfortable for the user's eyes, on a black background. 
 * Blue, cyan, and green match each other well, and white is a good complement.
 * Red sticks out and therefore is a good choice to have the user react to the message.
+
+### Structure
+A structure for Design Your Own Tote Bag was drafted on paper at the beginning of project process, and later improved using Lucidchart, to make it more appealing and easier to understand.
+
+The flowchart shows the different steps and checks the program follows, based on the different choices the user makes along the way.
+
+<br>
+
+![Flowchart showing program structure](assets/images/flowchart.webp)
+
+
