@@ -17,7 +17,7 @@ from validations import find_and_validate_bag_design, \
     input_and_validate_inner_fabric, input_and_validate_inner_color, \
     input_and_validate_handle_fabric, input_and_validate_handle_color
 
-# Needed by colorama to run on Windows
+# Needed by Colorama and Termcolor to run on Windows.
 init()
 
 

@@ -16,7 +16,7 @@ from constants import OUTER_COLOR_OPT, INNER_FABRIC_OPT
 from constants import INNER_COLOR_OPT, HANDLE_FABRIC_OPT
 from constants import HANDLE_COLOR_OPT
 
-# Needed by colorama to run on Windows
+# Needed by Colorama and Termcolor to run on Windows.
 init()
 
 SCOPE = [

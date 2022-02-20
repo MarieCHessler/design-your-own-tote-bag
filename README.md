@@ -1,14 +1,14 @@
-# Create Your Own Tote Bag
+# Design Your Own Tote Bag
 
-Create Your Own Tote Bag is an interactive command line program that aims to give peope a possibility to create their own tote bag out of reused material. The program iterates through a number of questions regarding fabrics and colors, and based on the user responses creates a unique tote bag, which is presented to the user at the end.
+Design Your Own Tote Bag is an interactive command line program that aims to give peope a possibility to create their own tote bag out of reused material. The program iterates through a number of questions regarding fabrics and colors, and based on the user responses creates a unique tote bag, which is presented to the user at the end.
 
 The tool is targeted towards people who are interested in sustainable solutions and design, and use their own bag when shopping or carrying things around. 
 
-Create Your Own Tote Bag will come in handy for those who want a unique tote bag that they have designed themselves. The inspiration comes from my daughter's small business that sews tote bags from old spinnakers, scrap furnishing fabrics and old textile belts.
+Design Your Own Tote Bag will come in handy for those who want a unique tote bag that they have designed themselves. The inspiration comes from my daughter's small business that sews tote bags from old spinnakers, scrap furnishing fabrics and old textile belts.
 
 A link to the live application can be found [here](https://design-your-own-tote-bag.herokuapp.com/), and a link to the repository [here](https://github.com/MarieCHessler/design-your-own-tote-bag).
 
-![Create Your Own Tote Bag on different screen sizes](assets/images/layout_on_screens.webp)
+![Design Your Own Tote Bag on different screen sizes](assets/images/layout_on_screens.webp)
 
 <br>
 
@@ -60,4 +60,17 @@ As a program owner, I would like to create a tool that:
 
 ## Design
 
-### Colors
+<br>
+
+![Design Your Own Tote Bag color palette](assets/images/colors.webp)
+
+### Color palette
+* The colors that have been used in this application were produced by using Colorama and Termcolor libraries.
+    * **Blue** for information, such as the introduction and the information and instructions at the end.
+    * **Cyan** for questions to the user.
+    * **Green** for comments on choices and final design.
+    * **Red** for error messages.
+    * **White** is the standard color, which is left unchanged for user input and save messages.
+* The colors are chosen to give a good contrast, yet be comfortable for the user's eyes, on a black background. 
+* Blue, cyan, and green match each other well, and white is a good complement.
+* Red sticks out and therefore is a good choice to have the user react to the message.
