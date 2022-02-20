@@ -112,10 +112,30 @@ In the New design section, the user name is collected for personification and re
 <br>
 
 ***Name***
-* First, the user is asked to enter his or her name.
-* From the first and last name a full name is created and sent to a Google Sheets worksheet called *name* to be stored.
-* If the user enters nothing, or other characters than letters, an error message appears and the user is asked to try again.
+* In the first part, the user is asked to enter his or her name. 
+* A personalized welcome message with the name appears, to make the user feel special.
+* From the first and last name a full name is created and passed to a Google Sheets worksheet called *name* to be stored.
+* If the user enters nothing or other characters than letters, an error message appears and the user is returned to the question.
+* For incorrectly entered characters, the error message returns what the user has entered and asks him or her to enter a name in letters.
 
-![Enter name](assets/images/new_name.webp)
+![Enter and save name](assets/images/new_name.webp)
+![No first name entered](assets/images/new_error_no_first_name.webp)
+![No last name entered](assets/images/new_error_no_last_name.webp)
+![Incorrect first name entered](assets/images/new_error_first_name.webp)
+![Incorrect last name entered](assets/images/new_error_last_name.webp)
 
+<br>
 
+***Fabric and color choices***
+* In the second part, the user is asked to choose between predefined choices of fabrics and colors for the outside, the inside, and the handles of the tote bag.
+* A comment that supports the choice appears, to encourage the user to continue.
+* When the choices are made they are passed to a Google Sheets worksheet called *design* to be stored.
+* If the user enters nothing or other choices than the predefined ones, an error message appears and the user is returned to the question. 
+* For all the fabric and color choices, the error message returns what the user has entered, shows the valid choices, and asks him or her to enter the choice in letters.
+
+![Enter outside fabric and color choices](assets/images/new_outside.webp)
+![Enter inside fabric and color choices](assets/images/new_inside.webp)
+![Enter handle fabric and color choices](assets/images/new_handles.webp)
+![No choice entered](assets/images/new_error_no_choice.webp)
+![Incorrect outer fabric choice](assets/images/new_error_out_fabric.webp)
+![Incorrect outer color choice](assets/images/new_error_out_color.webp)
