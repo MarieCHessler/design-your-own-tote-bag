@@ -66,7 +66,7 @@ As a program owner, I would like to create a tool that:
 ![Design Your Own Tote Bag color palette](assets/images/colors.webp)
 
 ### Color palette
-* The colors that have been used in this application were produced by using Colorama and Termcolor libraries.
+* The colors that have been used in this application were produced by using the Colorama and Termcolor libraries.
     * **Blue** for information, such as the introduction and the information and instructions at the end.
     * **Cyan** for questions to the user.
     * **Green** for comments on choices and final design.
@@ -90,7 +90,7 @@ The flowchart shows the different steps and checks the program follows, based on
 The features described below have been implemented for the user to have a pleasant experience.
 
 **Introduction, with logo and welcome**
-* When starting the program ASCII ART logo, showing the name Tote Bag Design, appears. This helps the user know that he or she is in the right place. 
+* When starting the program an ASCII ART logo, showing the name Tote Bag Design, appears. This helps the user know that he or she is in the right place. 
 * Below the logo there is a headline in bold, welcoming the user, and an introduction with a bit of information about what the company does and what the user can do in the application. With this information, the user is prepared when it is time to make the first choice.
 
 ![Logo and introduction](assets/images/intro.webp)
@@ -98,9 +98,24 @@ The features described below have been implemented for the user to have a pleasa
 <br>
 
 **Choice between new and existing design**
-* The first choice the user makes is if he or she wants to create a new design or pick up one that has been created earlier. Giving the user this choice is good, since he or she may already have a design that he or she is happy with.
+* The first choice the user makes is if he or she wants to create a new design or pick up one that has been created earlier. 
+* Giving the user this choice is important since he or she may already have a design that he or she is happy with.
 
 ![Choice new design](assets/images/new_choice.webp)
 ![Choice existing design](assets/images/existing_choice.webp)
+
+<br>
+
+**New design section** <br>
+In the New design section, the user name is collected for personification and recapture of design. Fabric and color choices the user makes are used to create the design. At the end of the section, the user is presented with the custom-designed tote bag and a unique design ID that can be used to access the design at a later time. 
+
+<br>
+
+***Name***
+* First, the user is asked to enter his or her name.
+* From the first and last name a full name is created and sent to a Google Sheets worksheet called *name* to be stored.
+* If the user enters nothing, or other characters than letters, an error message appears and the user is asked to try again.
+
+![Enter name](assets/images/new_name.webp)
 
 

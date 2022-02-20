@@ -53,7 +53,7 @@ def input_and_validate_first_name():
                 break
             if not first_name:
                 # State that no input has been made.
-                print(colored("\nSorry, we did not catch your first "
+                print(colored("Sorry, we did not catch your first "
                               "name.\n", "red"))
             else:
                 # State that the input is incorrect.
@@ -90,7 +90,7 @@ def input_and_validate_last_name(first_name):
                 break
             if not last_name:
                 # State that no input has been made.
-                print(colored("\nSorry, we did not catch your last "
+                print(colored("Sorry, we did not catch your last "
                               "name.\n", "red"))
             else:
                 # State that the input is incorrect.
@@ -128,7 +128,7 @@ def input_and_validate_outer_fabric():
                 break
             if not outer_fabric:
                 # State that no input has been made.
-                print(colored("\nYou forgot to make a choice.\n", "red"))
+                print(colored("You forgot to make a choice.\n", "red"))
             else:
                 # State that the input is incorrect.
                 raise ValueError(colored(f"\nYou wrote {outer_fabric}, but we "
@@ -165,7 +165,7 @@ def input_and_validate_outer_color():
                 break
             if not outer_color:
                 # State that no input has been made.
-                print(colored("\nYou forgot to make a choice.\n", "red"))
+                print(colored("You forgot to make a choice.\n", "red"))
             else:
                 # State that the input is incorrect.
                 raise ValueError(colored(f"\nYou wrote {outer_color}, but we "
@@ -202,7 +202,7 @@ def input_and_validate_inner_fabric():
                 break
             if not inner_fabric:
                 # State that no input has been made.
-                print(colored("\nYou forgot to make a choice.\n", "red"))
+                print(colored("You forgot to make a choice.\n", "red"))
             else:
                 # State that the input is incorrect.
                 raise ValueError(colored(f"\nYou wrote {inner_fabric}, but we "
@@ -239,7 +239,7 @@ def input_and_validate_inner_color():
                 break
             if not inner_color:
                 # State that no input has been made.
-                print(colored("\nYou forgot to make a choice.\n", "red"))
+                print(colored("You forgot to make a choice.\n", "red"))
             else:
                 # State that the input is incorrect.
                 raise ValueError(colored(f"\nYou wrote {inner_color}, but we "
@@ -276,7 +276,7 @@ def input_and_validate_handle_fabric():
                 break
             if not handle_fabric:
                 # State that no input has been made.
-                print(colored("\nYou forgot to make a choice.\n", "red"))
+                print(colored("You forgot to make a choice.\n", "red"))
             else:
                 # State that the input is incorrect.
                 raise ValueError(colored(f"\nYou wrote {handle_fabric}, but "
@@ -313,7 +313,7 @@ def input_and_validate_handle_color():
                 break
             if not handle_color:
                 # State that no input has been made.
-                print(colored("\nYou forgot to make a choice.\n", "red"))
+                print(colored("You forgot to make a choice.\n", "red"))
             else:
                 # State that the input is incorrect.
                 raise ValueError(colored(f"\nYou wrote {handle_color}, but we "
