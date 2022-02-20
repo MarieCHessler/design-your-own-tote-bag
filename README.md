@@ -1,8 +1,8 @@
 # Design Your Own Tote Bag
 
-Design Your Own Tote Bag is an interactive command line program that aims to give peope a possibility to create their own tote bag out of reused material. The program iterates through a number of questions regarding fabrics and colors, and based on the user responses creates a unique tote bag, which is presented to the user at the end.
+Design Your Own Tote Bag is an interactive command line application that aims to give people a possibility to design a custom made tote bag out of reused material. The app iterates through a number of questions regarding fabrics and colors and, based on the user responses, a unique tote bag is created and presented to the user at the end.
 
-The tool is targeted towards people who are interested in sustainable solutions and design, and use their own bag when shopping or carrying things around. 
+The app is targeted towards people who are interested in sustainable solutions and design and use their own bag when shopping or carrying things around. 
 
 Design Your Own Tote Bag will come in handy for those who want a unique tote bag that they have designed themselves. The inspiration comes from my daughter's small business that sews tote bags from old spinnakers, scrap furnishing fabrics and old textile belts.
 
@@ -44,7 +44,7 @@ A link to the live application can be found [here](https://design-your-own-tote-
 ## UX
 
 ### User needs
-As a user I would like a program that:
+As a user, I would like a program that:
 * Is easy to understand and use.
 * Has an appealing layout.
 * Saves the data in a spreadsheet, so it is possible to return to previous designs.
@@ -84,5 +84,23 @@ The flowchart shows the different steps and checks the program follows, based on
 <br>
 
 ![Flowchart showing program structure](assets/images/flowchart.webp)
+
+
+## Features
+The features described below have been implemented for the user to have a pleasant experience.
+
+**Introduction, with logo and welcome**
+* When starting the program ASCII ART logo, showing the name Tote Bag Design, appears. This helps the user know that he or she is in the right place. 
+* Below the logo there is a headline in bold, welcoming the user, and an introduction with a bit of information about what the company does and what the user can do in the application. With this information, the user is prepared when it is time to make the first choice.
+
+![Logo and introduction](assets/images/intro.webp)
+
+<br>
+
+**Choice between new and existing design**
+* The first choice the user makes is if he or she wants to create a new design or pick up one that has been created earlier. Giving the user this choice is good, since he or she may already have a design that he or she is happy with.
+
+![Choice new design](assets/images/new_choice.webp)
+![Choice existing design](assets/images/existing_choice.webp)
 
 
