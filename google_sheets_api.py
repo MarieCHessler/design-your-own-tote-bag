@@ -127,7 +127,7 @@ def presentation_of_created_tote_bag():
     Sum up the tote bag design, by showing the selection of fabrics, colors
     and handles, and the design ID to the user in a print statement.
     """
-    print(color("Your tote bag is now being designed :-)\n\n", "blue"))
+    print(colored("Your tote bag is now being designed :-)\n\n", "blue"))
     time.sleep(3)
 
     # Access Google Sheets worksheet to get all values in worksheet.
