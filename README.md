@@ -107,7 +107,7 @@ The features described below have been implemented for the user to have a pleasa
 <br>
 
 **New design section** <br>
-In the New design section, the user name is collected for personification and recapture of design. Fabric and color choices the user makes are used to create the design. At the end of the section, the user is presented with the custom-designed tote bag and a unique design ID that can be used to access the design at a later time. 
+In the New design section, the user name is collected for personification and recapture of design. The fabric and color choices the user makes are used to create the design. A design number and unique design ID are created in the background. At the end of the section, the user is presented with the custom-designed tote bag and a unique design ID that can be used to access the design at a later time. 
 
 <br>
 
@@ -130,7 +130,8 @@ In the New design section, the user name is collected for personification and re
 * In the second part, the user is asked to choose between predefined choices of fabrics and colors for the outside, the inside, and the handles of the tote bag.
 * A comment that supports the choice appears, to encourage the user to continue.
 * When the choices are made they are passed to a Google Sheets worksheet called *design* to be stored.
-* If the user enters nothing or other choices than the predefined ones, an error message appears and the user is returned to the question. 
+* The user is made aware of the choices being saved through messages shown after all the choices are made.
+* If the user enters nothing or other choices than the predefined ones, an error message appears, and the user is returned to the question.
 * For all the fabric and color choices, the error message returns what the user has entered, shows the valid choices, and asks him or her to enter the choice in letters.
 
 ![Enter outside fabric and color choices](assets/images/new_outside.webp)
@@ -139,3 +140,10 @@ In the New design section, the user name is collected for personification and re
 ![No choice entered](assets/images/new_error_no_choice.webp)
 ![Incorrect outer fabric choice](assets/images/new_error_out_fabric.webp)
 ![Incorrect outer color choice](assets/images/new_error_out_color.webp)
+
+***Design number and ID***
+* For the user to be able to access the design at a later time, some kind of identification is needed. This is created from a combination of the user name and the design number.
+* The design number is created by collecting the previous design number from the Google Sheets worksheet called *design_no*, incrementing it by one, and sending the new number back to the correct row in the worksheet.
+* The user name is collected from the Google Sheets worksheet called *name*, the whitespace is removed, and all letters are made lower case.
+* The name and number are combined according to the logic firstnamelastname1 and passed to the Google Sheets worksheet called *unique_id*.
+* The user is made aware of the number and ID being saved through messages shown after all the choices are made.
