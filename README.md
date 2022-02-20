@@ -66,7 +66,7 @@ As a program owner, I would like to create a tool that:
 ![Design Your Own Tote Bag color palette](assets/images/colors.webp)
 
 ### Color palette
-* The colors that have been used in this application were produced by using the Colorama and Termcolor libraries.
+* The colors that have been used in this application were enabled using the Colorama and Termcolor libraries.
     * **Blue** for information, such as the introduction and the information and instructions at the end.
     * **Cyan** for questions to the user.
     * **Green** for comments on choices and final design.
@@ -111,13 +111,14 @@ In the New design section, the user name is collected for personification and re
 
 <br>
 
-***Name***
-* In the first part, the user is asked to enter his or her name. 
-* A personalized welcome message with the name appears, to make the user feel special.
-* From the first and last name a full name is created and passed to a Google Sheets worksheet called *name* to be stored.
-* If the user enters nothing or other characters than letters, an error message appears and the user is returned to the question.
+***Name input***
+* In the first part, an intro message is shown and the user is then asked to enter his or her name. 
+* A personalized welcome message with the name appears to make the user feel special.
+* From the first and last name, a full name is created and passed to a Google Sheets worksheet called *name* to be stored.
+* If the user enters nothing or other characters than letters, an error message appears, and the user is returned to the question.
 * For incorrectly entered characters, the error message returns what the user has entered and asks him or her to enter a name in letters.
 
+![Start design message](assets/images/new_start_design.webp)
 ![Enter and save name](assets/images/new_name.webp)
 ![No first name entered](assets/images/new_error_no_first_name.webp)
 ![No last name entered](assets/images/new_error_no_last_name.webp)
@@ -129,7 +130,7 @@ In the New design section, the user name is collected for personification and re
 ***Fabric and color choices***
 * In the second part, the user is asked to choose between predefined choices of fabrics and colors for the outside, the inside, and the handles of the tote bag.
 * A comment that supports the choice appears, to encourage the user to continue.
-* When the choices are made they are passed to a Google Sheets worksheet called *design* to be stored.
+* When the choices are made, they are passed to a Google Sheets worksheet called *design* to be stored.
 * The user is made aware of the choices being saved through messages shown after all the choices are made.
 * If the user enters nothing or other choices than the predefined ones, an error message appears, and the user is returned to the question.
 * For all the fabric and color choices, the error message returns what the user has entered, shows the valid choices, and asks him or her to enter the choice in letters.
@@ -141,9 +142,30 @@ In the New design section, the user name is collected for personification and re
 ![Incorrect outer fabric choice](assets/images/new_error_out_fabric.webp)
 ![Incorrect outer color choice](assets/images/new_error_out_color.webp)
 
-***Design number and ID***
+<br>
+
+***Design number and ID creation***
 * For the user to be able to access the design at a later time, some kind of identification is needed. This is created from a combination of the user name and the design number.
 * The design number is created by collecting the previous design number from the Google Sheets worksheet called *design_no*, incrementing it by one, and sending the new number back to the correct row in the worksheet.
 * The user name is collected from the Google Sheets worksheet called *name*, the whitespace is removed, and all letters are made lower case.
 * The name and number are combined according to the logic firstnamelastname1 and passed to the Google Sheets worksheet called *unique_id*.
 * The user is made aware of the number and ID being saved through messages shown after all the choices are made.
+
+<br>
+
+***Presentation of the design***
+* In the final part, the user is presented with his or her design, including an image.
+* All the data from the different worksheets have automatically been copied into one single worksheet, called *all_info*, from which all the data is now collected and presented to the user.
+* In the message, the user is commended for his or her design, the fabrics and colors for the outside, the inside, and the handles are presented, together with the design ID, and an ASCCI image of the bag is shown.
+
+![Presentation of design](assets/images/new_design_message.webp)
+
+<br>
+
+***Information and thanks***
+* To end the section and return the user to the start, information on how to begin a new design or revisit a previously created one is presented, together with thanks and a heads up for the return.
+
+![Information and thanks message](assets/images/new_info_and_thanks_message.webp)
+
+<br>
+
