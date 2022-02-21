@@ -207,7 +207,7 @@ In the Existing design section, the user can choose between visiting an already 
 <br>
 
 ### Worksheets
-User data is stored in a Google Sheets document called *design_your_own_tote_bag*, which contains five worksheets. The user's data is passed to this document for storage and collected from it for use in the Design Your Own Tote Bag app.
+User data is stored in a Google Sheets spreadsheet called *design_your_own_tote_bag*, which contains five worksheets. The user's data is passed to this document for storage and collected from it for use in the Design Your Own Tote Bag app.
 * The *design* worksheet stores the fabric and color choices for the tote bag's outside, inside, and handles.
 * The *name* worksheet stores the user's name.
 * The *unique_id* worksheet stores the design's id, created from a combination of name and design number.
