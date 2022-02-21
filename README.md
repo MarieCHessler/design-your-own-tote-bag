@@ -13,31 +13,31 @@ A link to the live application can be found [here](https://design-your-own-tote-
 <br>
 
 ## Table of contents
-1. [UX](https://github.com/MarieCHessler/design-your-own-tote-bag#ux)
-    * [User needs](https://github.com/MarieCHessler/design-your-own-tote-bag#user_goals)
-    * [Owner goals]((https://github.com/MarieCHessler/design-your-own-tote-bag#owner_goals))
+1. [UX](#ux)
+    * [User needs](#user-goals)
+    * [Owner goals](#owner-goals)
 
-2. [Design](https://github.com/MarieCHessler/design-your-own-tote-bag#design)
-    * [Color palette](https://github.com/MarieCHessler/design-your-own-tote-bag#color_palette)
-    * [Structure](https://github.com/MarieCHessler/design-your-own-tote-bag#structure)
+2. [Design](#design)
+    * [Color palette](#color-palette)
+    * [Structure](#structure)
 
-3. [Features](https://github.com/MarieCHessler/design-your-own-tote-bag#features)
+3. [Features](#features)
     * 
 
-4. [Technology used](https://github.com/MarieCHessler/design-your-own-tote-bag#technology-used)
+4. [Technology used](#technology-used)
 
-5. [Testing](https://github.com/MarieCHessler/design-your-own-tote-bag#testing)
+5. [Testing](#testing)
     * 
 
-6. [Bugs](https://github.com/MarieCHessler/design-your-own-tote-bag#bugs)
+6. [Bugs](#bugs)
     * 
 
-7. [Deployment](https://github.com/MarieCHessler/design-your-own-tote-bag#deployment)
-    * [Heroku](https://github.com/MarieCHessler/design-your-own-tote-bag#heroku)
+7. [Deployment](#deployment)
+    * [Heroku](#heroku)
 
-8. [Credits](https://github.com/MarieCHessler/design-your-own-tote-bag#credits)
-    * [Content](https://github.com/MarieCHessler/design-your-own-tote-bag#content)
-    * [Special thanks to](https://github.com/MarieCHessler/design-your-own-tote-bag#special-thanks-to)
+8. [Credits](#credits)
+    * [Content](#content)
+    * [Special thanks to](#special-thanks-to)
 
 <br>
 
@@ -194,4 +194,4 @@ In the Existing design section, the user can choose between visiting an already 
 
 **General features**
 * To give the user extra time to read the information, time.sleep() is used.
-* To make it easy for the user to separate information from questions, comments, and errors, different colors have been used. For more information, see the Color palette in the Design section.
+* To make it easy for the user to separate information from questions, comments, and errors, different colors have been used. For more information, see the [Color palette](https://github.com/MarieCHessler/design-your-own-tote-bag#color_palette) in the Design section.
