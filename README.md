@@ -205,6 +205,7 @@ User data is stored in a Google Sheets document called *design_your_own_tote_bag
 * The *design_no* worksheet stores the design's number.
 * The *all_info* worksheet contains an automatically created copy of all the user's data in one place, for a better overview and a possibility to get all data back from one worksheet.
 * To push user data to Google Sheets, and get it back, the Python API *GSpread* is used in combination with the Google OAuth2 library Credentials class.
+
 ![Design worksheet](assets/images/sheet_design.webp)
 ![Name worksheet](assets/images/sheet_name.webp)
 ![Unique ID worksheet](assets/images/sheet_unique_id.webp)
@@ -228,4 +229,32 @@ User data is stored in a Google Sheets document called *design_your_own_tote_bag
 <br>
 
 ## Testing
+### PEP8
+* The run.py and google_sheets_api.py files show no errors in [PEP8 online](http://pep8online.com/).
+* The *validations.py* file gets the following errors:
+    * E203 - whitespace before ':'
+    * E231 - missing whitespace after ':'
+    * E701 - multiple statements on one line (colon)
+    * E225 - missing whitespace around operator
+* The *logo_and_intro.py* file gets the following errors:
+    * W291 - trailing whitespace
 
+My interpretation of the reason for the errors in *validation.py*, is that PEP8 online is not up to date with Python 3.8, where the new syntax [:=](https://docs.python.org/3/whatsnew/3.8.html), is featured. Pylint, which has been installed and checks PEP8 in Gitpod, does not show these errors.
+
+The reason for the trailing whitespace in *logo_and_intro* is that if it is removed the system interprets the backslash used at the top front of the D to be an escape character. This interpretation breaks the logo, which is why it is not removed.
+
+None of the errors affect the code performance.
+
+<br>
+
+### User needs
+* The app is easy to understand and use.
+    * When the app starts the user gets an introduction to what the app is about and what is possible to do in it. The questions are short and to the point, which makes it easy for the user to give the proper input. *The user's needs are met.*
+* The app has an appealing layout.
+    * Colors that go well together, and are easy on the eye, have been used to make the app appealing to the user. They also make it easy for the user to quickly distinguish between different types of texts. Blue is used for information, cyan for questions, green for comments, white for input and save messages, and red for error messages. *The user's needs are met.*
+* The app saves the data in a spreadsheet, so it is possible to return to previous designs.
+    * The use of GSpread, in combination with the Google OAuth2 library Credentials class, makes it possible to access Google Sheets and pass, manipulate and get data connected to the worksheets. *The user's needs are met.*
+* The app shows the user the result at the end of the design process.
+    * At the end of both the New design and the Existing design sections, the user is presented with his or her unique design. This includes a specification of fabrics and colors for the outside, the inside and the handles of the tote bag, and an ASCII image of the bag. In the New design section, the bag has the text Cool Tote, as it says in the message that the user has made a cool tote bag. In the Existing design section, the bag has the text My Tote since the user is coming back to check out the design he or she has created before. *The user's needs are met.*
+* The app explains how I can return to a previous design.
+    * When the app starts, the user is informed of the possibility to visit a design that he or she has created before. A choice between creating a new design or visiting an existing is presented, so the user can choose. When entering the Existing design section, the user is asked to enter his or her design ID and when it has been entered the design is presented. *The user's needs are met.*
