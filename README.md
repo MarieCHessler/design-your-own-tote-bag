@@ -230,7 +230,7 @@ User data is stored in a Google Sheets document called *design_your_own_tote_bag
 
 ## Testing
 ### PEP8
-* The run.py and google_sheets_api.py files show no errors in [PEP8 online](http://pep8online.com/).
+* The *run.py* and *google_sheets_api.py* files show no errors in [PEP8 online](http://pep8online.com/).
 * The *validations.py* file gets the following errors:
     * E203 - whitespace before ':'
     * E231 - missing whitespace after ':'
@@ -239,22 +239,69 @@ User data is stored in a Google Sheets document called *design_your_own_tote_bag
 * The *logo_and_intro.py* file gets the following errors:
     * W291 - trailing whitespace
 
-My interpretation of the reason for the errors in *validation.py*, is that PEP8 online is not up to date with Python 3.8, where the new syntax [:=](https://docs.python.org/3/whatsnew/3.8.html), is featured. Pylint, which has been installed and checks PEP8 in Gitpod, does not show these errors.
+My interpretation of the reason for the errors in *validation.py*, is that PEP8 online is not up to date with Python 3.8, where the new syntax [:=](https://docs.python.org/3/whatsnew/3.8.html), is featured. My mentor recommends this solution and Pylint, which has been installed and checks PEP8 in Gitpod, does not show these errors.
 
 The reason for the trailing whitespace in *logo_and_intro* is that if it is removed the system interprets the backslash used at the top front of the D to be an escape character. This interpretation breaks the logo, which is why it is not removed.
 
-None of the errors affect the code performance.
+None of the errors presented above affect the code performance in a negative way.
 
 <br>
 
 ### User needs
-* The app is easy to understand and use.
+* **The app is easy to understand and use**
     * When the app starts the user gets an introduction to what the app is about and what is possible to do in it. The questions are short and to the point, which makes it easy for the user to give the proper input. *The user's needs are met.*
-* The app has an appealing layout.
+* **The app has an appealing layout**
     * Colors that go well together, and are easy on the eye, have been used to make the app appealing to the user. They also make it easy for the user to quickly distinguish between different types of texts. Blue is used for information, cyan for questions, green for comments, white for input and save messages, and red for error messages. *The user's needs are met.*
-* The app saves the data in a spreadsheet, so it is possible to return to previous designs.
+* **The app saves the data in a spreadsheet, so it is possible to return to previous designs**
     * The use of GSpread, in combination with the Google OAuth2 library Credentials class, makes it possible to access Google Sheets and pass, manipulate and get data connected to the worksheets. *The user's needs are met.*
-* The app shows the user the result at the end of the design process.
+* **The app shows the user the result at the end of the design process**
     * At the end of both the New design and the Existing design sections, the user is presented with his or her unique design. This includes a specification of fabrics and colors for the outside, the inside and the handles of the tote bag, and an ASCII image of the bag. In the New design section, the bag has the text Cool Tote, as it says in the message that the user has made a cool tote bag. In the Existing design section, the bag has the text My Tote since the user is coming back to check out the design he or she has created before. *The user's needs are met.*
-* The app explains how I can return to a previous design.
-    * When the app starts, the user is informed of the possibility to visit a design that he or she has created before. A choice between creating a new design or visiting an existing is presented, so the user can choose. When entering the Existing design section, the user is asked to enter his or her design ID and when it has been entered the design is presented. *The user's needs are met.*
+* **The app explains how I can return to a previous design**
+    * When the app starts, the user is informed of the possibility to visit a design that he or she has created before. A choice between creating a new design or visiting an existing one is presented, so the user can choose. When entering the Existing design section, the user is asked to enter his or her design ID and when it has been entered the design is presented. *The user's needs are met.*
+
+<br>
+
+### Live testing
+* The app has been tested by friends and family, who found it easy to understand and use.
+* The app works well on Google Chrome, Firefox, and Microsoft Edge, but on Safari you just get to the first question since you cannot enter any answers.
+
+<br>
+
+## Bugs
+The bugs reported in the following section are a selection of the most prominent ones, that needed extra consideration and work.
+
+### Fixed bugs
+* **Bug:** ASCII logo breaks when removing all the whitespaces<br>
+    **Fix:** Change the logo a little by removing and changing some of the characters. Leave one whitespace behind the remaining backslash in the D to avoid it being read as an escape character.
+
+<br>
+
+* **Bug:** The First name while loop runs forever.<br>
+    **Fix:** Add *break* statement.
+
+<br>
+
+* **Bug:** The names can be entered in lower case.<br>
+    **Fix:** Add .capitalize() to force the first letter to become upper case.
+
+<br>
+
+* **Bug:** The user can enter any fabric or color.<br>
+    **Fix:** Create a constant that states what words can be used.
+
+<br>
+
+* **Bug:** The design number is not incrementing.<br>
+    **Fix:** Make the collected number an integer by using int() before adding 1 to it.
+
+<br>
+
+* **Bug:** User is sent to wrong question when choosing new design (N) at the first question. Only happens after having been sent back from the final question at either section.<br>
+    **Fix:** Arrange the functions in different files and create new functions that call the existing ones to make the flow right.
+
+<br>
+
+### Known issues
+* The app cannot run on Safari, since it is not possible to enter any text at the first question. Waiting for answer on why.
+
+* No other known issues.
