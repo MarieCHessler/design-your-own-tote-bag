@@ -75,8 +75,8 @@ As a program owner, I would like to create a tool that:
 * The colors are chosen to give a good contrast, yet be comfortable for the user's eyes, on a black background. 
 * Blue, cyan, and green match each other well, and white is a good complement.
 * Red sticks out and therefore is a good choice to have the user react to the message.
-* The color library [Colorama](https://pypi.org/project/colorama/) is installed using *pip install colorama* and then used by importing and calling *init* from the library to the relevant files. Calling init() is necessary for Colorama and Termcolor to work properly on Windows.
-* The color library [Termcolor](https://pypi.org/project/termcolor/) is installed using *pip install termcolor* and then used by importing and calling *colored* from the library to the relevant files.
+* The color library [Colorama](https://pypi.org/project/colorama/) is installed using *pip install colorama* and then used by importing and calling *init* from the library in the relevant files. Calling init() is necessary for Colorama and Termcolor to work properly on Windows.
+* The color library [Termcolor](https://pypi.org/project/termcolor/) is installed using *pip install termcolor* and then used by importing and calling *colored* from the library in the relevant files.
 
 ### Structure
 A structure for Design Your Own Tote Bag was drafted on paper at the beginning of the project process, and later improved using Lucidchart, to make it more appealing and easier to understand.
@@ -87,11 +87,12 @@ The flowchart shows the different steps and checks the program follows, based on
 
 ![Flowchart showing program structure](assets/images/flowchart.webp)
 
+<br>
 
 ## Features
 The features described below have been implemented for the user to have a pleasant experience.
 
-**Introduction, with logo and welcome**
+### Introduction, with logo and welcome
 * When starting the program an ASCII ART logo, showing the name Tote Bag Design, appears. This helps the user know that he or she is in the right place. 
 * Below the logo there is a headline in bold, welcoming the user, and an introduction with a bit of information about what the company does and what the user can do in the application. With this information, the user is prepared when it is time to make the first choice.
 
@@ -99,7 +100,7 @@ The features described below have been implemented for the user to have a pleasa
 
 <br>
 
-**Choice between new and existing design**
+### Choice between new and existing design
 * The first choice the user makes is if he or she wants to create a new design or pick up one that has been created earlier. 
 * Giving the user this choice is important since he or she may already have a design that he or she is happy with.
 
@@ -108,12 +109,12 @@ The features described below have been implemented for the user to have a pleasa
 
 <br>
 
-**New design section** <br>
+### New design section
 In the New design section, the user name is collected for personification and recapture of design. The fabric and color choices the user makes are used to create the design. A design number and a unique design ID are created in the background. At the end of the section, the user is presented with the custom-designed tote bag and a unique design ID that can be used to access the design at a later time. 
 
 <br>
 
-***Name input***
+**Name input**
 * In the first part, an intro message is shown and the user is then asked to enter his or her name. 
 * A personalized welcome message with the name appears to make the user feel special.
 * From the first and last name, a full name is created and passed to a Google Sheets worksheet called *name* to be stored.
@@ -129,7 +130,7 @@ In the New design section, the user name is collected for personification and re
 
 <br>
 
-***Fabric and color choices***
+**Fabric and color choices**
 * In the second part, the user is asked to choose between predefined choices of fabrics and colors for the outside, the inside, and the handles of the tote bag.
 * For each fabric and color a comment that supports the choice appears, to encourage the user to continue.
 * When the choices are made, they are passed to a Google Sheets worksheet called *design* to be stored.
@@ -146,7 +147,7 @@ In the New design section, the user name is collected for personification and re
 
 <br>
 
-***Design number and ID creation***
+**Design number and ID creation**
 * For the user to be able to access the design at a later time, some kind of identification is needed. This is created from a combination of the user name and the design number.
 * The design number is created by collecting the previous design number from the Google Sheets worksheet called *design_no*, incrementing it by one, and sending the new number back to the correct row in the worksheet.
 * The user name is collected from the Google Sheets worksheet called *name*, the whitespace is removed, and all letters are made lower case.
@@ -155,7 +156,7 @@ In the New design section, the user name is collected for personification and re
 
 <br>
 
-***Presentation of the design***
+**Presentation of the design**
 * In the final part, the user is presented with his or her design, including an ASCCI image.
 * All the data from the different worksheets have automatically been copied into a single worksheet, called *all_info*, from which it is now collected and presented to the user.
 * In the message, the user is commended for his or her design, the fabrics and colors for the outside, the inside, and the handles are presented, together with the design ID, and an ASCII image of the bag is shown.
@@ -164,14 +165,14 @@ In the New design section, the user name is collected for personification and re
 
 <br>
 
-***Information and thanks***
+**Information and thanks**
 * To end the New design section and return the user to the starting point, information on how to create a new design or revisit a previously created one is presented, together with thanks and a heads up for the return.
 
 ![Information and thanks message](assets/images/new_info_and_thanks_message.webp)
 
 <br>
 
-**Existing design section** <br>
+### Existing design section
 In the Existing design section, the user can choose between visiting an already created design by entering the design ID, or returning to the start by entering Exit. If the design ID cannot be found or is incorrect, an error message is presented, and the user is asked to try again.
 
 ![Input to revisit existing design](assets/images/existing_id.webp)
@@ -180,7 +181,7 @@ In the Existing design section, the user can choose between visiting an already 
 
 <br>
 
-***Visit existing design***
+**Visit existing design**
 * When entering the design ID correctly, the user is presented with his or her design, including an ASCII image.
 * All the data from the different worksheets have automatically been copied into a single worksheet, called *all_info*, from which it is now collected and presented to the user.
 * In the message, the user gets a description of the fabrics and colors for the outside, the inside, and the handles of the tote bad he or she has designed, and an ASCII image of the bag is presented.
@@ -189,11 +190,23 @@ In the Existing design section, the user can choose between visiting an already 
 
 <br>
 
-***Information and thanks***
+**Information and thanks**
 * To end the Existing design section and return the user to the starting point, information on how to create a new design is presented, together with thanks and a heads up for the return.
 
 ![Information and thanks message](assets/images/existing_info_and_thanks_message.webp)
 
-**General features**
-* To give the user extra time to read the information, time.sleep() is used.
-* To make it easy for the user to separate information from questions, comments, and errors, different colors have been used. For more information, see the [Color palette](#color-palette) in the Design section.
+### General features
+* To give the user extra time to read the information, *time* is imported and *time.sleep* is used in the relevant files
+* To make it easy for the user to separate information from questions, comments, and errors, different colors have been used. For more information, please see the [Color palette](#color-palette) in the Design section.
+* To push user data to Google Sheets, and get it back, the Python API *gspread* is used.
+
+<br>
+
+### Features for the future
+* More fabric choices and added goodies, like pockets and patches.
+* Possibility for the user to change a previous design.
+* Possibility for the user to order the design.
+* HTML layer on top, for more appealing look.
+
+<br>
+
