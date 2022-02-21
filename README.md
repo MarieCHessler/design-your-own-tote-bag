@@ -228,6 +228,11 @@ User data is stored in a Google Sheets document called *design_your_own_tote_bag
 
 <br>
 
+## Technology used
+
+
+<br>
+
 ## Testing
 ### PEP8
 * The *run.py* and *google_sheets_api.py* files show no errors in [PEP8 online](http://pep8online.com/).
@@ -249,21 +254,39 @@ None of the errors presented above affect the code performance in a negative way
 
 ### User needs
 * **The app is easy to understand and use**
-    * When the app starts the user gets an introduction to what the app is about and what is possible to do in it. The questions are short and to the point, which makes it easy for the user to give the proper input. *The user's needs are met.*
+    * When the app starts the user gets an introduction to what the app is about and what is possible to do in it. The questions are short and to the point, which makes it easy for the user to give the proper input. *The user's needs are met.* 
+    
+    <br>
+
 * **The app has an appealing layout**
-    * Colors that go well together, and are easy on the eye, have been used to make the app appealing to the user. They also make it easy for the user to quickly distinguish between different types of texts. Blue is used for information, cyan for questions, green for comments, white for input and save messages, and red for error messages. *The user's needs are met.*
+    * Colors that go well together, and are easy on the eye, have been used to make the app appealing to the user. They also make it easy for the user to quickly distinguish between different types of texts. Blue is used for information, cyan for questions, green for comments, white for input and save messages, and red for error messages. *The user's needs are met.* 
+    
+    <br>
+
 * **The app saves the data in a spreadsheet, so it is possible to return to previous designs**
     * The use of GSpread, in combination with the Google OAuth2 library Credentials class, makes it possible to access Google Sheets and pass, manipulate and get data connected to the worksheets. *The user's needs are met.*
+
+    <br>
+
 * **The app shows the user the result at the end of the design process**
     * At the end of both the New design and the Existing design sections, the user is presented with his or her unique design. This includes a specification of fabrics and colors for the outside, the inside and the handles of the tote bag, and an ASCII image of the bag. In the New design section, the bag has the text Cool Tote, as it says in the message that the user has made a cool tote bag. In the Existing design section, the bag has the text My Tote since the user is coming back to check out the design he or she has created before. *The user's needs are met.*
+
+    <br>
+
 * **The app explains how I can return to a previous design**
     * When the app starts, the user is informed of the possibility to visit a design that he or she has created before. A choice between creating a new design or visiting an existing one is presented, so the user can choose. When entering the Existing design section, the user is asked to enter his or her design ID and when it has been entered the design is presented. *The user's needs are met.*
 
 <br>
 
 ### Live testing
-* The app has been tested by friends and family, who found it easy to understand and use.
-* The app works well on Google Chrome, Firefox, and Microsoft Edge, but on Safari you just get to the first question since you cannot enter any answers.
+The following has been checked manually on different devices and in different browsers:
+* Input of name, fabrics and colors
+* Sending data to worksheets
+* Getting and manipulating data from worksheets
+* Error messages showing when appropriate
+* Returning to start
+
+The app has also been tested by friends and family, who found it easy to understand and use. It works well on Google Chrome, Firefox, and Microsoft Edge, on both Mac and PC. On Safari you, unfortunately, cannot get past the first question since it is not possible to enter any text. This has been noted as a [known issue](#known-issues) to be solved, in the Bugs section.
 
 <br>
 
@@ -302,7 +325,13 @@ The bugs reported in the following section are a selection of the most prominent
 <br>
 
 ### Known issues
-* The app cannot run properly on Safari. It starts the way it is supposed to, but since it is not possible to enter any text, you get stuck on the first question. I have tried Googling the issue, asking on Slack, and contacting Tutoring, but no one has any clue as to what is wrong. Gitpod crashed at one point, which meant a new workspace had to be created from one previously pushed to GitHub, and libraries and creds had to be reinstalled. Maybe something went amiss in that process, but since nothing had been deployed before the crash, I do not know what worked and not before then.
+* The app cannot run properly on Safari. 
+    * The app starts the way it is supposed to, but since it is not possible to enter any text, it is not possible to get past the first question. 
+    * No solution has been found when Googling the issue, asking on Slack or contacting Code Institute Tutors. No one has found any clue as to what is wrong. 
+    * Gitpod crashed at one point, which meant a new workspace had to be created from one previously pushed to GitHub, and libraries and creds had to be reinstalled. Maybe something went amiss in that process, but since nothing had been deployed before the crash, it is not possible to know what worked and not before then.
+    * More investigation is needed to find a solution to this issue. 
+
+<br>
 
 * No other known issues.
 
@@ -312,12 +341,21 @@ The bugs reported in the following section are a selection of the most prominent
 ### Heroku
 This app is deployed on Heroku, by following these steps:
 * Print pip freeze > requirements.txt in the Gitpod terminal.
-* Save, add, commit and push in the Gitpod terminal, to make sure the latest version is in place on GitHub.
+* Save, add, commit and push the latest changes in the Gitpod terminal, to make sure the latest version is in place on GitHub.
+
+<br>
+
 * Create a Heroku account, or login to an existing account.
+
+<br>
+
 * Select *Create new app*.
     * Enter a unique project name.
     * Select a region.
     * Click *Create app*.
+
+<br>
+
 * Go to *Settings* in the navigation bar.
     * In *Config Vars*, select *Reveal Config Vars*.
         * Add CREDS in *Key* and paste the contents copied from creds.json in *Value*. (If you do not have a .json file, you can skip this step)
@@ -326,6 +364,9 @@ This app is deployed on Heroku, by following these steps:
         * Select *python* and save changes.
         * Repeat by selecting *nodejs* and save changes
         * It is important that python is first and nodejs second.
+
+<br>
+
 * Go to *Deploy* in the navigation bar.
     * In *Deployment method*, select GitHub.
         * When selected it should turn green and say Connected.
@@ -334,5 +375,7 @@ This app is deployed on Heroku, by following these steps:
     * Choose if you want to deploy automatically every time a new push has been made to GitHub, or manually on Heroku.
         * In Automatic deploys, click Enable Automatic Deploys.
         * In Manual deploy, click Deploy Branch, and then View if you want to want to view the app live.
+
+<br>
 
 If you want to see your app live at a later time, log on to Heroku, click the app's name, and then Open app at the top right.
