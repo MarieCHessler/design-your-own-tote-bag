@@ -98,6 +98,14 @@ The flowchart shows the different steps and checks the program follows, based on
 
 <br>
 
+### ASCII logo
+An ASCII logo saying Tote Bag Design was created in ASCII Art on [patorjk.com](https://patorjk.com/software/taag/#p=display&f=Santa%20Clara&t=Tote%20Bag%20Design), please see the picture with black text on white background. This logo was later modified to become sleeker and better adjusted to PEP8. One backslash had to be kept, though, for the D to keep its shape. This is the logo used in the app, please see the picture with white text on black background.
+
+![Original logo](assets/images/logo_original.webp)
+![Revised logo](assets/images/logo_original.webp)
+
+<br>
+
 ## Features
 The features described below have been implemented for the user to have a pleasant experience.
 
@@ -472,6 +480,14 @@ The references mentioned in this section have been used for the content. Special
     Author: *Raymond Hettinger* - Editor <br>
     Date: 2022 <br>
     URL: https://docs.python.org/3/whatsnew/3.8.html
+
+<br>
+
+* **Logo creation** <br>
+    Title: ASCII Art <br>
+    Author: *patorjk* <br>
+    Date: 2022 <br>
+    URL: https://patorjk.com/software/taag
 
 <br>
 
