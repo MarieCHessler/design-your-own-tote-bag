@@ -131,9 +131,9 @@ In the New design section, the user name is collected for personification and re
 
 ***Fabric and color choices***
 * In the second part, the user is asked to choose between predefined choices of fabrics and colors for the outside, the inside, and the handles of the tote bag.
-* A comment that supports the choice appears, to encourage the user to continue.
+* For each fabric and color a comment that supports the choice appears, to encourage the user to continue.
 * When the choices are made, they are passed to a Google Sheets worksheet called *design* to be stored.
-* The user is made aware of the choices being saved through messages shown after all the choices are made.
+* The user is made aware of the choices being saved by messages shown after all the choices are made.
 * If the user enters nothing or other choices than the predefined ones, an error message appears, and the user is returned to the question.
 * For all the fabric and color choices, the error message returns what the user has entered, shows the valid choices, and asks him or her to enter the choice in letters.
 
