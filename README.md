@@ -14,7 +14,7 @@ A link to the live application can be found [here](https://design-your-own-tote-
 
 ## Table of contents
 1. [UX](#ux)
-    * [User needs](#user-goals)
+    * [User needs](#user-needs)
     * [Owner goals](#owner-goals)
 
 2. [Design](#design)
@@ -75,9 +75,11 @@ As a program owner, I would like to create a tool that:
 * The colors are chosen to give a good contrast, yet be comfortable for the user's eyes, on a black background. 
 * Blue, cyan, and green match each other well, and white is a good complement.
 * Red sticks out and therefore is a good choice to have the user react to the message.
+* The color library [Colorama](https://pypi.org/project/colorama/) is installed using *pip install colorama* and then used by importing and calling *init* from the library to the relevant files. Calling init() is necessary for Colorama and Termcolor to work properly on Windows.
+* The color library [Termcolor](https://pypi.org/project/termcolor/) is installed using *pip install termcolor* and then used by importing and calling *colored* from the library to the relevant files.
 
 ### Structure
-A structure for Design Your Own Tote Bag was drafted on paper at the beginning of project process, and later improved using Lucidchart, to make it more appealing and easier to understand.
+A structure for Design Your Own Tote Bag was drafted on paper at the beginning of the project process, and later improved using Lucidchart, to make it more appealing and easier to understand.
 
 The flowchart shows the different steps and checks the program follows, based on the different choices the user makes along the way.
 
@@ -194,4 +196,4 @@ In the Existing design section, the user can choose between visiting an already 
 
 **General features**
 * To give the user extra time to read the information, time.sleep() is used.
-* To make it easy for the user to separate information from questions, comments, and errors, different colors have been used. For more information, see the [Color palette](https://github.com/MarieCHessler/design-your-own-tote-bag#color_palette) in the Design section.
+* To make it easy for the user to separate information from questions, comments, and errors, different colors have been used. For more information, see the [Color palette](#color-palette) in the Design section.
