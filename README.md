@@ -422,3 +422,103 @@ This app is deployed on Heroku, by following these steps:
 <br>
 
 If you want to see your app live at a later time, log on to Heroku, click the app's name, and then Open app at the top right.
+
+## Credits
+The references mentioned in this section have been used for the content. Special thanks can be found at the end.
+
+### Content
+* **Add time delay** <br>
+    Title: Python sleep(): How to Add Time Delays to Your Code <br>
+    Author: *Mike Driscoll*, mentor <br>
+    Date: 2022 <br>
+    URL: https://realpython.com/python-sleep/
+
+<br>
+
+* **Info on how to rearrange functions for a better flow** <br>
+    Title: How to arrange functions <br>
+    Author: *Reuben Ferrante*, mentor <br>
+    Date: Feb 19, 2022 <br>
+    Mentor tip: Move functions to different files, create new functions from which you call the original functions.
+
+<br>
+
+* **Remove whitespace** <br>
+    Title: Python | Remove spaces from a string <br>
+    Author: *GeeksforGeeks* <br>
+    Date: Jan 17, 2019 <br>
+    URL: https://www.geeksforgeeks.org/python-remove-spaces-from-a-string/
+
+<br>
+
+* **Python List basics** <br>
+    Title: Python Lists <br>
+    Author: *GeeksforGeeks* <br>
+    Date: Jan 5, 2022 <br>
+    URL: https://www.geeksforgeeks.org/python-list/
+
+<br>
+
+* **Write a proper Docstrings** <br>
+    Title: PEP 257 -- Docstring Conventions <br>
+    Author: *David Goodger, Guido van Rossum* <br>
+    Date: Jun 13, 2001 <br>
+    URL: https://www.python.org/dev/peps/pep-0257/
+
+<br>
+
+* **The Walrus operator** <br>
+    Title: What’s New In Python 3.8 <br>
+    Author: *Raymond Hettinger* - Editor <br>
+    Date: 2022 <br>
+    URL: https://docs.python.org/3/whatsnew/3.8.html
+
+<br>
+
+* **Color text in Python - Colorama** <br>
+    Title: colorama 0.4.4 <br>
+    Author: *PyPI* <br>
+    Date: Oct 13, 2020 <br>
+    URL: https://pypi.org/project/colorama/
+
+<br>
+
+* **Color text in Python - Termcolor** <br>
+    Title: termcolor 1.1.0 <br>
+    Author: *PyPI* <br>
+    Date: Jan 13, 2011 <br>
+    URL: https://pypi.org/project/termcolor/
+
+<br>
+
+* **Capitalize a name** <br>
+    Title: Python String capitalize() Method <br>
+    Author: *W3Schools* <br>
+    Date: 2022 <br>
+    URL: https://www.w3schools.com/python/ref_string_capitalize.asp
+
+<br>
+
+* **Check that the input is in letters** <br>
+    Title: Python String isalpha() Method <br>
+    Author: *W3Schools* <br>
+    Date: 2022 <br>
+    URL: https://www.w3schools.com/python/ref_string_isalpha.asp
+
+<br>
+
+### Special thanks to
+
+* [Code Institute](https://codeinstitute.net/), for great instructions.
+
+* Code Institue Tutors, for great service and help.
+
+* Reuben Ferrante, Code Institute mentor, for his patient guidance and help.
+
+* [GeeksforGeeks](https://www.geeksforgeeks.org), for great explanations and examples
+
+* [Python](https://www.python.org), for excellent documentation.
+
+* [Stack Overflow](https://stackoverflow.com), for useful tips and tricks.
+
+* [W3Scools](https://www.w3schools.com/), for excellent explanations and examples, that are easy to understand.
