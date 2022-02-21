@@ -325,7 +325,7 @@ The bugs reported in the following section are a selection of the most prominent
 <br>
 
 ### Known issues
-* The app cannot run properly on Safari. 
+* **The app cannot run properly on Safari.**
     * The app starts the way it is supposed to, but since it is not possible to enter any text, it is not possible to get past the first question. 
     * No solution has been found when Googling the issue, asking on Slack or contacting Code Institute Tutors. No one has found any clue as to what is wrong. 
     * Gitpod crashed at one point, which meant a new workspace had to be created from one previously pushed to GitHub, and libraries and creds had to be reinstalled. Maybe something went amiss in that process, but since nothing had been deployed before the crash, it is not possible to know what worked and not before then.
@@ -333,7 +333,7 @@ The bugs reported in the following section are a selection of the most prominent
 
 <br>
 
-* No other known issues.
+* **No other known issues.**
 
 <br>
 
