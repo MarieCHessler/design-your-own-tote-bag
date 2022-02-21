@@ -302,6 +302,37 @@ The bugs reported in the following section are a selection of the most prominent
 <br>
 
 ### Known issues
-* The app cannot run on Safari, since it is not possible to enter any text at the first question. Waiting for answer on why.
+* The app cannot run properly on Safari. It starts the way it is supposed to, but since it is not possible to enter any text, you get stuck on the first question. I have tried Googling the issue, asking on Slack, and contacting Tutoring, but no one has any clue as to what is wrong. Gitpod crashed at one point, which meant a new workspace had to be created from one previously pushed to GitHub, and libraries and creds had to be reinstalled. Maybe something went amiss in that process, but since nothing had been deployed before the crash, I do not know what worked and not before then.
 
 * No other known issues.
+
+<br>
+
+## Deployment
+### Heroku
+This app is deployed on Heroku, by following these steps:
+* Print pip freeze > requirements.txt in the Gitpod terminal.
+* Save, add, commit and push in the Gitpod terminal, to make sure the latest version is in place on GitHub.
+* Create a Heroku account, or login to an existing account.
+* Select *Create new app*.
+    * Enter a unique project name.
+    * Select a region.
+    * Click *Create app*.
+* Go to *Settings* in the navigation bar.
+    * In *Config Vars*, select *Reveal Config Vars*.
+        * Add CREDS in *Key* and paste the contents copied from creds.json in *Value*. (If you do not have a .json file, you can skip this step)
+        * Click *Add*, and add PORT in *Key* and 8000 in *Value*
+    * In *Buildpacks*, select *Add Buildpack*.
+        * Select *python* and save changes.
+        * Repeat by selecting *nodejs* and save changes
+        * It is important that python is first and nodejs second.
+* Go to *Deploy* in the navigation bar.
+    * In *Deployment method*, select GitHub.
+        * When selected it should turn green and say Connected.
+    * In *App connected to GitHub*, enter the repository you want to connect to and click *Search*.
+        * When the repository has been found, click Connect.
+    * Choose if you want to deploy automatically every time a new push has been made to GitHub, or manually on Heroku.
+        * In Automatic deploys, click Enable Automatic Deploys.
+        * In Manual deploy, click Deploy Branch, and then View if you want to want to view the app live.
+
+If you want to see your app live at a later time, log on to Heroku, click the app's name, and then Open app at the top right.
