@@ -22,23 +22,24 @@ A link to the live application can be found [here](https://design-your-own-tote-
     * [Structure](#structure)
 
 3. [Features](#features)
-    * [Introduction, with logo and welcome](#introduction-with-logo-and-welcome)
+    * [Introduction with logo and welcome](#introduction-with-logo-and-welcome)
     * [Choice between new and existing design](#choice-between-new-and-existing-design)
     * [New design section](#new-design-section)
-    * [Existing design section](#existing-design_section)
+    * [Existing design section](#existing-design-section)
     * [Worksheets](#worksheets)
     * [General features](#general-features)
-    * [Features for the future](features-for-the-future)
+    * [Features for the future](#features-for-the-future)
 
 4. [Technology used](#technology-used)
 
 5. [Testing](#testing)
     * [PEP8](#pep8)
-    * [User needs](#user-needs)
+    * [User needs fulfilment](#user-needs-fulfilment)
     * [Live testing](#live-testing)
 
 6. [Bugs](#bugs)
-    * 
+    * [Fixed bugs](#fixed-bugs)
+    * [Known issues](#known-issues)
 
 7. [Deployment](#deployment)
     * [Heroku](#heroku)
@@ -294,7 +295,7 @@ None of the errors presented above affect the code performance in a negative way
 
 <br>
 
-### User needs
+### User needs fulfilment
 * **The app is easy to understand and use**
     * When the app starts the user gets an introduction to what the app is about and what is possible to do in it. The questions are short and to the point, which makes it easy for the user to give the proper input. *The user's needs are met.* 
     
