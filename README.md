@@ -22,12 +22,20 @@ A link to the live application can be found [here](https://design-your-own-tote-
     * [Structure](#structure)
 
 3. [Features](#features)
-    * 
+    * [Introduction, with logo and welcome](#introduction-with-logo-and-welcome)
+    * [Choice between new and existing design](#choice-between-new-and-existing-design)
+    * [New design section](#new-design-section)
+    * [Existing design section](#existing-design_section)
+    * [Worksheets](#worksheets)
+    * [General features](#general-features)
+    * [Features for the future](features-for-the-future)
 
 4. [Technology used](#technology-used)
 
 5. [Testing](#testing)
-    * 
+    * [PEP8](#pep8)
+    * [User needs](#user-needs)
+    * [Live testing](#live-testing)
 
 6. [Bugs](#bugs)
     * 
@@ -44,7 +52,7 @@ A link to the live application can be found [here](https://design-your-own-tote-
 ## UX
 
 ### User needs
-As a user, I would like a program that:
+**As a user, I would like a program that:**
 * Is easy to understand and use.
 * Has an appealing layout.
 * Saves the data in a spreadsheet, so it is possible to return to previous designs.
@@ -52,7 +60,7 @@ As a user, I would like a program that:
 * Explains how I can return to a previous design.
 
 ### Owner goals
-As a program owner, I would like to create a tool that:
+**As a program owner, I would like to create a tool that:**
 * Helps the user to create a tote bag in a unique design.
 * Is easy to understand and use and has an appealing look.
 * Validates the data to make sure the result is correct and easy to understand.
@@ -92,7 +100,7 @@ The flowchart shows the different steps and checks the program follows, based on
 ## Features
 The features described below have been implemented for the user to have a pleasant experience.
 
-### Introduction, with logo and welcome
+### Introduction with logo and welcome
 * When starting the program an ASCII ART logo, showing the name Tote Bag Design, appears. This helps the user know that he or she is in the right place. 
 * Below the logo there is a headline in bold, welcoming the user, and an introduction with a bit of information about what the company does and what the user can do in the application. With this information, the user is prepared when it is time to make the first choice.
 
