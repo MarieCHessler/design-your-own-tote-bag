@@ -229,7 +229,41 @@ User data is stored in a Google Sheets document called *design_your_own_tote_bag
 <br>
 
 ## Technology used
+* **[Git](https://git-scm.com/)** <br>
+    Used for version control, by using GitHub terminal for git commits and push to GitHub.
 
+* **[GitHub](https://github.com/)** <br>
+    Used to backup and store project code, including changes, and deploy.
+
+* **[Gitpod](https://www.gitpod.io/)** <br>
+    IDE used for programming, editing, and debugging.
+
+* **[Google OAuth2](https://developers.google.com/identity/protocols/oauth2)** <br>
+    Necessary for Google API:s to get authorized access to Google Sheets spreadsheets.
+
+* **[Google Sheets](https://docs.google.com/spreadsheets/)** <br>
+    Used to store data collected from application.
+
+* **[Grammarly](https://app.grammarly.com)** <br>
+    Used for checking spelling and grammar.
+
+* **[GSpread](https://docs.gspread.org/en/v5.1.1/)** <br>
+    Used to select, update and get data from Google Sheets worksheets.
+
+* **[Lucidchart](www.lucidchart.com)** <br>
+    Used to create flowchart.
+
+* **[PEP8 Online](http://pep8online.com/)** <br>
+    Used to create flowchart.
+
+* **[Photoshop](https://www.adobe.com/products/photoshop.html)** <br>
+    Used for editing images and illustrations.
+
+* **[Python](https://www.python.org)** <br>
+    Used to create all functionality in app and enhanced by imported libraries.
+
+* **[Squoosh](https://squoosh.app)** <br>
+    Used to reduce file size in images.
 
 <br>
 
