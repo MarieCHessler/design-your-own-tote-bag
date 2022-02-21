@@ -195,10 +195,27 @@ In the Existing design section, the user can choose between visiting an already 
 
 ![Information and thanks message](assets/images/existing_info_and_thanks_message.webp)
 
+<br>
+
+### Worksheets
+User data is stored in a Google Sheets document called *design_your_own_tote_bag*, which contains five worksheets. The user's data is passed to this document for storage and collected from it for use in the Design Your Own Tote Bag app.
+* The *design* worksheet stores the fabric and color choices for the tote bag's outside, inside, and handles.
+* The *name* worksheet stores the user's name.
+* The *unique_id* worksheet stores the design's id, created from a combination of name and design number.
+* The *design_no* worksheet stores the design's number.
+* The *all_info* worksheet contains an automatically created copy of all the user's data in one place, for a better overview and a possibility to get all data back from one worksheet.
+* To push user data to Google Sheets, and get it back, the Python API *GSpread* is used in combination with the Google OAuth2 library Credentials class.
+![Design worksheet](assets/images/sheet_design.webp)
+![Name worksheet](assets/images/sheet_name.webp)
+![Unique ID worksheet](assets/images/sheet_unique_id.webp)
+![Design number](assets/images/sheet_design_no.webp)
+![All info worksheet](assets/images/sheet_all_info.webp)
+
+<br>
+
 ### General features
 * To give the user extra time to read the information, *time* is imported and *time.sleep* is used in the relevant files
 * To make it easy for the user to separate information from questions, comments, and errors, different colors have been used. For more information, please see the [Color palette](#color-palette) in the Design section.
-* To push user data to Google Sheets, and get it back, the Python API *gspread* is used.
 
 <br>
 
@@ -209,4 +226,6 @@ In the Existing design section, the user can choose between visiting an already 
 * HTML layer on top, for more appealing look.
 
 <br>
+
+## Testing
 
