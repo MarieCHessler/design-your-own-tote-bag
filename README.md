@@ -34,7 +34,7 @@ A link to the live application can be found [here](https://design-your-own-tote-
 
 5. [Testing](#testing)
     * [PEP8](#pep8)
-    * [User needs fulfilment](#user-needs-fulfilment)
+    * [User needs fulfillment](#user-needs-fulfillment)
     * [Live testing](#live-testing)
 
 6. [Bugs](#bugs)
@@ -288,7 +288,7 @@ User data is stored in a Google Sheets spreadsheet called *design_your_own_tote_
 
 ## Testing
 ### PEP8
-* The *run.py* and *google_sheets_api.py* files show no errors in [PEP8 online](http://pep8online.com/).
+* The *run.py*, *logic.py* and *google_sheets_api.py* files show no errors in [PEP8 online](http://pep8online.com/).
 * The *validations.py* file gets the following errors:
     * E203 - whitespace before ':'
     * E231 - missing whitespace after ':'
@@ -296,16 +296,17 @@ User data is stored in a Google Sheets spreadsheet called *design_your_own_tote_
     * E225 - missing whitespace around operator
 * The *logo_and_intro.py* file gets the following errors:
     * W291 - trailing whitespace
+    * W605 - invalid escape sequence
 
 My interpretation of the reason for the errors in *validation.py*, is that PEP8 online is not up to date with Python 3.8, where the new syntax [:=](https://docs.python.org/3/whatsnew/3.8.html), is featured. My mentor recommends this solution and Pylint, which has been installed and checks PEP8 in Gitpod, does not show these errors.
 
-The reason for the trailing whitespace in *logo_and_intro* is that if it is removed the system interprets the backslash used at the top front of the D to be an escape character. This interpretation breaks the logo, which is why it is not removed.
+The reason for the invalid escape sequence in *logo_and_intro* is the backslash used at the top of the D in the logo to make it look like a D. The reason for the trailing whitespace is that if it is removed the system interprets the backslash to be that escape character. This interpretation breaks the logo, which is why it is not removed.
 
-None of the errors presented above affect the code performance in a negative way.
+None of the errors presented above affect the code performance negatively.
 
 <br>
 
-### User needs fulfilment
+### User needs fulfillment
 * **The app is easy to understand and use**
     * When the app starts the user gets an introduction to what the app is about and what is possible to do in it. The questions are short and to the point, which makes it easy for the user to give the proper input. *The user's needs are met.* 
     
