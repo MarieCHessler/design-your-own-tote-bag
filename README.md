@@ -19,6 +19,7 @@ A link to the live application can be found [here](https://design-your-own-tote-
 
 2. [Design](#design)
     * [Color palette](#color-palette)
+    * [ASCII logo](#ascii-logo)
     * [Structure](#structure)
 
 3. [Features](#features)
@@ -298,7 +299,9 @@ User data is stored in a Google Sheets spreadsheet called *design_your_own_tote_
     * W291 - trailing whitespace
     * W605 - invalid escape sequence
 
-My interpretation of the reason for the errors in *validation.py*, is that PEP8 online is not up to date with Python 3.8, where the new syntax [:=](https://docs.python.org/3/whatsnew/3.8.html), is featured. My mentor recommends this solution and Pylint, which has been installed and checks PEP8 in Gitpod, does not show these errors.
+These are intentional errors, based on mentor recommendations and logo design.
+
+My interpretation of the reason for the errors in *validation.py* is that PEP8 online is not up to date with Python 3.8, where the new syntax [:=](https://docs.python.org/3/whatsnew/3.8.html) is featured. My mentor recommends the use of this syntax. Pylint, which has been installed and checks PEP8 in Gitpod, does not show these errors.
 
 The reason for the invalid escape sequence in *logo_and_intro* is the backslash used at the top of the D in the logo to make it look like a D. The reason for the trailing whitespace is that if it is removed the system interprets the backslash to be that escape character. This interpretation breaks the logo, which is why it is not removed.
 
