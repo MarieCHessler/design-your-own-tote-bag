@@ -101,6 +101,7 @@ The flowchart shows the different steps and checks the program follows, based on
 ### ASCII logo
 * An ASCII logo saying Tote Bag Design was created in ASCII Art on [patorjk.com](https://patorjk.com/software/taag/#p=display&f=Santa%20Clara&t=Tote%20Bag%20Design), please see the picture with black text on white background.
 * The logo was later modified to become sleeker and better adjusted to PEP8. One backslash had to be kept, though, for the D to keep its shape. This is the logo used in the app, please see the picture with white text on black background.
+* The original font is called Santa Clara.
 
 ![Original logo](assets/images/logo_original.webp)
 ![Revised logo](assets/images/logo_revised.webp)
@@ -532,9 +533,11 @@ The references mentioned in this section have been used for the content. Special
 
 * Reuben Ferrante, Code Institute mentor, for his patient guidance and help.
 
-* [GeeksforGeeks](https://www.geeksforgeeks.org), for great explanations and examples
+* [GeeksforGeeks](https://www.geeksforgeeks.org), for great explanations and examples.
 
-* [patorjk.com](https://patorjk.com/software/taag/), for a great set of ASCII Art options
+* [patorjk.com](https://patorjk.com/software/taag/), for a great set of ASCII Art options.
+
+* [Pylint](https://pylint.org), for an great tool.
 
 * [Python](https://www.python.org), for excellent documentation.
 
