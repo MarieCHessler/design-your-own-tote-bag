@@ -388,8 +388,9 @@ The bugs reported in the following section are a selection of the most prominent
 ### Known issues
 * **The app cannot run properly on Safari.**
     * The app starts the way it is supposed to, but since it is not possible to enter any text, it is not possible to get past the first question. 
-    * No solution has been found when Googling the issue, asking on Slack or contacting Code Institute Tutors. No one has found any clue as to what is wrong. 
-    * Gitpod crashed at one point, which meant a new workspace had to be created from one previously pushed to GitHub, and libraries and creds had to be reinstalled. Maybe something went amiss in that process, but since nothing had been deployed before the crash, it is not possible to know what worked and not before then.
+    * No solution has been found when Googling the issue, asking on Slack or contacting Code Institute Tutors. No one has found any clue as to what is wrong.
+    * Gitpod crashed on January 26, which meant a new workspace had to be created from one previously pushed to GitHub, a new creds file had to be inserted, and the GSpread library and Google OAuth library Credentials class had to reimported. Maybe something went amiss in that process, but since nothing had been deployed before the crash, it is not possible to know what worked and not before then.
+    * The files originating from the Python Essentials Template, that we were told not to touch, all say Initial commit, so they do not seem to have been altered.
     * More investigation is needed to find a solution to this issue. 
 
 <br>
