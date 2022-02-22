@@ -19,7 +19,7 @@ A link to the live application can be found [here](https://design-your-own-tote-
 
 2. [Design](#design)
     * [Color palette](#color-palette)
-    * [ASCII logo](#ascii-logo)
+    * [ASCII Art logo](#ascii-art-logo)
     * [Structure](#structure)
 
 3. [Features](#features)
@@ -54,12 +54,12 @@ A link to the live application can be found [here](https://design-your-own-tote-
 ## UX
 
 ### User needs
-**As a user, I would like a program that:**
+**As a user, I would like an app that:**
 * Is easy to understand and use.
 * Has an appealing layout.
 * Saves the data in a spreadsheet, so it is possible to return to previous designs.
-* Shows me the result at the end of the design process.
-* Explains how I can return to a previous design.
+* Shows the result at the end of the design process.
+* Explains how to return to a previous design.
 
 ### Owner goals
 **As a program owner, I would like to create a tool that:**
@@ -99,8 +99,8 @@ The flowchart shows the different steps and checks the program follows, based on
 
 <br>
 
-### ASCII logo
-* An ASCII logo saying Tote Bag Design was created in ASCII Art on [patorjk.com](https://patorjk.com/software/taag/#p=display&f=Santa%20Clara&t=Tote%20Bag%20Design), please see the picture with black text on white background.
+### ASCII Art logo
+* An ASCII Art logo saying Tote Bag Design was created in the Text to ASCII Art Generator on [patorjk.com](https://patorjk.com/software/taag/#p=display&f=Santa%20Clara&t=Tote%20Bag%20Design), please see the picture with black text on white background.
 * The logo was later modified to become sleeker and better adjusted to PEP8. One backslash had to be kept, though, for the D to keep its shape. This is the logo used in the app, please see the picture with white text on black background.
 * The original font is called Santa Clara.
 
@@ -113,7 +113,7 @@ The flowchart shows the different steps and checks the program follows, based on
 The features described below have been implemented for the user to have a pleasant experience.
 
 ### Introduction with logo and welcome
-* When starting the program an ASCII ART logo, showing the name Tote Bag Design, appears. This helps the user know that he or she is in the right place. 
+* When starting the program an ASCII Art logo, showing the name Tote Bag Design, appears. This helps the user know that he or she is in the right place. 
 * Below the logo there is a headline in bold, welcoming the user, and an introduction with a bit of information about what the company does and what the user can do in the application. With this information, the user is prepared when it is time to make the first choice.
 
 ![Logo and introduction](assets/images/intro.webp)
@@ -135,7 +135,8 @@ In the New design section, the user name is collected for personification and re
 <br>
 
 **Name input**
-* In the first part, an intro message is shown and the user is then asked to enter his or her name. 
+* In the first part, an intro message is shown and the user is then asked to enter his or her name.
+* If the user enters the name in lower case, the first letter will automatically be capitalized.
 * A personalized welcome message with the name appears to make the user feel special.
 * From the first and last name, a full name is created and passed to a Google Sheets worksheet called *name* to be stored.
 * If the user enters nothing or other characters than letters, an error message appears, and the user is returned to the question.
@@ -152,11 +153,12 @@ In the New design section, the user name is collected for personification and re
 
 **Fabric and color choices**
 * In the second part, the user is asked to choose between predefined choices of fabrics and colors for the outside, the inside, and the handles of the tote bag.
+* If the user enters the choice with any uppercase case letters, they will automatically be made lower case.
 * For each fabric and color a comment that supports the choice appears, to encourage the user to continue.
 * When the choices are made, they are passed to a Google Sheets worksheet called *design* to be stored.
-* The user is made aware of the choices being saved by messages shown after all the choices are made.
 * If the user enters nothing or other choices than the predefined ones, an error message appears, and the user is returned to the question.
 * For all the fabric and color choices, the error message returns what the user has entered, shows the valid choices, and asks him or her to enter the choice in letters.
+* The user is made aware of the choices being saved by messages shown after all the choices are made, please see image in Design number and ID creation below.
 
 ![Enter outside fabric and color choices](assets/images/new_outside.webp)
 ![Enter inside fabric and color choices](assets/images/new_inside.webp)
@@ -174,12 +176,14 @@ In the New design section, the user name is collected for personification and re
 * The name and number are combined according to the logic firstnamelastname1 and passed to the Google Sheets worksheet called *unique_id*.
 * The user is made aware of the number and ID being saved through messages shown after all the choices are made.
 
+![Save messages](assets/images/new_save.webp)
+
 <br>
 
 **Presentation of the design**
-* In the final part, the user is presented with his or her design, including an ASCCI image.
+* In the final part, the user is presented with his or her design, including an ASCCI Art image.
 * All the data from the different worksheets have automatically been copied into a single worksheet, called *all_info*, from which it is now collected and presented to the user.
-* In the message, the user is commended for his or her design, the fabrics and colors for the outside, the inside, and the handles are presented, together with the design ID, and an ASCII image of the bag is shown.
+* In the message, the user is commended for his or her design, the fabrics and colors for the outside, the inside, and the handles are presented, together with the design ID, and an ASCII Art image of the bag is shown.
 
 ![Presentation of design](assets/images/new_design_message.webp)
 
@@ -202,9 +206,9 @@ In the Existing design section, the user can choose between visiting an already 
 <br>
 
 **Visit existing design**
-* When entering the design ID correctly, the user is presented with his or her design, including an ASCII image.
+* When entering the design ID correctly, the user is presented with his or her design, including an ASCII Art image.
 * All the data from the different worksheets have automatically been copied into a single worksheet, called *all_info*, from which it is now collected and presented to the user.
-* In the message, the user gets a description of the fabrics and colors for the outside, the inside, and the handles of the tote bad he or she has designed, and an ASCII image of the bag is presented.
+* In the message, the user gets a description of the fabrics and colors for the outside, the inside, and the handles of the tote bad he or she has designed, and an ASCII Art image of the bag is presented.
 
 ![Visit existing design](assets/images/new_design_message.webp)
 
@@ -221,7 +225,7 @@ In the Existing design section, the user can choose between visiting an already 
 User data is stored in a Google Sheets spreadsheet called *design_your_own_tote_bag*, which contains five worksheets. The user's data is passed to this document for storage and collected from it for use in the Design Your Own Tote Bag app.
 * The *design* worksheet stores the fabric and color choices for the tote bag's outside, inside, and handles.
 * The *name* worksheet stores the user's name.
-* The *unique_id* worksheet stores the design's id, created from a combination of name and design number.
+* The *unique_id* worksheet stores the design's ID, created from a combination of name and design number.
 * The *design_no* worksheet stores the design's number.
 * The *all_info* worksheet contains an automatically created copy of all the user's data in one place, for a better overview and a possibility to get all data back from one worksheet.
 * To push user data to Google Sheets, and get it back, the Python API *GSpread* is used in combination with the Google OAuth2 library Credentials class.
@@ -270,7 +274,7 @@ User data is stored in a Google Sheets spreadsheet called *design_your_own_tote_
 * **[GSpread](https://docs.gspread.org/en/v5.1.1/)** <br>
     Used to select, update and get data from Google Sheets worksheets.
 
-* **[Lucidchart](www.lucidchart.com)** <br>
+* **[Lucidchart](https://www.lucidchart.com/pages/)** <br>
     Used to create flowchart.
 
 * **[PEP8 Online](http://pep8online.com/)** <br>
@@ -289,13 +293,13 @@ User data is stored in a Google Sheets spreadsheet called *design_your_own_tote_
 
 ## Testing
 ### PEP8
-* The *run.py*, *logic.py* and *google_sheets_api.py* files show no errors in [PEP8 online](http://pep8online.com/).
-* The *validations.py* file gets the following errors:
+* The *run.py*, *logic.py*, *google_sheets_api.py*, and *constants.py* files show no errors in [PEP8 online](http://pep8online.com/).
+* The *validations.py* file returns the following errors:
     * E203 - whitespace before ':'
     * E231 - missing whitespace after ':'
     * E701 - multiple statements on one line (colon)
     * E225 - missing whitespace around operator
-* The *logo_and_intro.py* file gets the following errors:
+* The *logo_and_intro.py* file returns the following warnings:
     * W291 - trailing whitespace
     * W605 - invalid escape sequence
 
@@ -305,7 +309,7 @@ My interpretation of the reason for the errors in *validation.py* is that PEP8 o
 
 The reason for the invalid escape sequence in *logo_and_intro* is the backslash used at the top of the D in the logo to make it look like a D. The reason for the trailing whitespace is that if it is removed the system interprets the backslash to be that escape character. This interpretation breaks the logo, which is why it is not removed.
 
-None of the errors presented above affect the code performance negatively.
+None of the errors or warnings presented above affect the code performance negatively.
 
 <br>
 
